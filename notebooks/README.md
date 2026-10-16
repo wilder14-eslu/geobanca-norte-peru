@@ -12,4 +12,4 @@ Antes de correrlos: `python src/01_construir_base_distrital.py`.
 | `06_geoestadistica_precipitacion.ipynb` | Geoestadística | Semivariograma (WLS), anisotropía, IDW, kriging ordinario y con deriva externa, LOO y validación contra campo completo | CHIRPS, DEM, red SENAMHI | Listo |
 | `07_patrones_puntuales.ipynb` | Procesos puntuales | Cuadrantes, Clark-Evans, G, F y L con envolventes, kernel, Poisson no homogéneo, K no homogénea | `osm_bancos_atm`, `centros_poblados` | Listo |
 | `08_espaciotemporal_ml.ipynb` | Espacio-tiempo y ML | Moran por año, Markov espacial, origen móvil vs persistencia, acceso potencial con CV espacial, SHAP | panel SBS | Listo |
-| `09_ubicacion_optima.ipynb` | Decisión | Score oportunidad × riesgo, MCLP | `centros_poblados` | Pendiente |
+| `09_ubicacion_optima.ipynb` | Decisión | Matriz oportunidad × riesgo con sensibilidad (τ de Kendall), MCLP exacto (CBC) frente a voraz, sensibilidad al radio | brecha, exposición, `centros_poblados` | Listo |

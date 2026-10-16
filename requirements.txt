@@ -27,4 +27,4 @@ pointpats>=2.4
 scikit-learn>=1.4
 xgboost>=2.0
 shap>=0.45
-spopt>=0.6         # Maximal Covering Location Problem (ubicación de nuevos puntos)
+pulp>=2.7          # MCLP exacto con CBC (ubicación de nuevos canales)
