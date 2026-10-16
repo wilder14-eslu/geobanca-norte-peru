@@ -1,0 +1,19 @@
+[límites] distritos en el ámbito: 327  ({'CAJAMARCA': 127, 'LA LIBERTAD': 84, 'LAMBAYEQUE': 38, 'PIURA': 65, 'TUMBES': 13})
+[censo 2025] distritos leídos en el país: 1892 | sin ubigeo: 5 | en el ámbito: 327
+[pobreza 2018] distritos en el ámbito: 326
+[SBS cajeros] registros: 426378 | combinaciones dep-prov-dist sin ubigeo (todo el país): 1
+[SBS cajeros] cortes en el panel: ['di2017', 'di2018', 'di2019', 'di2020', 'di2021', 'di2022', 'di2023', 'di2024', 'di2025', 'ma2026']
+[SBS oficinas] oficinas en el ámbito por corte: {'ag2026': 227, 'di2023': 656, 'di2024': 618, 'di2025': 629}
+
+=== VERIFICACIÓN ===
+Distritos en la base: 327
+  pob_total_2025                     faltantes:    0   suma/media: 7,323,726 / 22,396.72
+  pob_18mas                          faltantes:    0   suma/media: 5,490,861 / 16,791.62
+  pobreza_2018                       faltantes:    1   suma/media: 14,078 / 43.18
+  idh_2019                           faltantes:    1   suma/media: 125 / 0.38
+  n_atm                              faltantes:    0   suma/media: 4,941 / 15.11
+  n_corresponsal_establecimientos    faltantes:    0   suma/media: 70,560 / 215.78
+  n_oficinas                         faltantes:    0   suma/media: 629 / 1.92
+  Distritos sin ningún punto de atención: 5
+  Población total 2025 del ámbito: 7,323,726
+Capas puntuales -> OSM: 395 | estaciones SENAMHI (meteo): 175 | centros poblados: 14481

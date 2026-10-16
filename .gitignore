@@ -1,0 +1,20 @@
+# Datos: se reconstruyen con src/00_descargar_datos.py y src/01_construir_base_distrital.py
+data/raw/**
+data/interim/**
+data/processed/*.gpkg
+data/processed/*.gpkg-journal
+data/processed/*.geojson
+!data/**/.gitkeep
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# QGIS
+*.qgs~
+*.qgz~
+.DS_Store
+Thumbs.db
