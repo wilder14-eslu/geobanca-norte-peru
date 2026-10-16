@@ -1,7 +1,7 @@
 # GeoBanca Norte Perú
 
 **Oportunidad y riesgo territorial para la expansión de canales financieros en el norte del Perú**
-Trabajo integrador de *Estadística Espacial* (UNMSM, Escuela de Estadística, 2026-II).
+Análisis de estadística espacial aplicado a la expansión de canales financieros: dependencia espacial, regresión espacial, geoestadística, procesos puntuales y aprendizaje automático espacial sobre datos oficiales del Perú.
 
 ## Pregunta de negocio
 Si una entidad financiera quiere abrir **N agentes, cajeros corresponsales o EOB** en la Macro Región Norte
@@ -23,7 +23,7 @@ geobanca-norte-peru/
 │   ├── utils_ubigeo.py               normalización de nombres y asignación de UBIGEO
 │   ├── 00_descargar_datos.py         descarga reproducible de todas las fuentes
 │   └── 01_construir_base_distrital.py  une todo por UBIGEO y genera las capas
-├── notebooks/        un notebook por módulo del sílabo (ver notebooks/README.md)
+├── notebooks/        un notebook por etapa del análisis (ver notebooks/README.md)
 ├── qgis/             proyecto QGIS
 ├── outputs/          figuras, mapas HTML, tablas
 └── docs/             catálogo de datos, guía SENAMHI, informe y presentación
