@@ -14,7 +14,7 @@ folium>=0.17
 matplotlib>=3.8
 mapclassify>=2.6
 
-# Unidades II y III: dependencia espacial, regresión espacial, geoestadística
+# Dependencia espacial, regresión espacial y geoestadística
 libpysal>=4.10
 esda>=2.5
 spreg>=1.5
@@ -22,7 +22,7 @@ mgwr>=2.2
 pykrige>=1.7
 scikit-gstat>=1.0
 
-# Unidad IV: patrones puntuales y ML espacial
+# Patrones puntuales y ML espacial
 pointpats>=2.4
 scikit-learn>=1.4
 xgboost>=2.0

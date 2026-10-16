@@ -41,11 +41,11 @@ python src/01_construir_base_distrital.py # une todo por UBIGEO y genera data/pr
 ```
 
 **Qué trae el repo y qué se descarga**
-| Ya está en el repo | Se descarga con `00_descargar_datos.py` | Paso manual |
-|---|---|---|
-| Base distrital, panel SBS y oficinas (`data/processed/*.csv`) | Límites INEI, ubigeos, censo 2025, pobreza 2018 (versiones fijadas por commit) | Lluvia de estaciones SENAMHI (registro o captcha): ver `docs/guia_senamhi.md` |
-| Bancos/ATM de OpenStreetMap del 16/10/2026 (`data/raw/osm/`) | 89 cuadros de la SBS | |
-| Catálogos de estaciones SENAMHI (`data/raw/senamhi/`) | Opcional: DEM (`--dem`) y CHIRPS (`--chirps`) | |
+| Ya está en el repo | Se descarga con `00_descargar_datos.py` |
+|---|---|
+| Base distrital, panel SBS y oficinas (`data/processed/*.csv`) | Límites INEI, ubigeos, censo 2025, pobreza 2018 (versiones fijadas por commit) |
+| Bancos/ATM de OpenStreetMap del 16/10/2026 (`data/raw/osm/`) | 89 cuadros de la SBS |
+| Catálogos de estaciones SENAMHI (`data/raw/senamhi/`) | Lluvia CHIRPS de marzo 1998, 2017 y 2023 (`--chirps`) y DEM Copernicus (`--dem`), necesarios para el notebook 06 |
 
 - Para **solo ver o rehacer el análisis** no hace falta descargar nada: los notebooks leen los CSV de `data/processed`.
 - Las fuentes de GitHub están **fijadas a un commit**, así que cualquiera obtiene los mismos archivos usados aquí.
@@ -64,8 +64,9 @@ python src/01_construir_base_distrital.py # une todo por UBIGEO y genera data/pr
 
 Verificación del cruce en `outputs/tablas/reporte_verificacion.txt`.
 
-## Pendiente (paso manual)
-- **Precipitación de estaciones SENAMHI** para la Unidad III: el portal pide registro o captcha. Ver `docs/guia_senamhi.md`.
+## Nota sobre la lluvia
+Los registros diarios de SENAMHI requieren registro o captcha por estación. El notebook 06 usa CHIRPS como campo de referencia y
+las coordenadas reales de la red SENAMHI como diseño de muestreo; ver `docs/guia_senamhi.md`.
 
 ## Fuentes
 INEI (Censo 2025, Mapa de Pobreza 2018, límites y ubigeos), SBS (Boletín Estadístico), SENAMHI, OpenStreetMap.

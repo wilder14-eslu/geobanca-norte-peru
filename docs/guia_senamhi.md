@@ -1,26 +1,27 @@
-# Cómo obtener los datos de estaciones SENAMHI (paso manual)
+# Datos de lluvia: decisión de diseño
 
-Los datos diarios de estaciones no se pueden bajar de forma automática:
-el portal histórico pide **registro gratuito** y el mapa de la red actual pide **captcha** por consulta.
-Los catálogos con códigos y coordenadas ya están en `data/raw/senamhi/`.
+## Por qué no se usan los registros de estaciones
+El portal de SENAMHI entrega los datos diarios estación por estación: la descarga histórica pide registro y la red
+actual pide captcha en cada consulta. Para las 235 estaciones meteorológicas del ámbito eso no es reproducible.
 
-## Opción A (recomendada): descarga histórica con registro
-1. Entra a <https://www.senamhi.gob.pe/site/descarga-datos/> y crea tu usuario (pestaña *Ingreso*).
-2. Las 68 estaciones del ámbito están en `estaciones_descarga_historica.csv`
-   (Tumbes 4, Piura 20, Lambayeque 8, La Libertad 10, Cajamarca 26).
-3. Descarga cada estación y guarda los archivos en `data/raw/senamhi/historico/`
-   con el nombre `<codigo>.csv` (o el .txt/.zip tal como venga).
-4. Variable objetivo sugerida: **precipitación acumulada de marzo de 1998** (El Niño extraordinario)
-   y su **anomalía** respecto de la media de marzo de los años disponibles.
-   Con ~68 puntos alcanza para semivariograma, kriging ordinario/universal y cokriging con altitud.
+## Qué se usa
+| Insumo | Origen | Uso |
+|---|---|---|
+| CHIRPS v2.0 mensual (0,05°) de marzo 1998, 2017 y 2023 | `python src/00_descargar_datos.py --chirps` | Campo de lluvia de referencia |
+| Copernicus DEM GLO-90 | `python src/00_descargar_datos.py --dem` | Deriva externa (altitud) |
+| Coordenadas de la red SENAMHI | `data/raw/senamhi/estaciones_*.csv` (ya en el repo) | Diseño de muestreo |
 
-## Opción B: red actual (2021-2026, incluye el Ciclón Yaku de marzo 2023)
-1. Abre <https://www.senamhi.gob.pe/?&p=estaciones>, filtra el norte y elige estaciones meteorológicas
-   (`tipo = M` en `estaciones_red_actual.csv`; hay 175 en el ámbito).
-2. En cada estación selecciona el mes **2023-03**, resuelve el captcha y exporta la tabla.
-3. Guarda cada tabla como `data/raw/senamhi/red_actual/<codigo>_202303.csv`.
-   Aunque sean menos estaciones (prioriza las convencionales `CO` y automáticas `EMA`), con 40-60 basta.
+CHIRPS combina satélite y pluviómetros (incluidos los de SENAMHI) y es el producto de referencia para lluvia mensual
+en zonas con red escasa (Funk et al., 2015).
 
-## Validación con producto grillado (sin login)
-`python src/00_descargar_datos.py --chirps` baja CHIRPS (satélite + estaciones) para feb-mar de 1998, 2017 y 2023.
-Úsalo **solo para validar** el mapa de kriging, no como dato de entrada: ya viene interpolado.
+## Diseño del notebook 06
+1. Se observa CHIRPS solo en los píxeles que contienen una estación SENAMHI real (149 píxeles distintos).
+2. Con esos puntos se ajusta el semivariograma y se interpola con IDW, kriging ordinario y kriging con deriva externa.
+3. Se valida de dos formas: dejando una estación fuera y contra el campo completo, que es conocido en cada píxel.
+
+Así se mide cuánta información pierde la geometría real de la red, y en qué zonas.
+La limitación es que el valor en cada estación es el del píxel CHIRPS, no el del pluviómetro.
+
+## Si se consiguen registros de estaciones
+Guardarlos en `data/raw/senamhi/historico/<codigo>.csv`; el notebook 06 puede reemplazar el valor del píxel por el
+registro observado sin cambiar el resto del flujo.
