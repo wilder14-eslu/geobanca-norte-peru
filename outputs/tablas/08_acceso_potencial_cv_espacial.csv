@@ -1,0 +1,10 @@
+modelo,variables,RMSE,MAE,R² (CV espacial),I de Moran residuos
+Ridge,estructurales (X),0.964,0.726,0.239,0.124
+Random Forest,estructurales (X),0.944,0.704,0.271,0.099
+XGBoost,estructurales (X),0.989,0.736,0.2,0.092
+Ridge,X + rezagos espaciales (WX),0.932,0.694,0.29,0.131
+Random Forest,X + rezagos espaciales (WX),0.926,0.681,0.298,0.092
+XGBoost,X + rezagos espaciales (WX),0.989,0.739,0.199,0.107
+Ridge,X + WX + coordenadas,0.92,0.69,0.307,0.094
+Random Forest,X + WX + coordenadas,0.903,0.659,0.332,0.052
+XGBoost,X + WX + coordenadas,0.976,0.725,0.22,0.071
