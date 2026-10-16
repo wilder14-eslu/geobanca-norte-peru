@@ -10,6 +10,6 @@ Antes de correrlos: `python src/01_construir_base_distrital.py`.
 | `04_regresion_espacial.ipynb` | Modelos de áreas | OLS + LM, SAR, SEM (ML y GMM), Durbin espacial e impactos | `lisa_acceso.csv` | Listo |
 | `05_mapas_interactivos.ipynb` | Comunicación | Álbum folium | todas las capas | Pendiente |
 | `06_semivariograma_kriging.ipynb` | Geoestadística | Semivariograma, kriging ordinario y universal, cokriging, validación cruzada | estaciones SENAMHI | Pendiente |
-| `07_patrones_puntuales.ipynb` | Procesos puntuales | Funciones K, L y G, CSR, Poisson no homogéneo | `osm_bancos_atm`, `centros_poblados` | Pendiente |
+| `07_patrones_puntuales.ipynb` | Procesos puntuales | Cuadrantes, Clark-Evans, G, F y L con envolventes, kernel, Poisson no homogéneo, K no homogénea | `osm_bancos_atm`, `centros_poblados` | Listo |
 | `08_espaciotemporal_ml.ipynb` | Espacio-tiempo y ML | Panel 2017-2026, RF/XGBoost con rezagos espaciales, validación cruzada espacial, SHAP | panel SBS | Pendiente |
 | `09_ubicacion_optima.ipynb` | Decisión | Score oportunidad × riesgo, MCLP | `centros_poblados` | Pendiente |
