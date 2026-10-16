@@ -10,6 +10,7 @@ Uso:
     python src/00_descargar_datos.py --chirps     # + precipitación CHIRPS (meses El Niño, ~14 MB c/u)
     python src/00_descargar_datos.py --dem        # + modelo de elevación Copernicus GLO-90 (~30 teselas)
     python src/00_descargar_datos.py --forzar     # vuelve a bajar aunque el archivo exista
+    python src/00_descargar_datos.py --osm-actualizar  # consulta OSM de nuevo (por defecto usa la copia del repo)
 
 No descarga datos diarios de estaciones SENAMHI: ese portal exige registro o captcha.
 Ver docs/guia_senamhi.md.
@@ -31,29 +32,43 @@ from config import DATA_RAW, SBS_ANIOS_PANEL
 UA = {"User-Agent": "Mozilla/5.0 (proyecto academico UNMSM - Estadistica Espacial)"}
 GH = "https://raw.githubusercontent.com"
 
+# Versiones fijas (commit) de cada repositorio, para que cualquiera obtenga exactamente los mismos
+# archivos usados en el análisis (verificados el 16/10/2026). Para usar la última versión, cambiar por "HEAD".
+VERSION = {
+    "Rodasluis/Peru-maps": "f2553240055092daa16ace1eb4ba614d09f1ca56",                       # 21/09/2026
+    "jmcastagnetto/ubigeo-peru-aumentado": "a783fa66effb16fa8f3321b49a3d5e71cab15a5c",       # 24/01/2022
+    "AlejandroPerezPortocarrero/mapadepobreza2018_peru": "ee681cb724f752531f1fd292c7940e3c3a0d8edc",  # 20/04/2021
+    "carlosperez100/censo-peru-2025": "92aa6006bc283829e5acb77fa274a62038be98df",            # 11/07/2026
+}
+
+
+def gh(repo: str, ruta: str) -> str:
+    return f"{GH}/{repo}/{VERSION[repo]}/{ruta}"
+
+
 FUENTES_GITHUB = {
     # Límites INEI 2026 (pipeline reproducible sobre el WFS del INEI)
-    "limites/distrito.geojson": f"{GH}/Rodasluis/Peru-maps/HEAD/salida/distrito.geojson",
-    "limites/distrito_simplificado.geojson": f"{GH}/Rodasluis/Peru-maps/HEAD/salida/distrito_simplificado.geojson",
-    "limites/provincia_simplificado.geojson": f"{GH}/Rodasluis/Peru-maps/HEAD/salida/provincia_simplificado.geojson",
-    "limites/departamento_simplificado.geojson": f"{GH}/Rodasluis/Peru-maps/HEAD/salida/departamento_simplificado.geojson",
-    "limites/ubigeos_2026.csv": f"{GH}/Rodasluis/Peru-maps/HEAD/salida/ubigeos_2026.csv",
+    "limites/distrito.geojson": gh("Rodasluis/Peru-maps", f"salida/distrito.geojson"),
+    "limites/distrito_simplificado.geojson": gh("Rodasluis/Peru-maps", f"salida/distrito_simplificado.geojson"),
+    "limites/provincia_simplificado.geojson": gh("Rodasluis/Peru-maps", f"salida/provincia_simplificado.geojson"),
+    "limites/departamento_simplificado.geojson": gh("Rodasluis/Peru-maps", f"salida/departamento_simplificado.geojson"),
+    "limites/ubigeos_2026.csv": gh("Rodasluis/Peru-maps", f"salida/ubigeos_2026.csv"),
     # Ubigeo aumentado y centros poblados con coordenadas
-    "ubigeo/ubigeo_distrito.csv": f"{GH}/jmcastagnetto/ubigeo-peru-aumentado/HEAD/ubigeo_distrito.csv",
-    "ubigeo/ubigeo_ccpp.csv": f"{GH}/jmcastagnetto/ubigeo-peru-aumentado/HEAD/ubigeo_ccpp.csv",
+    "ubigeo/ubigeo_distrito.csv": gh("jmcastagnetto/ubigeo-peru-aumentado", f"ubigeo_distrito.csv"),
+    "ubigeo/ubigeo_ccpp.csv": gh("jmcastagnetto/ubigeo-peru-aumentado", f"ubigeo_ccpp.csv"),
     # Mapa de pobreza monetaria 2018 (anexos oficiales del INEI)
     "pobreza2018/INEI_mapa_pobreza_2018_anexo_estadistico.xlsx":
-        f"{GH}/AlejandroPerezPortocarrero/mapadepobreza2018_peru/HEAD/2_Anexo%20Estadistico.xlsx",
+        gh("AlejandroPerezPortocarrero/mapadepobreza2018_peru", f"2_Anexo%20Estadistico.xlsx"),
     "pobreza2018/INEI_mapa_pobreza_2018_diccionario.xlsx":
-        f"{GH}/AlejandroPerezPortocarrero/mapadepobreza2018_peru/HEAD/3_Anexo%20Metodologico%201%20-%20Diccionario.xlsx",
+        gh("AlejandroPerezPortocarrero/mapadepobreza2018_peru", f"3_Anexo%20Metodologico%201%20-%20Diccionario.xlsx"),
     "pobreza2018/INEI_mapa_pobreza_2018_informe.pdf":
-        f"{GH}/AlejandroPerezPortocarrero/mapadepobreza2018_peru/HEAD/Informe%20de%20pobreza%202018%20-%20INEI.pdf",
+        gh("AlejandroPerezPortocarrero/mapadepobreza2018_peru", f"Informe%20de%20pobreza%202018%20-%20INEI.pdf"),
 }
 # Tabulados oficiales del Censo 2025 (copia de censos2025.inei.gob.pe)
 for _f in ["01_indicadores_demograficos", "02_fecundidad", "03_migracion", "04_estado_civil_identidad_seguro",
            "05_educacion", "06_discapacidad", "07_etnicidad", "08_poblacion_edad_trabajar",
            "09_vivienda_caracteristicas", "10_vivienda_servicios"]:
-    FUENTES_GITHUB[f"censo2025/INEI_censo2025_{_f}.xlsx"] = f"{GH}/carlosperez100/censo-peru-2025/HEAD/raw/{_f}.xlsx"
+    FUENTES_GITHUB[f"censo2025/INEI_censo2025_{_f}.xlsx"] = gh("carlosperez100/censo-peru-2025", f"raw/{_f}.xlsx")
 
 # SBS: código de cuadro -> descripción. Cajeros: trimestral; oficinas: mensual.
 SBS_CAJEROS = {"B-2364": "banca múltiple", "B-3261": "financieras", "C-1236": "cajas municipales",
@@ -107,10 +122,11 @@ def descargar_sbs(forzar: bool) -> None:
 
 def descargar_osm(forzar: bool) -> None:
     print("\n[OpenStreetMap / Overpass]")
-    destino = DATA_RAW / "osm" / f"overpass_bancos_atm_norte_{time.strftime('%Y-%m-%d')}.json"
-    if destino.exists() and not forzar:
-        print("  ya existe", destino.name)
+    existentes = sorted((DATA_RAW / "osm").glob("overpass_bancos_atm_norte_*.json"))
+    if existentes and not forzar:
+        print(f"  se usa la copia versionada {existentes[-1].name} (para actualizar: --osm-actualizar)")
         return
+    destino = DATA_RAW / "osm" / f"overpass_bancos_atm_norte_{time.strftime('%Y-%m-%d')}.json"
     q = """[out:json][timeout:180];
 (area["ISO3166-2"="PE-TUM"];area["ISO3166-2"="PE-PIU"];area["ISO3166-2"="PE-LAM"];
  area["ISO3166-2"="PE-LAL"];area["ISO3166-2"="PE-CAJ"];)->.a;
@@ -185,13 +201,14 @@ def main() -> None:
     ap.add_argument("--chirps", action="store_true")
     ap.add_argument("--dem", action="store_true")
     ap.add_argument("--forzar", action="store_true")
+    ap.add_argument("--osm-actualizar", action="store_true", help="vuelve a consultar Overpass (cambia los resultados)")
     a = ap.parse_args()
 
     print("[GitHub: límites, ubigeo, pobreza 2018, censo 2025]")
     for rel, url in FUENTES_GITHUB.items():
         bajar(url, DATA_RAW / rel, a.forzar)
     descargar_sbs(a.forzar)
-    descargar_osm(a.forzar)
+    descargar_osm(a.osm_actualizar)
     descargar_catalogo_senamhi(a.forzar)
     if a.chirps:
         descargar_chirps(a.forzar)

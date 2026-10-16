@@ -1,0 +1,5115 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-16T07:12:00Z",
+    "timestamp_areas_base": "2026-10-14T11:21:03Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 635420398,
+  "lat": -7.1566873,
+  "lon": -78.5161162,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "name": "Scotia Bank",
+    "operator": "Scotiabank",
+    "operator:wikidata": "Q451476"
+  }
+},
+{
+  "type": "node",
+  "id": 1794633038,
+  "lat": -7.2437409,
+  "lon": -79.4703884,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 1810079590,
+  "lat": -8.0797980,
+  "lon": -79.1216429,
+  "tags": {
+    "amenity": "atm",
+    "operator": "BBVA"
+  }
+},
+{
+  "type": "node",
+  "id": 1810079632,
+  "lat": -8.0798895,
+  "lon": -79.1217135,
+  "tags": {
+    "amenity": "atm",
+    "operator": "GlobalNet"
+  }
+},
+{
+  "type": "node",
+  "id": 1815033746,
+  "lat": -8.0795845,
+  "lon": -79.1215441,
+  "tags": {
+    "amenity": "atm",
+    "operator": "MultiRed"
+  }
+},
+{
+  "type": "node",
+  "id": 1880776577,
+  "lat": -7.1567425,
+  "lon": -78.5161030,
+  "tags": {
+    "addr:city": "Cajamarca",
+    "amenity": "bank",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "name": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 1880787553,
+  "lat": -7.1560216,
+  "lon": -78.5208007,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 1880807499,
+  "lat": -7.1484996,
+  "lon": -78.5101644,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "brand:wikipedia": "es:Banco de Crédito del Perú",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 1895709491,
+  "lat": -3.5709181,
+  "lon": -80.4602357,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 1902278380,
+  "lat": -7.1657774,
+  "lon": -78.5084954,
+  "tags": {
+    "addr:housenumber": "098",
+    "addr:street": "Luis Reyna Farge",
+    "amenity": "bank",
+    "name": "BCP Agencia Atahualpa"
+  }
+},
+{
+  "type": "node",
+  "id": 2694540217,
+  "lat": -8.1166444,
+  "lon": -79.0289087,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "Caja Trujillo"
+  }
+},
+{
+  "type": "node",
+  "id": 2768956303,
+  "lat": -8.1127520,
+  "lon": -79.0065143,
+  "tags": {
+    "addr:city": "Trujillo",
+    "amenity": "atm",
+    "operator": "BBVA Banco Continental"
+  }
+},
+{
+  "type": "node",
+  "id": 2768956304,
+  "lat": -8.1146514,
+  "lon": -79.0079158,
+  "tags": {
+    "addr:city": "Trujillo",
+    "amenity": "bank",
+    "atm": "no",
+    "name": "Caja Trujillo"
+  }
+},
+{
+  "type": "node",
+  "id": 2951358635,
+  "lat": -8.1201997,
+  "lon": -79.0412414,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "name": "Scotiabank",
+    "operator": "Scotiabank",
+    "operator:wikidata": "Q451476"
+  }
+},
+{
+  "type": "node",
+  "id": 2957251030,
+  "lat": -7.1563514,
+  "lon": -78.5181095,
+  "tags": {
+    "amenity": "atm",
+    "name": "Scotiabank",
+    "operator": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 2965017513,
+  "lat": -7.1457671,
+  "lon": -78.5161542,
+  "tags": {
+    "amenity": "atm",
+    "name": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 2979351224,
+  "lat": -5.1475042,
+  "lon": -79.0031973,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "currency:PEN": "yes",
+    "name": "Banco de la Nación",
+    "operator": "Banco de la Nación",
+    "operator:wikidata": "Q4856206"
+  }
+},
+{
+  "type": "node",
+  "id": 3049830900,
+  "lat": -4.1071244,
+  "lon": -81.0542428,
+  "tags": {
+    "amenity": "atm",
+    "atm": "yes",
+    "name": "Banco de Crédito del Perú",
+    "operator": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 3049830903,
+  "lat": -4.1067177,
+  "lon": -81.0524189,
+  "tags": {
+    "amenity": "atm",
+    "atm": "yes",
+    "name": "Scotiabank",
+    "operator": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 3049888988,
+  "lat": -4.1066107,
+  "lon": -81.0530305,
+  "tags": {
+    "amenity": "atm",
+    "name": "Multired"
+  }
+},
+{
+  "type": "node",
+  "id": 3049888994,
+  "lat": -4.1072100,
+  "lon": -81.0573542,
+  "tags": {
+    "amenity": "atm",
+    "name": "Globalnet"
+  }
+},
+{
+  "type": "node",
+  "id": 3049890569,
+  "lat": -4.1067819,
+  "lon": -81.0529125,
+  "tags": {
+    "amenity": "atm",
+    "atm": "yes",
+    "name": "Banco BBVA Continental",
+    "operator": "BBVA Continental"
+  }
+},
+{
+  "type": "node",
+  "id": 3107953848,
+  "lat": -4.6576335,
+  "lon": -80.2440027,
+  "tags": {
+    "addr:street": "Jirón Alfonso Ugarte",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 3221209583,
+  "lat": -8.1121060,
+  "lon": -79.0279571,
+  "tags": {
+    "amenity": "atm",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "operator": "BCP",
+    "operator:wikidata": "Q4854124"
+  }
+},
+{
+  "type": "node",
+  "id": 3481573928,
+  "lat": -7.1574475,
+  "lon": -78.5186698,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Trujillo"
+  }
+},
+{
+  "type": "node",
+  "id": 3481600400,
+  "lat": -7.1492246,
+  "lon": -78.5095410,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BBVA",
+    "brand:wikidata": "Q806189",
+    "brand:wikipedia": "en:Banco Bilbao Vizcaya Argentaria",
+    "name": "BBVA",
+    "official_name": "Banco Bilbao Vizcaya Argentaria"
+  }
+},
+{
+  "type": "node",
+  "id": 3481600403,
+  "lat": -7.1486784,
+  "lon": -78.5099951,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 3759222517,
+  "lat": -7.1560772,
+  "lon": -78.5132628,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 3759222520,
+  "lat": -7.1583218,
+  "lon": -78.5141796,
+  "tags": {
+    "amenity": "bank",
+    "name": "San Pio X"
+  }
+},
+{
+  "type": "node",
+  "id": 3760277264,
+  "lat": -7.1538553,
+  "lon": -78.5052393,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "brand:wikipedia": "es:Interbank",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 3833022359,
+  "lat": -8.0801688,
+  "lon": -79.1216967,
+  "tags": {
+    "amenity": "atm",
+    "brand": "BCP",
+    "opening_hours": "24/7",
+    "operator": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 3880823996,
+  "lat": -3.7107703,
+  "lon": -80.7246892,
+  "tags": {
+    "amenity": "atm"
+  }
+},
+{
+  "type": "node",
+  "id": 3981080358,
+  "lat": -7.4013190,
+  "lon": -79.5723465,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 3981106604,
+  "lat": -7.7930222,
+  "lon": -79.2226427,
+  "tags": {
+    "amenity": "atm",
+    "brand": "BBVA"
+  }
+},
+{
+  "type": "node",
+  "id": 3985383561,
+  "lat": -4.6577278,
+  "lon": -80.2439155,
+  "tags": {
+    "addr:street": "Jirón Alfonso Ugarte",
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "Financiera Edyficar"
+  }
+},
+{
+  "type": "node",
+  "id": 4175011191,
+  "lat": -8.1259585,
+  "lon": -79.0398067,
+  "tags": {
+    "addr:street": "Avenida Victor Larco Herrera",
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación",
+    "opening_hours": "Mo-Fr 08:00-17:00",
+    "website": "https://www.bn.com.pe"
+  }
+},
+{
+  "type": "node",
+  "id": 4180010470,
+  "lat": -5.4035554,
+  "lon": -80.7429292,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "24/7",
+    "operator": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 4180010471,
+  "lat": -5.4036005,
+  "lon": -80.7429385,
+  "tags": {
+    "addr:housenumber": "385 La Unión",
+    "addr:street": "Av. Lima",
+    "amenity": "bank",
+    "email": "agencialaunion@cajapiura.pe",
+    "name": "Caja Piura agencia La Unión",
+    "opening_hours": "Mo-Sa 08:30-18:00",
+    "phone": "+51 73 284321",
+    "website": "https://www.cajapiura.pe"
+  }
+},
+{
+  "type": "node",
+  "id": 4199711690,
+  "lat": -7.1505553,
+  "lon": -78.5062092,
+  "tags": {
+    "amenity": "atm"
+  }
+},
+{
+  "type": "node",
+  "id": 4211716389,
+  "lat": -6.8352424,
+  "lon": -79.9355559,
+  "tags": {
+    "addr:street": "Grau",
+    "amenity": "bank"
+  }
+},
+{
+  "type": "node",
+  "id": 4231834990,
+  "lat": -8.4225715,
+  "lon": -78.7523808,
+  "tags": {
+    "amenity": "atm"
+  }
+},
+{
+  "type": "node",
+  "id": 4262802438,
+  "lat": -7.1624191,
+  "lon": -78.5122688,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco Azteca",
+    "brand:wikidata": "Q4854076",
+    "brand:wikipedia": "en:Banco Azteca",
+    "name": "Banco Azteca"
+  }
+},
+{
+  "type": "node",
+  "id": 4269788902,
+  "lat": -3.5698869,
+  "lon": -80.4596561,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 4272525189,
+  "lat": -8.1117334,
+  "lon": -79.0187036,
+  "tags": {
+    "amenity": "bank",
+    "branch": "Mercado Mayorista",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 4281432089,
+  "lat": -5.1976746,
+  "lon": -80.6266866,
+  "tags": {
+    "addr:housenumber": "353",
+    "addr:street": "Ayacucho",
+    "amenity": "bank",
+    "email": "cajapiura@cajapiura.pe",
+    "name": "Caja Piura Oficina Principal",
+    "opening_hours": "Mo-Fr 08:30-18:00; Sa 09:00-13:00",
+    "phone": "+51 73 284300",
+    "website": "https://www.cajapiura.pe/"
+  }
+},
+{
+  "type": "node",
+  "id": 4291268891,
+  "lat": -5.1909365,
+  "lon": -80.6310835,
+  "tags": {
+    "addr:street": "Avenida Sanchéz Cerro",
+    "amenity": "bank",
+    "name": "Caja Piura-Agencia Sánchez Cerro",
+    "opening_hours": "Mo-Fr 08:00-18:00; Sa 09:00-13:00",
+    "phone": "+51 73 284300",
+    "website": "https://www.cajapiura.pe/"
+  }
+},
+{
+  "type": "node",
+  "id": 4291270490,
+  "lat": -5.1898489,
+  "lon": -80.6335162,
+  "tags": {
+    "amenity": "bank",
+    "email": "agenciamercado@cajapiura.pe",
+    "name": "Caja Piura - Agencia Mercado",
+    "opening_hours": "Mo-Fr 08:00-18:00; Sa 09:00-13:00",
+    "phone": "+51 73 284300",
+    "website": "https://www.cajapiura.pe/"
+  }
+},
+{
+  "type": "node",
+  "id": 4304308298,
+  "lat": -5.1959067,
+  "lon": -80.6276405,
+  "tags": {
+    "amenity": "bureau_de_change"
+  }
+},
+{
+  "type": "node",
+  "id": 4353442396,
+  "lat": -6.6795469,
+  "lon": -78.5184049,
+  "tags": {
+    "amenity": "bank",
+    "branch": "Bambamarca",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 4353475689,
+  "lat": -7.3990770,
+  "lon": -79.5694698,
+  "tags": {
+    "amenity": "bank",
+    "branch": "Pacasmayo",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 4362950789,
+  "lat": -7.4796969,
+  "lon": -78.8191607,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 4383886993,
+  "lat": -8.5382783,
+  "lon": -78.6788884,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco de la Nación",
+    "name:es": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 4384303891,
+  "lat": -6.7023970,
+  "lon": -79.9038482,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco de la Nación",
+    "name:es": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 4392323190,
+  "lat": -8.0541712,
+  "lon": -79.0644434,
+  "tags": {
+    "addr:street": "3",
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 4392323489,
+  "lat": -8.0946467,
+  "lon": -79.0393208,
+  "tags": {
+    "addr:street": "Avenida Nicolas de Pierola",
+    "amenity": "bank",
+    "brand": "Banco Azteca",
+    "brand:wikidata": "Q4854076",
+    "name": "Banco Azteca",
+    "name:es": "Banco Azteca"
+  }
+},
+{
+  "type": "node",
+  "id": 4434979991,
+  "lat": -6.1538952,
+  "lon": -79.7155431,
+  "tags": {
+    "addr:street": "calle El carmen",
+    "amenity": "bank",
+    "name": "Caja Piura",
+    "name:es": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 4442281289,
+  "lat": -8.1138603,
+  "lon": -79.0291144,
+  "tags": {
+    "addr:street": "Jirón Coronel Bolognesi",
+    "amenity": "atm",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "name": "Scotiabank",
+    "name:es": "Scotiabank",
+    "name:fr": "Scotiabank",
+    "operator": "Scotiabank",
+    "operator:wikidata": "Q451476",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4454051327,
+  "lat": -8.1018842,
+  "lon": -79.0470166,
+  "tags": {
+    "addr:street": "Pasillo Aventura Plaza",
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "brand:wikipedia": "es:Banco Interbank",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 4454051328,
+  "lat": -8.1020942,
+  "lon": -79.0470763,
+  "tags": {
+    "addr:street": "Pasillo Aventura Plaza",
+    "amenity": "bank",
+    "brand": "Western Union",
+    "brand:wikidata": "Q861042",
+    "brand:wikipedia": "en:Western Union",
+    "name": "Western Union"
+  }
+},
+{
+  "type": "node",
+  "id": 4457340856,
+  "lat": -7.2547720,
+  "lon": -79.1272922,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 4459759291,
+  "lat": -8.1466871,
+  "lon": -79.0118525,
+  "tags": {
+    "addr:street": "Panamericana Norte",
+    "amenity": "atm",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name:es": "Cajero BCP",
+    "operator": "BCP",
+    "operator:wikidata": "Q4854124"
+  }
+},
+{
+  "type": "node",
+  "id": 4463422396,
+  "lat": -4.1798957,
+  "lon": -81.1285788,
+  "tags": {
+    "amenity": "atm",
+    "operator": "globalnet"
+  }
+},
+{
+  "type": "node",
+  "id": 4487703792,
+  "lat": -6.3776608,
+  "lon": -78.8173167,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banque BCP",
+    "name:es": "Banque BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 4487703793,
+  "lat": -6.3768067,
+  "lon": -78.8148565,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja trujillo",
+    "name:es": "Caja trujillo"
+  }
+},
+{
+  "type": "node",
+  "id": 4531388601,
+  "lat": -8.1015089,
+  "lon": -79.0272368,
+  "tags": {
+    "addr:postcode": "13001",
+    "addr:street": "Avenida 9 de Octubre",
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank",
+    "opening_hours": "Mo-Sa 09:00-18:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4531390993,
+  "lat": -8.1036918,
+  "lon": -79.0291183,
+  "tags": {
+    "addr:postcode": "13001",
+    "addr:street": "Avenida 9 de Octubre",
+    "amenity": "bank",
+    "name": "Agente Interbank y Agente del Banco de la Nación",
+    "name:es": "Agente Interbank y Agente del Banco de la Nación",
+    "opening_hours": "Mo-Fr 09:00-18:30; Sa 09:00-18:30"
+  }
+},
+{
+  "type": "node",
+  "id": 4531395501,
+  "lat": -8.1034611,
+  "lon": -79.0289339,
+  "tags": {
+    "addr:postcode": "13001",
+    "addr:street": "Avenida 9 de Octubre",
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "opening_hours": "Mo-Sa 08:00-20:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4638116890,
+  "lat": -4.5793322,
+  "lon": -81.2731181,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BBVA",
+    "brand:wikidata": "Q806189",
+    "name": "BBVA",
+    "name:es": "BBVA",
+    "official_name": "Banco Bilbao Vizcaya Argentaria"
+  }
+},
+{
+  "type": "node",
+  "id": 4638124790,
+  "lat": -4.5798686,
+  "lon": -81.2733677,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "name": "Scotiabank",
+    "name:es": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 4638162489,
+  "lat": -4.5793455,
+  "lon": -81.2729915,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "name:es": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 4688133093,
+  "lat": -8.1037187,
+  "lon": -79.0105171,
+  "tags": {
+    "addr:street": "Avenida America Sur",
+    "amenity": "atm",
+    "operator": "Multi Red",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4705107491,
+  "lat": -6.6799464,
+  "lon": -78.5186702,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco",
+    "name:es": "Mi banco"
+  }
+},
+{
+  "type": "node",
+  "id": 4705108590,
+  "lat": -6.6802712,
+  "lon": -78.5201066,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja piura",
+    "name:es": "Caja piura"
+  }
+},
+{
+  "type": "node",
+  "id": 4725187789,
+  "lat": -5.1463283,
+  "lon": -79.0036598,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 4731140123,
+  "lat": -8.0803454,
+  "lon": -79.1218909,
+  "tags": {
+    "amenity": "atm"
+  }
+},
+{
+  "type": "node",
+  "id": 4817121221,
+  "lat": -7.1569128,
+  "lon": -78.5196532,
+  "tags": {
+    "amenity": "bank",
+    "name": "BanBif Cajamarca",
+    "name:es": "BanBif Cajamarca"
+  }
+},
+{
+  "type": "node",
+  "id": 4818747821,
+  "lat": -7.1488678,
+  "lon": -78.5098431,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "brand:wikipedia": "en:Scotiabank",
+    "name": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 4833210323,
+  "lat": -8.0940591,
+  "lon": -79.0240016,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Trujillo",
+    "name:es": "Caja Trujillo"
+  }
+},
+{
+  "type": "node",
+  "id": 4840496622,
+  "lat": -3.5713161,
+  "lon": -80.4600000,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Piura",
+    "name:es": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 4840496922,
+  "lat": -3.5714664,
+  "lon": -80.4597128,
+  "tags": {
+    "amenity": "bank",
+    "name": "Scotiabank",
+    "name:es": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 4840497122,
+  "lat": -3.5704717,
+  "lon": -80.4589326,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Sullana",
+    "name:es": "Caja Sullana"
+  }
+},
+{
+  "type": "node",
+  "id": 4846675931,
+  "lat": -4.8465190,
+  "lon": -80.8743738,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Piura",
+    "name:es": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 4846675937,
+  "lat": -4.9177401,
+  "lon": -80.6957198,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "brand:wikipedia": "en:Scotiabank",
+    "name": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 4848531721,
+  "lat": -8.0851335,
+  "lon": -79.0030672,
+  "tags": {
+    "addr:street": "Calle Micaela Bastidas",
+    "amenity": "bank",
+    "name": "BCP El Porvenir",
+    "name:es": "BCP El Porvenir",
+    "source": "#Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4852149022,
+  "lat": -8.1022270,
+  "lon": -79.0470835,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "name:es": "BCP Mall Aventura Plaza Trujillo",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 4856553521,
+  "lat": -7.3995089,
+  "lon": -79.5712425,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "name": "BBVA Perú",
+    "name:es": "BBVA Continental"
+  }
+},
+{
+  "type": "node",
+  "id": 4858068201,
+  "lat": -4.6311023,
+  "lon": -79.8274756,
+  "tags": {
+    "amenity": "atm",
+    "name": "Agente Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 4858068205,
+  "lat": -4.6309997,
+  "lon": -79.8271303,
+  "tags": {
+    "amenity": "atm",
+    "name": "Agente Multired-Caja Sullana"
+  }
+},
+{
+  "type": "node",
+  "id": 4860858322,
+  "lat": -6.7586571,
+  "lon": -79.8421181,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 4860858522,
+  "lat": -6.7588835,
+  "lon": -79.8420259,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "name:es": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 4862796228,
+  "lat": -8.1094248,
+  "lon": -79.0259101,
+  "tags": {
+    "amenity": "bank",
+    "name": "Scotiabank",
+    "name:es": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 4862797325,
+  "lat": -8.1090211,
+  "lon": -79.0252650,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco Falabella",
+    "brand:wikidata": "Q4854088",
+    "name": "Banco Falabella"
+  }
+},
+{
+  "type": "node",
+  "id": 4879555121,
+  "lat": -4.1070833,
+  "lon": -81.0541278,
+  "tags": {
+    "amenity": "atm",
+    "atm": "yes",
+    "operator": "Globalnet"
+  }
+},
+{
+  "type": "node",
+  "id": 4902814341,
+  "lat": -4.9789133,
+  "lon": -79.1160962,
+  "tags": {
+    "amenity": "bureau_de_change"
+  }
+},
+{
+  "type": "node",
+  "id": 4937064523,
+  "lat": -8.1094102,
+  "lon": -79.0258103,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 4945063121,
+  "lat": -4.6315915,
+  "lon": -79.8280623,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 4998595921,
+  "lat": -8.0953203,
+  "lon": -79.0239901,
+  "tags": {
+    "amenity": "bank",
+    "name": "BCP Trujillo Open Plaza"
+  }
+},
+{
+  "type": "node",
+  "id": 5022917240,
+  "lat": -5.7081972,
+  "lon": -78.8073930,
+  "tags": {
+    "amenity": "bank",
+    "name": "BCP Jaen",
+    "name:es": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 5022939721,
+  "lat": -5.7090334,
+  "lon": -78.8072278,
+  "tags": {
+    "amenity": "bank",
+    "name": "Scotiabank",
+    "name:en": "Scotiabank",
+    "name:es": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 5045515121,
+  "lat": -5.1462702,
+  "lon": -79.0046831,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "24/7",
+    "operator": "Multi Red banco de la nacíon"
+  }
+},
+{
+  "type": "node",
+  "id": 5051657621,
+  "lat": -7.8159132,
+  "lon": -78.0474125,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "name:es": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 5051813335,
+  "lat": -8.1036199,
+  "lon": -79.0316688,
+  "tags": {
+    "addr:street": "Avenida Manuel Vera Enriquez",
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5051813336,
+  "lat": -8.1035847,
+  "lon": -79.0317077,
+  "tags": {
+    "addr:street": "Avenida Manuel Vera Enriquez",
+    "amenity": "atm",
+    "name": "Multi Red",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5065177142,
+  "lat": -8.1172382,
+  "lon": -79.0381962,
+  "tags": {
+    "addr:street": "Juan Pablo II",
+    "amenity": "bank",
+    "name": "Escalabs",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5065257026,
+  "lat": -6.7752684,
+  "lon": -79.8457957,
+  "tags": {
+    "addr:street": "Avenida José Leonardo Ortiz",
+    "amenity": "bank",
+    "name": "Agrobanco",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5067015530,
+  "lat": -6.7747557,
+  "lon": -79.8385853,
+  "tags": {
+    "addr:street": "Avenida José Balta",
+    "amenity": "bank",
+    "name": "Banbif",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5067015565,
+  "lat": -6.7730670,
+  "lon": -79.8384357,
+  "tags": {
+    "addr:street": "Calle Manuel María Izaga",
+    "amenity": "bank",
+    "name": "Caja Trujillo",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5067199138,
+  "lat": -8.1213033,
+  "lon": -79.0362227,
+  "tags": {
+    "addr:street": "Avenida Victor Larco Herrera",
+    "amenity": "bank",
+    "name": "Interbank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5067341046,
+  "lat": -8.1172862,
+  "lon": -79.0322563,
+  "tags": {
+    "addr:street": "Avenida Victor Larco Herrera",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "name": "BBVA Perú",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5067376779,
+  "lat": -8.1008389,
+  "lon": -79.0357666,
+  "tags": {
+    "addr:street": "Teodoro Valcarcel",
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5069644205,
+  "lat": -6.7732302,
+  "lon": -79.8397245,
+  "tags": {
+    "addr:street": "Calle Manuel María Izaga",
+    "amenity": "bank",
+    "name": "La Rehabilitadora",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5071832078,
+  "lat": -6.7731775,
+  "lon": -79.8422505,
+  "tags": {
+    "addr:street": "Calle Manuel María Izaga",
+    "amenity": "bank",
+    "name": "Crediserv",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5071832099,
+  "lat": -6.7741750,
+  "lon": -79.8387807,
+  "tags": {
+    "addr:street": "Calle Francisco Cabrera",
+    "amenity": "bank",
+    "name": "Inversiones La Cruz",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5071881150,
+  "lat": -8.1199997,
+  "lon": -79.0320196,
+  "tags": {
+    "addr:street": "Calle Bolivia",
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5071983675,
+  "lat": -8.0939370,
+  "lon": -79.0244888,
+  "tags": {
+    "addr:street": "Avenida América Norte",
+    "amenity": "bank",
+    "brand": "Banco Azteca",
+    "brand:wikidata": "Q4854076",
+    "name": "Banco Azteca",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5071983679,
+  "lat": -8.0939249,
+  "lon": -79.0245860,
+  "tags": {
+    "addr:street": "Avenida América Norte",
+    "amenity": "bank",
+    "name": "Caja Piura",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5071983684,
+  "lat": -8.0939249,
+  "lon": -79.0247691,
+  "tags": {
+    "addr:street": "Avenida América Norte",
+    "amenity": "bank",
+    "name": "Credi Scotia",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5071983688,
+  "lat": -8.0939293,
+  "lon": -79.0248507,
+  "tags": {
+    "addr:street": "Avenida América Norte",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5071983703,
+  "lat": -8.0939610,
+  "lon": -79.0253997,
+  "tags": {
+    "addr:street": "Avenida América Norte",
+    "amenity": "bank",
+    "name": "Caja Huancayo",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5071983712,
+  "lat": -8.0940716,
+  "lon": -79.0256845,
+  "tags": {
+    "addr:street": "Avenida América Norte",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5071983923,
+  "lat": -8.0943149,
+  "lon": -79.0261804,
+  "tags": {
+    "addr:street": "Avenida América Norte",
+    "amenity": "bank",
+    "name": "Pro Empresa",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5079495016,
+  "lat": -8.1053278,
+  "lon": -79.0204436,
+  "tags": {
+    "addr:street": "Calle Aguayita",
+    "amenity": "bank",
+    "name": "BCP",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5079834147,
+  "lat": -8.1032151,
+  "lon": -79.0144229,
+  "tags": {
+    "addr:street": "Calle Pacasmayo",
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5081843461,
+  "lat": -8.1098848,
+  "lon": -79.0201511,
+  "tags": {
+    "addr:street": "Avenida José María Eguren",
+    "amenity": "bank",
+    "brand": "Banco Azteca",
+    "brand:wikidata": "Q4854076",
+    "name": "Banco Azteca",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5082107548,
+  "lat": -8.0684137,
+  "lon": -79.0215710,
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "12 de Noviembre",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco",
+    "source": "#Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5082351591,
+  "lat": -8.0804743,
+  "lon": -79.0196670,
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Calle 12 de Noviembre",
+    "amenity": "bank",
+    "atm": "yes",
+    "source": "#Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5082413204,
+  "lat": -6.7677529,
+  "lon": -79.8387291,
+  "tags": {
+    "addr:city": "Chiclayo",
+    "addr:street": "Avenida Pedro Ruiz",
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5082472466,
+  "lat": -6.7677777,
+  "lon": -79.8391668,
+  "tags": {
+    "addr:city": "Chiclayo",
+    "addr:street": "Avenida Pedro Ruiz",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank",
+    "operator": "Globolnet",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5082611315,
+  "lat": -6.7673348,
+  "lon": -79.8378711,
+  "tags": {
+    "addr:city": "Chiclayo",
+    "addr:street": "Avenida José Balta",
+    "amenity": "bank",
+    "name": "Caja Sullana",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5082928911,
+  "lat": -8.1130003,
+  "lon": -79.0301326,
+  "tags": {
+    "addr:street": "Jirón Coronel Bolognesi",
+    "amenity": "atm",
+    "opening_hours": "24/7",
+    "operator": "Multired",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5082928912,
+  "lat": -8.1130003,
+  "lon": -79.0301597,
+  "tags": {
+    "addr:street": "Jirón Coronel Bolognesi",
+    "amenity": "atm",
+    "operator": "Multired",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5083877688,
+  "lat": -8.1111086,
+  "lon": -79.0181359,
+  "tags": {
+    "addr:street": "Avenida César Vallejo",
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5083877691,
+  "lat": -8.1111808,
+  "lon": -79.0181863,
+  "tags": {
+    "addr:street": "Avenida César Vallejo",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "name": "BBVA Perú",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5083895248,
+  "lat": -8.1104110,
+  "lon": -79.0178966,
+  "tags": {
+    "addr:street": "Avenida César Vallejo",
+    "amenity": "bank",
+    "brand": "Caja Arequipa",
+    "brand:wikidata": "Q131297428",
+    "name": "Caja Arequipa",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5083915307,
+  "lat": -8.1106002,
+  "lon": -79.0180560,
+  "tags": {
+    "addr:street": "Avenida César Vallejo",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5083917221,
+  "lat": -8.1108805,
+  "lon": -79.0183218,
+  "tags": {
+    "addr:street": "Avenida César Vallejo",
+    "amenity": "bank",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "name": "Scotiabank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5083917235,
+  "lat": -8.1110774,
+  "lon": -79.0185157,
+  "tags": {
+    "addr:street": "Calle Abelardo Gamarra",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "node",
+  "id": 5084689685,
+  "lat": -8.1197357,
+  "lon": -79.0409007,
+  "tags": {
+    "addr:street": "Avenida Juan Pablo II",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "name": "BBVA Perú",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5086658167,
+  "lat": -8.1109230,
+  "lon": -79.0262336,
+  "tags": {
+    "addr:housenumber": "553",
+    "addr:street": "Jirón Gamarra",
+    "amenity": "bureau_de_change",
+    "name": "Cash",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5086658174,
+  "lat": -8.1111337,
+  "lon": -79.0260200,
+  "tags": {
+    "addr:street": "Jirón Gamarra",
+    "amenity": "bureau_de_change",
+    "name": "Bunker",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5087331970,
+  "lat": -8.0851748,
+  "lon": -79.0017323,
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Avenida Jose Faustino Sanchez Carrion",
+    "amenity": "bank",
+    "brand": "Banco Azteca",
+    "brand:wikidata": "Q4854076",
+    "name": "Banco Azteca",
+    "source": "#Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5087355804,
+  "lat": -6.7707066,
+  "lon": -79.8397462,
+  "tags": {
+    "addr:city": "Chiclayo",
+    "addr:street": "Calle Alfredo Lapoint",
+    "amenity": "bank",
+    "brand": "Caja Arequipa",
+    "brand:wikidata": "Q131297428",
+    "name": "Caja Arequipa",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5087460032,
+  "lat": -8.1103613,
+  "lon": -79.0268123,
+  "tags": {
+    "addr:street": "Jirón Gamarra",
+    "amenity": "bureau_de_change",
+    "operator": "Globalnet",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5087460034,
+  "lat": -8.1101380,
+  "lon": -79.0270730,
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:housenumber": "455",
+    "addr:street": "Jirón Gamarra",
+    "amenity": "bureau_de_change",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5087488641,
+  "lat": -8.0854579,
+  "lon": -79.0016713,
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Avenida Jose Faustino Sanchez Carrion",
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación",
+    "source": "#Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5087488651,
+  "lat": -8.0853419,
+  "lon": -79.0016230,
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Avenida Jose Faustino Sanchez Carrion",
+    "amenity": "bank",
+    "name": "Credi Scotia",
+    "source": "#Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5088907399,
+  "lat": -8.1130471,
+  "lon": -79.0241146,
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Jirón Gamarra",
+    "amenity": "bank",
+    "name": "Scotiabank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5088908522,
+  "lat": -8.1136137,
+  "lon": -79.0247345,
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Jirón Miguel Grau",
+    "amenity": "bank",
+    "name": "Caja Sullana",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5089071322,
+  "lat": -8.1119504,
+  "lon": -79.0183921,
+  "tags": {
+    "addr:street": "Avenida José María Eguren",
+    "amenity": "bank",
+    "name": "Continental",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5089327666,
+  "lat": -8.1145976,
+  "lon": -79.0244450,
+  "tags": {
+    "addr:street": "Avenida España",
+    "amenity": "bank",
+    "name": "CrediScotia",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5089327675,
+  "lat": -8.1144161,
+  "lon": -79.0242646,
+  "tags": {
+    "addr:street": "Avenida España",
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5089327686,
+  "lat": -8.1141827,
+  "lon": -79.0240455,
+  "tags": {
+    "addr:street": "Avenida España",
+    "amenity": "bank",
+    "name": "Western Union",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5089586333,
+  "lat": -8.0809159,
+  "lon": -79.0457091,
+  "tags": {
+    "addr:street": "Avenida José Gabriel Condorcanqui",
+    "amenity": "bank",
+    "name": "Banco de Lentes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5089789334,
+  "lat": -8.0904608,
+  "lon": -79.0065260,
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Avenida Prolongación Unión",
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank",
+    "source": "#Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5101476433,
+  "lat": -8.1121411,
+  "lon": -79.0226715,
+  "tags": {
+    "addr:street": "Avenida España",
+    "amenity": "bank",
+    "name": "Caja Trujillo",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5141587370,
+  "lat": -7.1564050,
+  "lon": -78.5192900,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco de Credito BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 5170805137,
+  "lat": -6.3720597,
+  "lon": -79.7983015,
+  "tags": {
+    "amenity": "atm"
+  }
+},
+{
+  "type": "node",
+  "id": 5204752522,
+  "lat": -7.1625015,
+  "lon": -78.5121601,
+  "tags": {
+    "addr:street": "Héroes de San Ramón",
+    "amenity": "bank",
+    "name": "Agente MultiRed",
+    "name:es": "Agente MultiRed"
+  }
+},
+{
+  "type": "node",
+  "id": 5252879621,
+  "lat": -3.5700039,
+  "lon": -80.4595101,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Multi Red"
+  }
+},
+{
+  "type": "node",
+  "id": 5259816524,
+  "lat": -3.6703710,
+  "lon": -80.6596464,
+  "tags": {
+    "addr:street": "Panamericana Norte",
+    "amenity": "bank",
+    "name": "Banco de la Nación",
+    "opening_hours": "Mo-Fr 08:30-17:30"
+  }
+},
+{
+  "type": "node",
+  "id": 5262182765,
+  "lat": -5.1900873,
+  "lon": -80.6344730,
+  "tags": {
+    "amenity": "atm",
+    "name": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 5265770994,
+  "lat": -6.7709577,
+  "lon": -79.8453061,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco Azteca",
+    "brand:wikidata": "Q4854076",
+    "brand:wikipedia": "en:Banco Azteca",
+    "name": "Banco Azteca"
+  }
+},
+{
+  "type": "node",
+  "id": 5268607581,
+  "lat": -6.7071140,
+  "lon": -79.9034342,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Paita"
+  }
+},
+{
+  "type": "node",
+  "id": 5272929521,
+  "lat": -7.7337185,
+  "lon": -79.3025901,
+  "tags": {
+    "amenity": "atm",
+    "operator": "banco de la nación"
+  }
+},
+{
+  "type": "node",
+  "id": 5272929522,
+  "lat": -7.7337271,
+  "lon": -79.3025413,
+  "tags": {
+    "amenity": "atm",
+    "operator": "banco whatever"
+  }
+},
+{
+  "type": "node",
+  "id": 5298564928,
+  "lat": -5.1828447,
+  "lon": -80.6310113,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 5298580522,
+  "lat": -5.1828461,
+  "lon": -80.6310808,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 5322457508,
+  "lat": -6.7607560,
+  "lon": -79.8355331,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 5438581821,
+  "lat": -4.9319219,
+  "lon": -79.9471210,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Piura Oficina informativa",
+    "opening_hours": "Mo-Fr 08:30-13:00, 13:45-17:00; Sa 09:00-12:30"
+  }
+},
+{
+  "type": "node",
+  "id": 5462490024,
+  "lat": -4.9307665,
+  "lon": -79.9477574,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 5476843326,
+  "lat": -5.0964868,
+  "lon": -80.1605285,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "operator": "Banco de la Nación",
+    "operator:wikidata": "Q4856206"
+  }
+},
+{
+  "type": "node",
+  "id": 5476844523,
+  "lat": -5.0964819,
+  "lon": -80.1612255,
+  "tags": {
+    "amenity": "atm",
+    "operator": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 5491288622,
+  "lat": -5.1980084,
+  "lon": -80.6263322,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "operator": "Banco de la Nación",
+    "operator:wikidata": "Q4856206"
+  }
+},
+{
+  "type": "node",
+  "id": 5495170427,
+  "lat": -6.7762516,
+  "lon": -79.8390308,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "Mo-Su 08:00-22:00",
+    "operator": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 5495170428,
+  "lat": -6.7762499,
+  "lon": -79.8390456,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "Mo-Su 08:00-22:00",
+    "operator": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 5495173032,
+  "lat": -6.7762536,
+  "lon": -79.8390025,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "Mo-Su 08:00-22:00",
+    "operator": "BBVA"
+  }
+},
+{
+  "type": "node",
+  "id": 5517558422,
+  "lat": -6.7049630,
+  "lon": -79.9031678,
+  "tags": {
+    "amenity": "bank",
+    "name": "BCP",
+    "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5517571722,
+  "lat": -6.7050331,
+  "lon": -79.9031387,
+  "tags": {
+    "amenity": "atm",
+    "operator": "BBVA Continental"
+  }
+},
+{
+  "type": "node",
+  "id": 5517571723,
+  "lat": -6.7049701,
+  "lon": -79.9031294,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "24/7",
+    "operator": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 5517572322,
+  "lat": -6.7052218,
+  "lon": -79.9031930,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "Mo-Su 09:00-22:00",
+    "operator": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 5517572323,
+  "lat": -6.7050274,
+  "lon": -79.9031746,
+  "tags": {
+    "amenity": "bank",
+    "name": "BBVA Continental",
+    "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5599009325,
+  "lat": -7.1564503,
+  "lon": -78.5192084,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Banco de Credito"
+  }
+},
+{
+  "type": "node",
+  "id": 5599009326,
+  "lat": -7.1555614,
+  "lon": -78.5198226,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Banco Continental"
+  }
+},
+{
+  "type": "node",
+  "id": 5752675322,
+  "lat": -8.1231267,
+  "lon": -79.0317537,
+  "tags": {
+    "amenity": "atm",
+    "operator": "banco de la nacion"
+  }
+},
+{
+  "type": "node",
+  "id": 5790952354,
+  "lat": -5.7084832,
+  "lon": -78.8079876,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Banco de la nación"
+  }
+},
+{
+  "type": "node",
+  "id": 5794754153,
+  "lat": -5.7085457,
+  "lon": -78.8063613,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Trujillo"
+  }
+},
+{
+  "type": "node",
+  "id": 5854325073,
+  "lat": -4.8914795,
+  "lon": -80.6818040,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Sullana"
+  }
+},
+{
+  "type": "node",
+  "id": 5888938886,
+  "lat": -6.8672554,
+  "lon": -78.1460289,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Banco de Nation"
+  }
+},
+{
+  "type": "node",
+  "id": 5903774785,
+  "lat": -7.1634591,
+  "lon": -78.4644534,
+  "tags": {
+    "amenity": "bank",
+    "check_date": "2024-05-02",
+    "name": "Banco de la nación"
+  }
+},
+{
+  "type": "node",
+  "id": 6001434588,
+  "lat": -6.7677922,
+  "lon": -79.8389441,
+  "tags": {
+    "amenity": "atm"
+  }
+},
+{
+  "type": "node",
+  "id": 6008286885,
+  "lat": -6.7755732,
+  "lon": -79.8410186,
+  "tags": {
+    "amenity": "atm",
+    "operator": "scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 6083409586,
+  "lat": -6.8654194,
+  "lon": -78.1450520,
+  "tags": {
+    "amenity": "atm",
+    "check_date": "2024-05-08",
+    "operator": "multired"
+  }
+},
+{
+  "type": "node",
+  "id": 6093272070,
+  "lat": -8.1044262,
+  "lon": -79.0365688,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Multired"
+  }
+},
+{
+  "type": "node",
+  "id": 6096719785,
+  "lat": -8.1045139,
+  "lon": -79.0305349,
+  "tags": {
+    "amenity": "atm",
+    "operator": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 6167495386,
+  "lat": -5.7091828,
+  "lon": -78.8080329,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "name": "BBVA Continental"
+  }
+},
+{
+  "type": "node",
+  "id": 6353422194,
+  "lat": -7.2270282,
+  "lon": -79.4294371,
+  "tags": {
+    "addr:street": "Plaza de armas",
+    "amenity": "bank",
+    "name": "Caja Sipan"
+  }
+},
+{
+  "type": "node",
+  "id": 6353422196,
+  "lat": -7.2275220,
+  "lon": -79.4292330,
+  "tags": {
+    "amenity": "bank",
+    "name": "BBVA Continental",
+    "operator": "BBVA"
+  }
+},
+{
+  "type": "node",
+  "id": 6353422197,
+  "lat": -7.2281117,
+  "lon": -79.4286697,
+  "tags": {
+    "amenity": "bank",
+    "name": "BCP",
+    "operator": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 6355759786,
+  "lat": -6.7698009,
+  "lon": -79.8395358,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Caja Sultana"
+  }
+},
+{
+  "type": "node",
+  "id": 6361565293,
+  "lat": -4.9357407,
+  "lon": -80.3419814,
+  "tags": {
+    "addr:street": "Plaza de armas",
+    "amenity": "bank",
+    "name": "Scotia"
+  }
+},
+{
+  "type": "node",
+  "id": 6361565294,
+  "lat": -4.9349666,
+  "lon": -80.3425065,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación",
+    "operator": "Banco de la Nación",
+    "operator:wikidata": "Q4856206"
+  }
+},
+{
+  "type": "node",
+  "id": 6363786885,
+  "lat": -4.6587014,
+  "lon": -80.2437264,
+  "tags": {
+    "addr:street": "Jirón Leoncio Prado",
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "Agencia Caja Piura",
+    "operator": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 6379113040,
+  "lat": -4.1797372,
+  "lon": -81.1281689,
+  "tags": {
+    "amenity": "atm",
+    "name": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 6432078385,
+  "lat": -8.1023210,
+  "lon": -79.0475030,
+  "tags": {
+    "amenity": "bank",
+    "name": "Western Union"
+  }
+},
+{
+  "type": "node",
+  "id": 6462514285,
+  "lat": -8.1016989,
+  "lon": -79.0450179,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "operator": "Banco de la Nación",
+    "operator:wikidata": "Q4856206"
+  }
+},
+{
+  "type": "node",
+  "id": 6479388486,
+  "lat": -4.9787286,
+  "lon": -79.1162695,
+  "tags": {
+    "amenity": "bureau_de_change"
+  }
+},
+{
+  "type": "node",
+  "id": 6502743586,
+  "lat": -3.5692947,
+  "lon": -80.4591003,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Bcp"
+  }
+},
+{
+  "type": "node",
+  "id": 6513272288,
+  "lat": -6.2392566,
+  "lon": -78.7129126,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco De La Nacion MULTIRED"
+  }
+},
+{
+  "type": "node",
+  "id": 6578038628,
+  "lat": -6.8917128,
+  "lon": -79.5617464,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6593462223,
+  "lat": -4.6397589,
+  "lon": -79.7149921,
+  "tags": {
+    "addr:housenumber": "453",
+    "addr:street": "Calle Caceres",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "brand:wikipedia": "en:Bank of the Nation (Peru)",
+    "name": "Banco de la Nación",
+    "opening_hours": "Mo-Fr 08:30-17:30; Sa 09:00-13:00; PH closed"
+  }
+},
+{
+  "type": "node",
+  "id": 6593462237,
+  "lat": -4.6420377,
+  "lon": -79.7155009,
+  "tags": {
+    "amenity": "bank",
+    "atm": "no",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "brand:wikipedia": "es:MiBanco",
+    "level": "0",
+    "name": "Mibanco",
+    "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-12:30; PH closed",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6593462298,
+  "lat": -4.6413140,
+  "lon": -79.7157589,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "level": "0",
+    "name": "Caja Sullana",
+    "opening_hours": "Mo-Fr 08:15-18:00; Sa 09:00-13:00; PH closed",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 6593462398,
+  "lat": -4.6397233,
+  "lon": -79.7153418,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Multired",
+    "level": "0",
+    "operator": "Multired",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 6593462605,
+  "lat": -4.6411976,
+  "lon": -79.7151799,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "NORANDINO",
+    "opening_hours": "Mo-Fr 08:30-18:00; Sa 09:00-13:00; PH closed"
+  }
+},
+{
+  "type": "node",
+  "id": 6593462820,
+  "lat": -4.6410396,
+  "lon": -79.7155315,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 6824276417,
+  "lat": -8.1338644,
+  "lon": -79.0465780,
+  "tags": {
+    "amenity": "atm",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "Cajero BCP",
+    "operator": "BCP",
+    "operator:wikidata": "Q4854124"
+  }
+},
+{
+  "type": "node",
+  "id": 6824332076,
+  "lat": -8.1330085,
+  "lon": -79.0459648,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "name": "BBVA Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 6824338303,
+  "lat": -8.1338028,
+  "lon": -79.0464991,
+  "tags": {
+    "addr:street": "Av Larco",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "name": "BBVA Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 6845517966,
+  "lat": -8.1338433,
+  "lon": -79.0465089,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 6918663687,
+  "lat": -5.1968995,
+  "lon": -80.6260906,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:neighbourhood": "Centro Histórico de Piura",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "drive_through": "no",
+    "name": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 6918674185,
+  "lat": -5.1971259,
+  "lon": -80.6261496,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:neighbourhood": "Centro Histórico de Piura",
+    "addr:street": "Calle La Libertad",
+    "amenity": "bank",
+    "drive_through": "no",
+    "name": "Caja Metropolitana"
+  }
+},
+{
+  "type": "node",
+  "id": 6923583785,
+  "lat": -4.1071508,
+  "lon": -81.0545353,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 6927976686,
+  "lat": -5.1945120,
+  "lon": -80.6203430,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Multired"
+  }
+},
+{
+  "type": "node",
+  "id": 6927981585,
+  "lat": -5.1945493,
+  "lon": -80.6203184,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 7030319288,
+  "lat": -6.8352572,
+  "lon": -79.9355476,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "24/7",
+    "operator": "Banco National"
+  }
+},
+{
+  "type": "node",
+  "id": 7030319289,
+  "lat": -6.8369616,
+  "lon": -79.9356388,
+  "tags": {
+    "amenity": "atm"
+  }
+},
+{
+  "type": "node",
+  "id": 7034425485,
+  "lat": -6.8375625,
+  "lon": -79.9358804,
+  "tags": {
+    "amenity": "bank",
+    "name": "Mibanco",
+    "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-12:30"
+  }
+},
+{
+  "type": "node",
+  "id": 7130121088,
+  "lat": -6.7789612,
+  "lon": -79.8424021,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 7134355085,
+  "lat": -7.1569371,
+  "lon": -78.5156624,
+  "tags": {
+    "addr:housenumber": "757",
+    "addr:street": "Amazonas",
+    "amenity": "bank",
+    "name": "mibanco",
+    "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-12:30"
+  }
+},
+{
+  "type": "node",
+  "id": 7134355086,
+  "lat": -7.1571134,
+  "lon": -78.5198083,
+  "tags": {
+    "addr:housenumber": "625;627",
+    "addr:street": "Jirón Apurimac",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco"
+  }
+},
+{
+  "type": "node",
+  "id": 7152247586,
+  "lat": -6.7984091,
+  "lon": -79.8398960,
+  "tags": {
+    "addr:postcode": "14000",
+    "addr:street": "Avenida Los Incas",
+    "amenity": "bank",
+    "name": "Banco de la Nación",
+    "name:en": "Bank of the Natión",
+    "opening_hours": "Mo-Fr 08:00-17:00"
+  }
+},
+{
+  "type": "node",
+  "id": 7161867886,
+  "lat": -6.7759225,
+  "lon": -79.8383698,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco Azteca",
+    "name:en": "Aztec Bank",
+    "name:ko": "방꼬 아스떼까 (개쓰레기)"
+  }
+},
+{
+  "type": "node",
+  "id": 7228919364,
+  "lat": -4.8817740,
+  "lon": -80.7074981,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "Compartamos Financiera"
+  }
+},
+{
+  "type": "node",
+  "id": 8092694662,
+  "lat": -5.2143336,
+  "lon": -80.0907938,
+  "tags": {
+    "addr:street": "Calle José Olaya",
+    "amenity": "bank",
+    "name": "Agencia Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 8111983590,
+  "lat": -5.1850526,
+  "lon": -79.9714763,
+  "tags": {
+    "addr:city": "Morropón",
+    "addr:street": "Jirón Adrianzén",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco"
+  }
+},
+{
+  "type": "node",
+  "id": 8112486940,
+  "lat": -5.1847823,
+  "lon": -79.9709915,
+  "tags": {
+    "addr:street": "Calle Cajamarca",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "drive_through": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 8138847462,
+  "lat": -5.3411886,
+  "lon": -79.8330033,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Piura",
+    "wikidata": "Q129027339",
+    "wikipedia": "es:Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 8152055050,
+  "lat": -5.3757289,
+  "lon": -79.6056641,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco de La Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 8171780677,
+  "lat": -5.1825718,
+  "lon": -80.6278508,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Multired - BN"
+  }
+},
+{
+  "type": "node",
+  "id": 8223422922,
+  "lat": -5.0969097,
+  "lon": -80.1607065,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Huancayo"
+  }
+},
+{
+  "type": "node",
+  "id": 8228319941,
+  "lat": -5.0955772,
+  "lon": -80.1609309,
+  "tags": {
+    "addr:city": "Chulucanas",
+    "addr:housenumber": "660",
+    "addr:street": "Jirón Apurímac",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "brand:wikipedia": "en:Bank of the Nation (Peru)",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 8271758369,
+  "lat": -5.1980787,
+  "lon": -80.6262962,
+  "tags": {
+    "addr:street": "Tacna",
+    "amenity": "bank",
+    "backrest": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "brand:wikipedia": "en:Bank of the Nation (Peru)",
+    "description": "Banco de la Nación",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 8309382684,
+  "lat": -5.1879360,
+  "lon": -80.6224849,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "cash_in": "no",
+    "currency:PEN": "yes",
+    "operator": "Banco de la Nación",
+    "operator:wikidata": "Q4856206"
+  }
+},
+{
+  "type": "node",
+  "id": 8316107957,
+  "lat": -8.1714169,
+  "lon": -79.0092117,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 8335029406,
+  "lat": -5.0957993,
+  "lon": -80.1609959,
+  "tags": {
+    "addr:city": "Chulucanas",
+    "addr:street": "Jirón Apurimac",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco"
+  }
+},
+{
+  "type": "node",
+  "id": 8751549575,
+  "lat": -5.1936044,
+  "lon": -80.6218340,
+  "tags": {
+    "addr:city": "Castilla",
+    "addr:street": "Avenida Guardia Civil",
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "BanBif"
+  }
+},
+{
+  "type": "node",
+  "id": 8751549576,
+  "lat": -5.1936059,
+  "lon": -80.6217200,
+  "tags": {
+    "addr:city": "Castilla",
+    "addr:street": "Avenida Guardia Civil",
+    "amenity": "bank",
+    "name": "Compartamos Financiera"
+  }
+},
+{
+  "type": "node",
+  "id": 8770050967,
+  "lat": -5.1938894,
+  "lon": -80.6228997,
+  "tags": {
+    "addr:neighbourhood": "Urbanización Miraflores",
+    "addr:street": "Avenida Guardia Civil",
+    "amenity": "bank",
+    "name": "Caja Huancayo"
+  }
+},
+{
+  "type": "node",
+  "id": 8913053132,
+  "lat": -5.1822721,
+  "lon": -80.6218627,
+  "tags": {
+    "addr:street": "Avenida Andrés Avelino Cáceres",
+    "amenity": "bank",
+    "brand": "Scotiabank",
+    "brand:wikidata": "Q451476",
+    "name": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 8913053133,
+  "lat": -5.1822403,
+  "lon": -80.6219194,
+  "tags": {
+    "addr:street": "Avenida Andrés Avelino Cáceres",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "name": "BBVA Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 8913053134,
+  "lat": -5.1824390,
+  "lon": -80.6217425,
+  "tags": {
+    "addr:street": "Avenida Andrés Avelino Cáceres",
+    "amenity": "bank",
+    "brand": "Banco Falabella",
+    "brand:wikidata": "Q4854088",
+    "name": "Banco Falabella"
+  }
+},
+{
+  "type": "node",
+  "id": 8913053137,
+  "lat": -5.1820672,
+  "lon": -80.6227887,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "brand:wikipedia": "es:Banco de Crédito del Perú",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "official_name:en": "Credit Bank of Peru",
+    "official_name:es": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 9102037521,
+  "lat": -5.2392681,
+  "lon": -79.4511260,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "brand:wikipedia": "en:Bank of the Nation (Peru)",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 9104226005,
+  "lat": -5.2392534,
+  "lon": -79.4511397,
+  "tags": {
+    "amenity": "atm",
+    "cash_in": "yes",
+    "operator": "Multired- BN"
+  }
+},
+{
+  "type": "node",
+  "id": 9309870979,
+  "lat": -6.1545093,
+  "lon": -79.7165930,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "brand:wikipedia": "en:Bank of the Nation (Peru)",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 9309870983,
+  "lat": -6.1547074,
+  "lon": -79.7159387,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco"
+  }
+},
+{
+  "type": "node",
+  "id": 9837755833,
+  "lat": -5.1967340,
+  "lon": -80.6262605,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:housenumber": "762",
+    "addr:street": "Libertad",
+    "amenity": "bank",
+    "atm": "no",
+    "drive_through": "no",
+    "name": "Banco Central de Reserva del Perú",
+    "website": "https://www.bcrp.gob.pe/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9951920330,
+  "lat": -4.9353351,
+  "lon": -80.3418065,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Banco de Crédito"
+  }
+},
+{
+  "type": "node",
+  "id": 10142996218,
+  "lat": -7.3990907,
+  "lon": -79.5695564,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "operator": "Banco de la Nación",
+    "operator:wikidata": "Q4856206"
+  }
+},
+{
+  "type": "node",
+  "id": 10224623217,
+  "lat": -5.1959572,
+  "lon": -80.6259090,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco GNB"
+  }
+},
+{
+  "type": "node",
+  "id": 10286868909,
+  "lat": -6.7666794,
+  "lon": -79.8390244,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BBVA",
+    "brand:wikidata": "Q806189",
+    "name": "BBVA",
+    "official_name": "Banco Bilbao Vizcaya Argentaria"
+  }
+},
+{
+  "type": "node",
+  "id": 10543151209,
+  "lat": -7.4326007,
+  "lon": -79.5040198,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 10568661594,
+  "lat": -3.5709703,
+  "lon": -80.4602441,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Trujillo"
+  }
+},
+{
+  "type": "node",
+  "id": 10930603393,
+  "lat": -5.0042168,
+  "lon": -79.0872028,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 11090727868,
+  "lat": -7.1570932,
+  "lon": -78.5165836,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 11144981659,
+  "lat": -7.3362003,
+  "lon": -78.1708682,
+  "tags": {
+    "amenity": "bank",
+    "name": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 11149400764,
+  "lat": -5.1940351,
+  "lon": -80.6198772,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:district": "Castilla",
+    "addr:street": "Avenida Guardia Civil",
+    "amenity": "bank",
+    "name": "Inversiones La cruz"
+  }
+},
+{
+  "type": "node",
+  "id": 11364628313,
+  "lat": -5.1846818,
+  "lon": -79.9720933,
+  "tags": {
+    "addr:city": "Morropón",
+    "addr:street": "Calle Cajamarca",
+    "amenity": "bank",
+    "name": "Caja Sullana"
+  }
+},
+{
+  "type": "node",
+  "id": 11367506686,
+  "lat": -5.0934711,
+  "lon": -80.1660685,
+  "tags": {
+    "addr:city": "Chulucanas",
+    "addr:street": "Jirón Lambayeque",
+    "amenity": "bank",
+    "drive_through": "yes",
+    "name": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 11382061557,
+  "lat": -5.2144540,
+  "lon": -80.0905683,
+  "tags": {
+    "addr:city": "La Matanza",
+    "addr:street": "Avenida 27 de Noviembre",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco"
+  }
+},
+{
+  "type": "node",
+  "id": 11425904710,
+  "lat": -5.1921146,
+  "lon": -80.6087827,
+  "tags": {
+    "addr:city": "Castilla",
+    "addr:street": "Avenida Guardia Civil",
+    "amenity": "bank",
+    "name": "Caja Sullana"
+  }
+},
+{
+  "type": "node",
+  "id": 11447386999,
+  "lat": -6.6771498,
+  "lon": -78.8186811,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 11483987970,
+  "lat": -6.7715068,
+  "lon": -79.8444575,
+  "tags": {
+    "amenity": "atm",
+    "operator": "MultiRed"
+  }
+},
+{
+  "type": "node",
+  "id": 11535949027,
+  "lat": -5.1825704,
+  "lon": -80.6272005,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 11539938618,
+  "lat": -5.2062861,
+  "lon": -80.6184246,
+  "tags": {
+    "amenity": "atm",
+    "atm": "yes",
+    "name": "ATM interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 11539938619,
+  "lat": -5.2061447,
+  "lon": -80.6184426,
+  "tags": {
+    "amenity": "atm",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "operator": "Banco de la Nación",
+    "operator:wikidata": "Q4856206"
+  }
+},
+{
+  "type": "node",
+  "id": 12073810915,
+  "lat": -4.9349198,
+  "lon": -80.3423530,
+  "tags": {
+    "addr:city": "Tambo Grande",
+    "addr:street": "Jirón Castilla",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "name": "Mibanco"
+  }
+},
+{
+  "type": "node",
+  "id": 12128380151,
+  "lat": -5.1949510,
+  "lon": -80.6206994,
+  "tags": {
+    "addr:city": "Castilla",
+    "addr:street": "Avenida Cayetano Heredia",
+    "amenity": "payment_centre",
+    "description": "Aquí es tienda comercial, tambien se puede pagar servicios como recibos de telefonos y retiros de dinero como del banco de la nación",
+    "name": "Agente Bnaco de La Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 12144901382,
+  "lat": -6.8349694,
+  "lon": -79.9355244,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco de la Nacion"
+  }
+},
+{
+  "type": "node",
+  "id": 12349885670,
+  "lat": -5.1922729,
+  "lon": -80.6567705,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:country": "PE",
+    "addr:district": "26 de Octubre",
+    "addr:housenumber": "3",
+    "addr:plot": "3",
+    "addr:postcode": "20007",
+    "addr:province": "Piura",
+    "amenity": "bank",
+    "name": "Agente BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 12400719701,
+  "lat": -5.7084016,
+  "lon": -78.8073602,
+  "tags": {
+    "amenity": "bureau_de_change"
+  }
+},
+{
+  "type": "node",
+  "id": 12480254401,
+  "lat": -3.5678967,
+  "lon": -80.4576249,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Cajero Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 12497449064,
+  "lat": -5.1937095,
+  "lon": -80.6197903,
+  "tags": {
+    "addr:city": "Castilla",
+    "addr:neighbourhood": "Urbanización Miraflores",
+    "addr:street": "Avenida Guardia Civil",
+    "amenity": "bank",
+    "brand": "Caja Arequipa",
+    "brand:wikidata": "Q131297428",
+    "name": "Caja Arequipa"
+  }
+},
+{
+  "type": "node",
+  "id": 12590514102,
+  "lat": -7.9059247,
+  "lon": -78.5657659,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "24/7",
+    "operator": "Multired"
+  }
+},
+{
+  "type": "node",
+  "id": 12591711502,
+  "lat": -7.9025068,
+  "lon": -78.5652464,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "Mo-Fr 08:30-18:00; Sa 09:00-13:00",
+    "operator": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 12597137006,
+  "lat": -6.7719987,
+  "lon": -79.8383511,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "24/7",
+    "operator": "Multired"
+  }
+},
+{
+  "type": "node",
+  "id": 12612810101,
+  "lat": -4.5759988,
+  "lon": -81.2561656,
+  "tags": {
+    "amenity": "atm",
+    "opening_hours": "24/7",
+    "operator": "Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 12612810201,
+  "lat": -4.5758990,
+  "lon": -81.2561818,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "operator": "Interbank",
+    "operator:wikidata": "Q2835558"
+  }
+},
+{
+  "type": "node",
+  "id": 12777365717,
+  "lat": -7.7021199,
+  "lon": -79.4379938,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 12895042116,
+  "lat": -7.1563369,
+  "lon": -78.5204034,
+  "tags": {
+    "amenity": "atm",
+    "covered": "yes",
+    "indoor": "yes",
+    "level": "0",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 12895851424,
+  "lat": -7.3350558,
+  "lon": -78.1709931,
+  "tags": {
+    "amenity": "atm",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 12899444021,
+  "lat": -7.6235339,
+  "lon": -78.0463539,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "cash_in": "no",
+    "drive_through": "no",
+    "name": "Banco de la Nación",
+    "operator": "Banco de la Nación",
+    "operator:wikidata": "Q4856206"
+  }
+},
+{
+  "type": "node",
+  "id": 12962411429,
+  "lat": -4.9292929,
+  "lon": -80.3427468,
+  "tags": {
+    "addr:city": "Tambogrande",
+    "addr:housenumber": "519",
+    "addr:street": "Avenida Ignacia Schaeffer",
+    "amenity": "bank",
+    "atm": "yes",
+    "drive_through": "yes",
+    "name": "Agencia Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 13035041862,
+  "lat": -5.1848293,
+  "lon": -79.9713414,
+  "tags": {
+    "addr:city": "Morropón",
+    "addr:street": "Jiron Adrianzén/Calle Cajamarca",
+    "amenity": "bank",
+    "name": "Edpyme Alternativa"
+  }
+},
+{
+  "type": "node",
+  "id": 13041957599,
+  "lat": -5.1935594,
+  "lon": -80.6200195,
+  "tags": {
+    "addr:city": "Castilla",
+    "addr:street": "Avenida Guardia Civil",
+    "amenity": "bank",
+    "drive_through": "no",
+    "name": "Servicios de Cobranzas e Inversiones"
+  }
+},
+{
+  "type": "node",
+  "id": 13111705318,
+  "lat": -7.6234360,
+  "lon": -78.0457351,
+  "tags": {
+    "amenity": "bank",
+    "name": "Coopac NSR"
+  }
+},
+{
+  "type": "node",
+  "id": 13125815503,
+  "lat": -6.7019495,
+  "lon": -79.9037880,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 13125817903,
+  "lat": -6.7019729,
+  "lon": -79.9037884,
+  "tags": {
+    "amenity": "atm",
+    "operator": "MultiRed"
+  }
+},
+{
+  "type": "node",
+  "id": 13137266601,
+  "lat": -8.1107283,
+  "lon": -79.0305029,
+  "tags": {
+    "amenity": "atm",
+    "operator": "MultiRed"
+  }
+},
+{
+  "type": "node",
+  "id": 13140096401,
+  "lat": -8.1160116,
+  "lon": -79.0262523,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Interbank globalnet ATM"
+  }
+},
+{
+  "type": "node",
+  "id": 13203004904,
+  "lat": -3.5696008,
+  "lon": -80.4593519,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BBVA",
+    "brand:wikidata": "Q806189",
+    "name": "BBVA",
+    "official_name": "Banco Bilbao Vizcaya Argentaria"
+  }
+},
+{
+  "type": "node",
+  "id": 13203004905,
+  "lat": -3.5692885,
+  "lon": -80.4591826,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 13208342812,
+  "lat": -5.1860904,
+  "lon": -80.6425715,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:state": "Piura",
+    "addr:street": "Av. Sanchez Cerro con Av.Vice",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "node",
+  "id": 13394273799,
+  "lat": -8.1138826,
+  "lon": -79.0290845,
+  "tags": {
+    "amenity": "bank",
+    "name": "Scotiabank"
+  }
+},
+{
+  "type": "node",
+  "id": 13403426197,
+  "lat": -8.1107964,
+  "lon": -79.0261066,
+  "tags": {
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "name": "BBVA Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 13438247655,
+  "lat": -5.1941151,
+  "lon": -80.6183515,
+  "tags": {
+    "addr:city": "Castilla",
+    "addr:neighbourhood": "Urbanización Miraflores frente al estadio Miguel Grau",
+    "addr:street": "Avenida Guardia Civil/Avenida Luís Montero",
+    "amenity": "bank",
+    "name": "Caja Cusco"
+  }
+},
+{
+  "type": "node",
+  "id": 13588771018,
+  "lat": -5.1917165,
+  "lon": -80.6302604,
+  "tags": {
+    "addr:city": "Piura",
+    "amenity": "bank",
+    "drive_through": "no",
+    "name": "Caja Huancayo",
+    "wikidata": "Q130211499",
+    "wikipedia": "es:Caja Huancayo"
+  }
+},
+{
+  "type": "node",
+  "id": 13588771019,
+  "lat": -5.1907399,
+  "lon": -80.6312353,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:street": "Avenida Sánchez Cerro",
+    "amenity": "bank",
+    "drive_through": "no",
+    "name": "Caja Paita",
+    "wikidata": "Q131297617"
+  }
+},
+{
+  "type": "node",
+  "id": 13588771029,
+  "lat": -5.1903100,
+  "lon": -80.6323956,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:street": "Avenida Sánchez Cerro",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "drive_through": "no",
+    "name": "BBVA Perú"
+  }
+},
+{
+  "type": "node",
+  "id": 13705980902,
+  "lat": -6.7720340,
+  "lon": -79.8405392,
+  "tags": {
+    "amenity": "bank",
+    "check_date": "2026-04-04",
+    "name": "Banco de la Nacion"
+  }
+},
+{
+  "type": "node",
+  "id": 13705980903,
+  "lat": -6.7719933,
+  "lon": -79.8405306,
+  "tags": {
+    "amenity": "atm",
+    "check_date": "2026-04-04",
+    "operator": "MultiRed"
+  }
+},
+{
+  "type": "node",
+  "id": 13707135266,
+  "lat": -5.1698763,
+  "lon": -80.1863518,
+  "tags": {
+    "addr:city": "Km 50- Chulucanas",
+    "amenity": "bank",
+    "description": "Bodega Don Mario, tambien es un agente Bcp donde se puede depositar y retirar donero",
+    "name": "Agente Bcp",
+    "name:es": "Bodega Don Mario"
+  }
+},
+{
+  "type": "node",
+  "id": 13818289501,
+  "lat": -5.1907042,
+  "lon": -80.6669188,
+  "tags": {
+    "amenity": "bank",
+    "name": "Agente BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 13818344301,
+  "lat": -5.1935414,
+  "lon": -80.6602445,
+  "tags": {
+    "amenity": "bank",
+    "name": "Agente BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 13829203201,
+  "lat": -3.5679326,
+  "lon": -80.4576096,
+  "tags": {
+    "amenity": "bureau_de_change"
+  }
+},
+{
+  "type": "node",
+  "id": 13847697723,
+  "lat": -5.1976990,
+  "lon": -80.6262516,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:neighbourhood": "Centro Histórico de Piura",
+    "amenity": "bank",
+    "drive_through": "no",
+    "name": "Caja Piura",
+    "wikidata": "Q129027339",
+    "wikipedia": "es:Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 13847697725,
+  "lat": -5.1972437,
+  "lon": -80.6261825,
+  "tags": {
+    "addr:city": "Piura",
+    "addr:neighbourhood": "Centro Histórico de Piura",
+    "addr:street": "Calle La Libertad",
+    "amenity": "bank",
+    "drive_through": "no",
+    "name": "Qapaq"
+  }
+},
+{
+  "type": "node",
+  "id": 13976529258,
+  "lat": -3.6832295,
+  "lon": -80.2002209,
+  "tags": {
+    "addr:city": "Matapalo",
+    "amenity": "bank",
+    "drive_through": "no",
+    "name": "Caja Piura",
+    "wikidata": "Q129027339",
+    "wikipedia": "es:Caja Piura"
+  }
+},
+{
+  "type": "node",
+  "id": 14023262545,
+  "lat": -6.7741302,
+  "lon": -79.8699077,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 14047814205,
+  "lat": -5.4017061,
+  "lon": -80.7421457,
+  "tags": {
+    "addr:street": "Jirón Chepa Santos",
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 14047814206,
+  "lat": -5.4017289,
+  "lon": -80.7421779,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Multired -BN"
+  }
+},
+{
+  "type": "node",
+  "id": 14052691913,
+  "lat": -8.4137867,
+  "lon": -78.7522483,
+  "tags": {
+    "amenity": "bank",
+    "name": "BCP"
+  }
+},
+{
+  "type": "node",
+  "id": 14101782873,
+  "lat": -7.0004217,
+  "lon": -78.8498867,
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "node",
+  "id": 14165128901,
+  "lat": -6.7724344,
+  "lon": -79.8387061,
+  "tags": {
+    "amenity": "bank",
+    "name": "BBVA"
+  }
+},
+{
+  "type": "node",
+  "id": 14165132701,
+  "lat": -6.7719062,
+  "lon": -79.8389109,
+  "tags": {
+    "amenity": "bank",
+    "name": "Banco Pichincha"
+  }
+},
+{
+  "type": "way",
+  "id": 111289590,
+  "center": {
+    "lat": -8.1102870,
+    "lon": -79.0268270
+  },
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Jirón Gamarra",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "building": "yes",
+    "building:levels": "3",
+    "name": "Interbank",
+    "name:es": "Interbank - Oficina Principal",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 111289591,
+  "center": {
+    "lat": -8.1107351,
+    "lon": -79.0303905
+  },
+  "tags": {
+    "addr:street": "Jirón Almagro",
+    "amenity": "bank",
+    "atm": "yes",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "Banco de la Nación - Oficina Principal",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 111289592,
+  "center": {
+    "lat": -8.1110746,
+    "lon": -79.0264188
+  },
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "building": "yes",
+    "name": "BCP",
+    "name:es": "BCP - Oficina Principal",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "way",
+  "id": 111425785,
+  "center": {
+    "lat": -8.1180148,
+    "lon": -79.0323188
+  },
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "building": "yes",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 123658491,
+  "center": {
+    "lat": -7.4014874,
+    "lon": -79.5723466
+  },
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "way",
+  "id": 145261122,
+  "center": {
+    "lat": -4.5122637,
+    "lon": -80.0024884
+  },
+  "tags": {
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 287655740,
+  "center": {
+    "lat": -3.4818023,
+    "lon": -80.2445695
+  },
+  "tags": {
+    "addr:city": "Aguas Verdes",
+    "addr:street": "Panamericana Norte",
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 309482421,
+  "center": {
+    "lat": -7.8908122,
+    "lon": -79.2213266
+  },
+  "tags": {
+    "amenity": "bank",
+    "building": "yes",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "way",
+  "id": 340938955,
+  "center": {
+    "lat": -7.1562818,
+    "lon": -78.5191808
+  },
+  "tags": {
+    "addr:housenumber": "675",
+    "addr:street": "Jirón Del Comercio",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Banco de Credito",
+    "name:es": "Banco BCP",
+    "name:fr": "Banque BCP",
+    "opening_hours": "Su-Fr 09:00-18:00; Sa 09:00-13:00",
+    "phone": "+5116362742"
+  }
+},
+{
+  "type": "way",
+  "id": 340938957,
+  "center": {
+    "lat": -7.1555380,
+    "lon": -78.5199116
+  },
+  "tags": {
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "building": "yes",
+    "name": "BBVA Perú"
+  }
+},
+{
+  "type": "way",
+  "id": 340938959,
+  "center": {
+    "lat": -7.1555592,
+    "lon": -78.5187624
+  },
+  "tags": {
+    "addr:housenumber": "455",
+    "addr:postcode": "06001",
+    "addr:street": "Jirón Amalia Puga",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Caja Piura"
+  }
+},
+{
+  "type": "way",
+  "id": 365921665,
+  "center": {
+    "lat": -7.8919708,
+    "lon": -79.2217052
+  },
+  "tags": {
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Cooperativa de Ahorro y Crédito Chimu",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "way",
+  "id": 366754092,
+  "center": {
+    "lat": -7.8872554,
+    "lon": -79.2201575
+  },
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "building": "yes",
+    "name": "Banco de la Nación",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 397160628,
+  "center": {
+    "lat": -5.1864282,
+    "lon": -80.6306590
+  },
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "building": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 397162633,
+  "center": {
+    "lat": -5.1905182,
+    "lon": -80.6337739
+  },
+  "tags": {
+    "addr:city": "Piura",
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "building": "yes",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "way",
+  "id": 397312843,
+  "center": {
+    "lat": -5.1882101,
+    "lon": -80.6503981
+  },
+  "tags": {
+    "addr:city": "Piura",
+    "addr:street": "Avenida Grau/Calle Enrique Palacios",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "building": "yes",
+    "name": "Banco de la Nación",
+    "operator": "Bando de la Nación",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 445266436,
+  "center": {
+    "lat": -8.0802057,
+    "lon": -79.0461772
+  },
+  "tags": {
+    "amenity": "bank",
+    "building": "yes",
+    "name": "BCP"
+  }
+},
+{
+  "type": "way",
+  "id": 453607510,
+  "center": {
+    "lat": -6.7716349,
+    "lon": -79.8394555
+  },
+  "tags": {
+    "addr:street": "Elias Aguirre",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "building": "yes",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "way",
+  "id": 487854169,
+  "center": {
+    "lat": -4.9135748,
+    "lon": -80.9605834
+  },
+  "tags": {
+    "addr:street": "Calle Ferrocarril",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 517750032,
+  "center": {
+    "lat": -8.1037208,
+    "lon": -79.0336554
+  },
+  "tags": {
+    "addr:street": "Avenida América Norte",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Scotiabank",
+    "name:es": "Scotiabank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 519722443,
+  "center": {
+    "lat": -8.1177392,
+    "lon": -79.0333796
+  },
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Avenida Victor Larco",
+    "amenity": "bank",
+    "atm": "yes",
+    "building": "yes",
+    "name": "Ban Bif",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 519735764,
+  "center": {
+    "lat": -8.1175141,
+    "lon": -79.0323221
+  },
+  "tags": {
+    "addr:street": "Avenida Victor Larco Herrera",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Banco Financiero Pichincha",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 520050266,
+  "center": {
+    "lat": -8.1234562,
+    "lon": -79.0223462
+  },
+  "tags": {
+    "addr:street": "Plaza Miguel Grau",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "building": "yes",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 520051240,
+  "center": {
+    "lat": -6.7757578,
+    "lon": -79.8411614
+  },
+  "tags": {
+    "addr:street": "Avenida Francisco Bolognesi",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Scotia Bank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "way",
+  "id": 520055179,
+  "center": {
+    "lat": -8.1024093,
+    "lon": -79.0354022
+  },
+  "tags": {
+    "addr:street": "Avenida José Gabriel Condorcanqui",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "building": "yes",
+    "name": "BBVA Perú",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 520068053,
+  "center": {
+    "lat": -6.7716814,
+    "lon": -79.8448283
+  },
+  "tags": {
+    "addr:street": "Avenida Elias Aguirre",
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "brand:wikipedia": "en:Bank of the Nation (Peru)",
+    "building": "yes",
+    "name": "Banco de la Nación",
+    "name:es": "Banco de la Nación",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "way",
+  "id": 520125277,
+  "center": {
+    "lat": -8.1155490,
+    "lon": -79.0203841
+  },
+  "tags": {
+    "addr:street": "Jirón La Mar",
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "building": "yes",
+    "name": "Interbank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 520371581,
+  "center": {
+    "lat": -8.0940662,
+    "lon": -79.0240683
+  },
+  "tags": {
+    "addr:street": "Avenida América Norte",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Caja Sullana",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 520396353,
+  "center": {
+    "lat": -8.1235226,
+    "lon": -79.0350349
+  },
+  "tags": {
+    "addr:street": "Avenida Húsares de Junín",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "building": "yes",
+    "name": "BBVA Perú",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 520558220,
+  "center": {
+    "lat": -8.1288079,
+    "lon": -79.0420649
+  },
+  "tags": {
+    "addr:street": "Avenida Victor Larco Herrera",
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "building": "yes",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 520570968,
+  "center": {
+    "lat": -8.0976411,
+    "lon": -79.0236564
+  },
+  "tags": {
+    "addr:street": "Avenida Salvador Lara",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Arteco",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 520612504,
+  "center": {
+    "lat": -6.7634039,
+    "lon": -79.8349189
+  },
+  "tags": {
+    "addr:street": "Nicolas de Pierola",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "building": "yes",
+    "name": "BBVA Perú",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017."
+  }
+},
+{
+  "type": "way",
+  "id": 521326339,
+  "center": {
+    "lat": -8.0813372,
+    "lon": -79.0449360
+  },
+  "tags": {
+    "addr:street": "Avenida José Gabriel Condorcanqui",
+    "amenity": "bank",
+    "brand": "Banco Azteca",
+    "brand:wikidata": "Q4854076",
+    "building": "yes",
+    "name": "Banco Azteca",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 521326341,
+  "center": {
+    "lat": -8.0812240,
+    "lon": -79.0450120
+  },
+  "tags": {
+    "addr:street": "Avenida José Gabriel Condorcanqui",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Interbank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 521326345,
+  "center": {
+    "lat": -8.0809778,
+    "lon": -79.0450896
+  },
+  "tags": {
+    "addr:street": "Avenida José Gabriel Condorcanqui",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "building": "yes",
+    "name": "Mibanco",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 521643812,
+  "center": {
+    "lat": -8.1163059,
+    "lon": -79.0261323
+  },
+  "tags": {
+    "addr:street": "Avenida 29 de Diciembre",
+    "amenity": "bank",
+    "building": "yes",
+    "building:levels": "3",
+    "name": "Caja Metropolitana",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 521650562,
+  "center": {
+    "lat": -8.1350178,
+    "lon": -79.0362315
+  },
+  "tags": {
+    "addr:street": "Avenida Prolongación César Vallejo",
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "building": "yes",
+    "name": "Interbank",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 521667460,
+  "center": {
+    "lat": -8.1273228,
+    "lon": -79.0408691
+  },
+  "tags": {
+    "addr:street": "Avenida Victor Larco Herrera",
+    "amenity": "bank",
+    "brand": "Banco Azteca",
+    "brand:wikidata": "Q4854076",
+    "building": "yes",
+    "name": "Banco Azteca",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 521928004,
+  "center": {
+    "lat": -8.1238954,
+    "lon": -79.0387416
+  },
+  "tags": {
+    "addr:street": "Avenida America Sur",
+    "amenity": "bank",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "building": "yes",
+    "name": "BBVA Perú",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 521943635,
+  "center": {
+    "lat": -6.9907123,
+    "lon": -79.6220149
+  },
+  "tags": {
+    "addr:street": "Panamericana Norte",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Banco de la Nación",
+    "name:es": "Banco de la Nación",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 521944233,
+  "center": {
+    "lat": -6.7708487,
+    "lon": -79.8410426
+  },
+  "tags": {
+    "addr:city": "Chiclayo",
+    "addr:street": "Avenida San Jose",
+    "amenity": "bank",
+    "brand": "Banco Falabella",
+    "brand:wikidata": "Q4854088",
+    "building": "yes",
+    "name": "Banco Falabella",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 522201890,
+  "center": {
+    "lat": -8.1093639,
+    "lon": -79.0280595
+  },
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Jirón Gamarra",
+    "amenity": "bank",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "Caja del Santa",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 522288883,
+  "center": {
+    "lat": -8.0847697,
+    "lon": -79.0016899
+  },
+  "tags": {
+    "addr:city": "Trujillo",
+    "addr:street": "Avenida Jose Faustino Sanchez Carrion",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Carsa Banco Financiero",
+    "source": "#Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 524098304,
+  "center": {
+    "lat": -8.1056284,
+    "lon": -79.0267298
+  },
+  "tags": {
+    "addr:street": "Avenida España",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "Mibanco",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 524186089,
+  "center": {
+    "lat": -8.1165772,
+    "lon": -79.0275743
+  },
+  "tags": {
+    "addr:street": "Avenida España",
+    "amenity": "bank",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "Caja Sipan",
+    "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 549389049,
+  "center": {
+    "lat": -4.8895661,
+    "lon": -80.6871265
+  },
+  "tags": {
+    "addr:city": "Sullana",
+    "addr:street": "Plaza de Armas",
+    "amenity": "bank",
+    "atm": "yes",
+    "building": "yes",
+    "name": "Caja Municipal Sullana"
+  }
+},
+{
+  "type": "way",
+  "id": 549389540,
+  "center": {
+    "lat": -4.8897693,
+    "lon": -80.6866652
+  },
+  "tags": {
+    "addr:city": "Sullana",
+    "addr:street": "Plaza de Armas",
+    "amenity": "bank",
+    "atm": "yes",
+    "building": "yes",
+    "drive_through": "no",
+    "name": "Caja Piura"
+  }
+},
+{
+  "type": "way",
+  "id": 549393320,
+  "center": {
+    "lat": -4.8896336,
+    "lon": -80.6854967
+  },
+  "tags": {
+    "addr:city": "Sullana",
+    "addr:street": "San Martin",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "building": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 551732618,
+  "center": {
+    "lat": -6.6385818,
+    "lon": -79.7878746
+  },
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "building": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 585022146,
+  "center": {
+    "lat": -5.0848150,
+    "lon": -81.1138227
+  },
+  "tags": {
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "building": "yes",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "way",
+  "id": 585022286,
+  "center": {
+    "lat": -5.0851677,
+    "lon": -81.1140779
+  },
+  "tags": {
+    "amenity": "bank",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "building": "yes",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "way",
+  "id": 622155213,
+  "center": {
+    "lat": -5.7095405,
+    "lon": -78.8069978
+  },
+  "tags": {
+    "amenity": "bank",
+    "building": "yes",
+    "name": "BCP"
+  }
+},
+{
+  "type": "way",
+  "id": 730232071,
+  "center": {
+    "lat": -6.7503380,
+    "lon": -79.7039774
+  },
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "brand:wikipedia": "en:Bank of the Nation (Peru)",
+    "building": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 815754784,
+  "center": {
+    "lat": -4.8464144,
+    "lon": -80.8746153
+  },
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 836950645,
+  "center": {
+    "lat": -6.9273756,
+    "lon": -79.8663624
+  },
+  "tags": {
+    "amenity": "bank",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 860806959,
+  "center": {
+    "lat": -5.1940042,
+    "lon": -80.6212388
+  },
+  "tags": {
+    "addr:street": "Avenida Guardia Civil",
+    "amenity": "bank",
+    "atm": "yes",
+    "building": "yes",
+    "name": "Caja Piura",
+    "office": "financial"
+  }
+},
+{
+  "type": "way",
+  "id": 860809914,
+  "center": {
+    "lat": -5.1939587,
+    "lon": -80.6221757
+  },
+  "tags": {
+    "addr:city": "Castilla",
+    "addr:street": "Avenida Guardia Civil",
+    "amenity": "bank",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "building": "yes",
+    "name": "Mibanco",
+    "office": "financial"
+  }
+},
+{
+  "type": "way",
+  "id": 863575412,
+  "center": {
+    "lat": -4.9350150,
+    "lon": -80.3425587
+  },
+  "tags": {
+    "addr:street": "Jirón Castilla",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "brand:wikipedia": "en:Bank of the Nation (Peru)",
+    "building": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 868190228,
+  "center": {
+    "lat": -5.2143674,
+    "lon": -80.0902358
+  },
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "building": "yes",
+    "name": "Banco de la Nación"
+  }
+},
+{
+  "type": "way",
+  "id": 870823750,
+  "center": {
+    "lat": -5.1852536,
+    "lon": -79.9714164
+  },
+  "tags": {
+    "addr:street": "Jirón Adrianzén",
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Caja Piura"
+  }
+},
+{
+  "type": "way",
+  "id": 874229835,
+  "center": {
+    "lat": -5.3421606,
+    "lon": -79.8328623
+  },
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "building": "yes",
+    "name": "Banco de la Nación",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "way",
+  "id": 1034878803,
+  "center": {
+    "lat": -5.1972601,
+    "lon": -80.6272347
+  },
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BBVA Perú",
+    "brand:wikidata": "Q4835089",
+    "building": "yes",
+    "layer": "1",
+    "name": "BBVA Perú"
+  }
+},
+{
+  "type": "way",
+  "id": 1086118996,
+  "center": {
+    "lat": -4.9354007,
+    "lon": -80.3417577
+  },
+  "tags": {
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Banco de Crédito"
+  }
+},
+{
+  "type": "way",
+  "id": 1086130564,
+  "center": {
+    "lat": -5.1964500,
+    "lon": -80.6271826
+  },
+  "tags": {
+    "addr:city": "Piura",
+    "addr:neighbourhood": "Centro Histórico de Piura",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BCP",
+    "brand:wikidata": "Q4854124",
+    "brand:wikipedia": "es:Banco de Crédito del Perú",
+    "building": "yes",
+    "name": "BCP",
+    "official_name": "Banco de Crédito del Perú",
+    "operator": "Banco de Crédito del Perú"
+  }
+},
+{
+  "type": "way",
+  "id": 1303319098,
+  "center": {
+    "lat": -8.1710889,
+    "lon": -79.0084011
+  },
+  "tags": {
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Compartamos Financiera"
+  }
+},
+{
+  "type": "way",
+  "id": 1354333901,
+  "center": {
+    "lat": -5.2190688,
+    "lon": -80.6260209
+  },
+  "tags": {
+    "addr:city": "Castilla",
+    "addr:street": "Avenida Progreso",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Caja Piura",
+    "brand:wikidata": "Q129027339",
+    "building": "yes",
+    "drive_through": "no",
+    "name": "Caja Piura"
+  }
+},
+{
+  "type": "way",
+  "id": 1481651568,
+  "center": {
+    "lat": -5.1911642,
+    "lon": -80.6322019
+  },
+  "tags": {
+    "addr:city": "Piura",
+    "addr:street": "Avenida Sánchez Cerro",
+    "amenity": "bank",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "building": "yes",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "way",
+  "id": 1481651570,
+  "center": {
+    "lat": -5.1907120,
+    "lon": -80.6331755
+  },
+  "tags": {
+    "addr:city": "Piura",
+    "addr:street": "Avenida Sánchez Cerro",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Mibanco",
+    "brand:wikidata": "Q5558589",
+    "building": "yes",
+    "drive_through": "no",
+    "name": "Mibanco"
+  }
+},
+{
+  "type": "way",
+  "id": 1516760724,
+  "center": {
+    "lat": -5.1960955,
+    "lon": -80.6271802
+  },
+  "tags": {
+    "addr:city": "Piura",
+    "addr:neighbourhood": "Centro Histórico de Piura",
+    "addr:street": "Avenida Grau",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Interbank",
+    "brand:wikidata": "Q2835558",
+    "building": "yes",
+    "building:levels": "3",
+    "drive_through": "no",
+    "name": "Interbank"
+  }
+},
+{
+  "type": "way",
+  "id": 1550446402,
+  "center": {
+    "lat": -6.6260981,
+    "lon": -78.9450527
+  },
+  "tags": {
+    "amenity": "bank",
+    "brand": "Banco de la Nación",
+    "brand:wikidata": "Q4856206",
+    "building": "yes",
+    "name": "Banco de la Nación"
+  }
+}
+
+  ]
+}

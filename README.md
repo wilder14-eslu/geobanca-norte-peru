@@ -31,12 +31,26 @@ geobanca-norte-peru/
 
 ## Cómo reproducir
 ```bash
+git clone https://github.com/wilder14-eslu/geobanca-norte-peru.git
+cd geobanca-norte-peru
 python -m venv .venv
-.venv\Scripts\activate            # Windows
+.venv\Scripts\activate                   # Windows  (Linux/Mac: source .venv/bin/activate)
 pip install -r requirements.txt
-python src/00_descargar_datos.py  # opcional: los datos ya están en data/raw
-python src/01_construir_base_distrital.py
+python src/00_descargar_datos.py          # baja las fuentes a data/raw (~220 MB, unos minutos)
+python src/01_construir_base_distrital.py # une todo por UBIGEO y genera data/processed
 ```
+
+**Qué trae el repo y qué se descarga**
+| Ya está en el repo | Se descarga con `00_descargar_datos.py` | Paso manual |
+|---|---|---|
+| Base distrital, panel SBS y oficinas (`data/processed/*.csv`) | Límites INEI, ubigeos, censo 2025, pobreza 2018 (versiones fijadas por commit) | Lluvia de estaciones SENAMHI (registro o captcha): ver `docs/guia_senamhi.md` |
+| Bancos/ATM de OpenStreetMap del 16/10/2026 (`data/raw/osm/`) | 89 cuadros de la SBS | |
+| Catálogos de estaciones SENAMHI (`data/raw/senamhi/`) | Opcional: DEM (`--dem`) y CHIRPS (`--chirps`) | |
+
+- Para **solo ver o rehacer el análisis** no hace falta descargar nada: los notebooks leen los CSV de `data/processed`.
+- Las fuentes de GitHub están **fijadas a un commit**, así que cualquiera obtiene los mismos archivos usados aquí.
+- OSM es una foto al 16/10/2026: `--osm-actualizar` vuelve a consultarlo, pero los conteos pueden cambiar.
+- La SBS podría mover sus archivos en el futuro; las rutas están en `00_descargar_datos.py`.
 
 ## Datos listos (16/10/2026)
 | Capa | Archivo | Registros |

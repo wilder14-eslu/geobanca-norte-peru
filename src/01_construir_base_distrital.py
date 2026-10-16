@@ -282,7 +282,8 @@ def cargar_sbs_oficinas(ubigeos: pd.DataFrame) -> pd.DataFrame:
 # 5. Capas puntuales: OSM, estaciones SENAMHI, centros poblados
 # ---------------------------------------------------------------------------
 def capa_osm() -> gpd.GeoDataFrame:
-    js = json.loads((DATA_RAW / "osm" / "overpass_bancos_atm_norte_2026-10-16.json").read_text(encoding="utf-8"))
+    ruta = sorted((DATA_RAW / "osm").glob("overpass_bancos_atm_norte_*.json"))[-1]   # la copia más reciente
+    js = json.loads(ruta.read_text(encoding="utf-8"))
     filas = []
     for e in js["elements"]:
         lat = e.get("lat", e.get("center", {}).get("lat"))

@@ -1,10 +1,18 @@
-# Datos: se reconstruyen con src/00_descargar_datos.py y src/01_construir_base_distrital.py
-data/raw/**
-data/interim/**
+# Datos crudos: se reconstruyen con src/00_descargar_datos.py
+# Excepción: OSM y catálogos SENAMHI se versionan (son pequeños y no se pueden reproducir igual)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/osm/
+!data/raw/senamhi/
+data/raw/senamhi/historico/
+data/raw/senamhi/red_actual/
+
+# Intermedios y capas pesadas: se regeneran con src/01_construir_base_distrital.py
+data/interim/*
+!data/interim/.gitkeep
 data/processed/*.gpkg
 data/processed/*.gpkg-journal
 data/processed/*.geojson
-!data/**/.gitkeep
 
 # Python / Jupyter
 __pycache__/
@@ -13,8 +21,9 @@ __pycache__/
 .venv/
 venv/
 
-# QGIS
+# QGIS y sistema
 *.qgs~
 *.qgz~
 .DS_Store
 Thumbs.db
+desktop.ini
