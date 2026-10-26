@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GeoBanca Norte Perú — Caso de Negocio & Analítica Espacial</title>
   
-  <!-- Metadatos OpenGraph optimizados para compartir en LinkedIn / WhatsApp / Twitter -->
-  <meta property="og:title" content="GeoBanca Norte Perú: ¿Dónde expandir canales financieros sin riesgo de inundaciones?">
-  <meta property="og:description" content="Caso práctico de Analítica Espacial y Negocios: optimización de 25 puntos estratégicos para beneficiar a 63,000+ personas en el Norte del Perú combinando Big Data, Machine Learning y Riesgo Climático FEN.">
+  <!-- Metadatos OpenGraph -->
+  <meta property="og:title" content="GeoBanca Norte Perú: Estrategia de Expansión Bancaria con Analítica Espacial">
+  <meta property="og:description" content="Optimización de 25 puntos estratégicos para beneficiar a 63,643 personas en el Norte del Perú combinando Big Data, Machine Learning y Riesgo Climático FEN.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="outputs/figuras/09_matriz_oportunidad_riesgo.png">
   <meta name="author" content="Wilder E. (esluw)">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,12 +45,6 @@
               500: '#10b981',
               600: '#059669',
               700: '#047857',
-            },
-            accent: {
-              blue: '#0284c7',
-              cyan: '#06b6d4',
-              amber: '#f59e0b',
-              purple: '#8b5cf6',
             }
           }
         }
@@ -59,11 +53,9 @@
   </script>
 
   <style>
-    /* Suavizado y detalles corporativos */
     html { scroll-behavior: smooth; }
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
 
-    /* Barra de lectura superior */
     #reading-progress {
       position: fixed; top: 0; left: 0; height: 3.5px; z-index: 100;
       background: linear-gradient(90deg, #10b981, #06b6d4, #6366f1);
@@ -71,19 +63,6 @@
       transition: width 0.15s ease-out;
     }
 
-    /* Badge "En cristiano / Para no expertos" */
-    .plain-english-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 9999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    /* Efectos de tarjeta ejecutiva */
     .exec-card {
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -92,7 +71,6 @@
       box-shadow: 0 16px 32px -10px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.03);
     }
 
-    /* Zoom de figuras con cursor amigable */
     .zoomable-thumb {
       cursor: zoom-in;
       transition: transform 0.3s ease, filter 0.3s ease;
@@ -102,14 +80,12 @@
       filter: brightness(1.03);
     }
 
-    /* Tabs de modo de lectura */
     .view-toggle-btn.active {
       background-color: #0f172a;
       color: #ffffff;
       box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
     }
 
-    /* Scrollbar estilizado */
     ::-webkit-scrollbar { width: 7px; height: 7px; }
     ::-webkit-scrollbar-track { background: #f8fafc; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
@@ -134,35 +110,23 @@
         <div>
           <div class="flex items-center gap-2">
             <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-600">GeoBanca Norte Perú</span>
-            <span class="hidden sm:inline-block text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-semibold border border-slate-200">Executive Edition</span>
+            <span class="hidden sm:inline-block text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-semibold border border-slate-200">Executive Brief</span>
           </div>
           <h1 class="text-sm font-bold text-slate-900 leading-tight">Expansión Bancaria con Analítica Espacial</h1>
         </div>
       </a>
 
-      <!-- Quick Nav -->
-      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+      <!-- Quick Nav Corporativo -->
+      <nav class="flex items-center space-x-6 text-sm font-medium text-slate-600">
         <a href="#pitch" class="hover:text-emerald-600 transition-colors">El Reto</a>
         <a href="#mapa-estrategico" class="hover:text-emerald-600 transition-colors">Visor de Mapa</a>
         <a href="#solucion-6-pasos" class="hover:text-emerald-600 transition-colors">Metodología</a>
         <a href="#sitios-recomendados" class="hover:text-emerald-600 transition-colors font-semibold text-emerald-700 flex items-center gap-1.5">
           <i class="fa-solid fa-bullseye text-xs"></i> 25 Puntos Óptimos
         </a>
+        <a href="#conclusiones" class="hover:text-emerald-600 transition-colors hidden md:inline">Recomendaciones</a>
       </nav>
 
-      <!-- Botones de Acción para LinkedIn & GitHub -->
-      <div class="flex items-center gap-2">
-        <!-- Botón para copiar post de LinkedIn -->
-        <button onclick="abrirModalLinkedIn()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#0a66c2] hover:bg-[#084e96] text-white text-xs font-bold transition shadow-sm">
-          <i class="fa-brands fa-linkedin text-sm"></i>
-          <span class="hidden sm:inline">Post para LinkedIn</span>
-        </button>
-        <!-- Repo -->
-        <a href="https://github.com/wilder14-eslu/geobanca-norte-peru" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition">
-          <i class="fa-brands fa-github text-sm"></i>
-          <span class="hidden lg:inline">GitHub</span>
-        </a>
-      </div>
     </div>
   </header>
 
@@ -368,19 +332,19 @@
               <i class="fa-regular fa-lightbulb"></i>
             </div>
             <div>
-              <h4 class="font-bold text-slate-900 text-sm">En lenguaje sencillo para LinkedIn:</h4>
+              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
               <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                Los distritos no viven en islas aisladas. Descubrimos un fuerte <strong>"efecto arrastre"</strong>: si tus distritos vecinos tienen muchos bancos y comercios (como en el eje costero Trujillo–Chiclayo–Piura), tu distrito también florece. En cambio, en la sierra de Cajamarca y Piura rural ocurre lo contrario: los distritos pobres están rodeados de otros distritos desatendidos, atrapados en una <strong>trampa geográfica de exclusión financiera</strong>.
+                Los distritos no viven en islas aisladas. Se descubrió un fuerte <strong>"efecto arrastre"</strong>: si los distritos vecinos tienen muchos bancos y comercios (como en el eje costero Trujillo–Chiclayo–Piura), el distrito también florece. En cambio, en la sierra de Cajamarca y Piura rural ocurre lo contrario: los distritos de bajos ingresos están rodeados de otros distritos desatendidos, atrapados en una <strong>trampa geográfica de exclusión financiera</strong>.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Contenido en Modo Técnico (Oculto por defecto o visible al cambiar) -->
+      <!-- Contenido en Modo Técnico -->
       <div class="view-tech hidden space-y-3 mb-6 bg-slate-900 text-slate-200 p-5 rounded-2xl border border-slate-800 font-mono text-xs">
         <div class="text-emerald-400 font-bold text-sm mb-1 font-sans">Detalle Metodológico (AEDE & Moran):</div>
-        <p>Matriz de pesos de Contigüidad Reina 1er orden estandarizada por filas. Índice de Moran Global: <strong>I = 0.540 (p < 0.001, 999 permutaciones)</strong>. Fuerte autocorrelación espacial positiva. Clusters LISA identifican agrupamientos Alto-Alto (HH) en costa urbana y Bajo-Bajo (LL) en Ayabaca, Huancabamba y Cajamarca rural.</p>
+        <p>Matriz de pesos de Contigüidad Reina 1er orden estandarizada por filas. Índice de Moran Global: <strong>I = 0.540 (p &lt; 0.001, 999 permutaciones)</strong>. Fuerte autocorrelación espacial positiva. Clusters LISA identifican agrupamientos Alto-Alto (HH) en costa urbana y Bajo-Bajo (LL) en Ayabaca, Huancabamba y Cajamarca rural.</p>
       </div>
 
       <!-- Figuras interactivas -->
@@ -428,9 +392,9 @@
               <i class="fa-regular fa-lightbulb"></i>
             </div>
             <div>
-              <h4 class="font-bold text-slate-900 text-sm">En lenguaje sencillo para LinkedIn:</h4>
+              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
               <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                Si un banco utiliza una regresión común (como la que enseñan en la universidad) asume que lo que pasa en un distrito no afecta a los distritos contiguos. Eso es falso en finanzas. Al incorporar el <strong>derrame territorial (spillover)</strong> mediante un modelo Durbin Espacial, logramos explicar un <strong>38.4% de la variabilidad</strong> y corregir las decisiones erróneas que cometería un modelo tradicional.
+                Una regresión lineal ordinaria asume que lo que pasa en un distrito es independiente de sus vecinos. Al incorporar el <strong>derrame territorial (spillover)</strong> mediante un modelo Durbin Espacial (SDM), se explica un <strong>38.4% de la varianza</strong> y se eliminan los sesgos sistemáticos en las decisiones de inversión.
               </p>
             </div>
           </div>
@@ -486,9 +450,9 @@
               <i class="fa-regular fa-lightbulb"></i>
             </div>
             <div>
-              <h4 class="font-bold text-slate-900 text-sm">En lenguaje sencillo para LinkedIn:</h4>
+              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
               <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                El Fenómeno El Niño (1998, 2017, 2023) destruye bodegas y anega carreteras. No podemos poner un sensor en cada cuadra del Perú. Mediante <strong>Geoestadística (Kriging)</strong> sobre 175 estaciones del SENAMHI, reconstruimos un mapa continuo de lluvia extrema histórica que redujo el margen de error en un <strong>23% frente a métodos habituales</strong>. Ahora sabemos con precisión milimétrica qué distritos tienen alta demanda pero son trampas de inundación.
+                El Fenómeno El Niño (1998, 2017, 2023) genera graves daños a la infraestructura comercial. Mediante <strong>Geoestadística (Kriging Ordinario)</strong> sobre 175 estaciones pluviométricas del SENAMHI, se reconstruyó un campo continuo de precipitación extrema que <strong>redujo el error en más de 23%</strong> respecto a interpolaciones convencionales (IDW), mapeando con precisión los distritos en zona de riesgo.
               </p>
             </div>
           </div>
@@ -544,9 +508,9 @@
               <i class="fa-regular fa-lightbulb"></i>
             </div>
             <div>
-              <h4 class="font-bold text-slate-900 text-sm">En lenguaje sencillo para LinkedIn:</h4>
+              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
               <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                Al analizar 14,481 centros poblados y la ubicación exacta de cajeros y oficinas, descubrimos una paradoja comercial: <strong>las entidades bancarias imitan la ubicación de sus competidores</strong>. En el centro de Trujillo o Chiclayo hay hasta 10 cajeros en 100 metros, pero cruzando a la periferia o a distritos vecinos populosos no hay ninguno. Hay una tremenda oportunidad de negocio captando ese mercado virgen.
+                Al cruzar 14,481 centros poblados con las ubicaciones de cajeros y sucursales, los datos comprueban una <strong>aglomeración excesiva</strong> en los centros metropolitanos (ej. centro histórico de Trujillo y Chiclayo) mientras la periferia norte y las zonas rurales carecen de canales básicos. Esto evidencia una oportunidad desaprovechada de expansión hacia mercados cautivos.
               </p>
             </div>
           </div>
@@ -555,7 +519,7 @@
 
       <div class="view-tech hidden space-y-3 mb-6 bg-slate-900 text-slate-200 p-5 rounded-2xl border border-slate-800 font-mono text-xs">
         <div class="text-amber-400 font-bold text-sm mb-1 font-sans">Estadística de Procesos Puntuales:</div>
-        <p>Test de Clark-Evans con R = 0.41 (p < 0.001), rechazando la Completa Aleatoriedad Espacial (CSR). La función K inhomogénea de Ripley supera las envolventes de simulación de Monte Carlo a distancias menores a 5 km, probando atracción competitiva.</p>
+        <p>Test de Clark-Evans con R = 0.41 (p &lt; 0.001), rechazando la Completa Aleatoriedad Espacial (CSR). La función K inhomogénea de Ripley supera las envolventes de simulación de Monte Carlo a distancias menores a 5 km, probando atracción competitiva.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -585,7 +549,7 @@
           <div>
             <span class="text-xs font-extrabold uppercase tracking-wider text-purple-600">Paso 5: Inteligencia Artificial Espacio-Temporal</span>
             <h3 class="text-2xl font-black text-slate-900 leading-tight">
-              ¿Cómo predice la IA el potencial de inclusión financiera a lo largo de 10 años?
+              ¿Cómo predice el modelo el potencial de inclusión financiera a 10 años?
             </h3>
           </div>
         </div>
@@ -602,9 +566,9 @@
               <i class="fa-regular fa-lightbulb"></i>
             </div>
             <div>
-              <h4 class="font-bold text-slate-900 text-sm">En lenguaje sencillo para LinkedIn:</h4>
+              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
               <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                Analizamos una serie histórica oficial de 10 años (2017 a 2026). Entrenamos algoritmos de Machine Learning con <strong>validación espacial por bloques</strong> (para no autoengañarse con datos cercanos). Usando valores SHAP (Inteligencia Artificial Explicable), descubrimos que la altitud y la pobreza son frenos, pero si el distrito vecino tiene comercio dinámico, la probabilidad de que un punto bancario prospere <strong>se triplica</strong>.
+                Con base en un panel oficial de 10 años de la SBS (2017 a 2026), se entrenó un Random Forest con <strong>validación espacial por bloques</strong>. El análisis de importancia SHAP confirma que la tasa de urbanización vecina amortigua el efecto negativo de la altitud y la pobreza, triplicando la probabilidad de que una localidad suba de categoría de acceso si sus distritos limítrofes cuentan con servicios activos.
               </p>
             </div>
           </div>
@@ -659,9 +623,9 @@
             <i class="fa-solid fa-check"></i>
           </div>
           <div>
-            <h4 class="font-bold text-white text-sm">El Valor para el Negocio y la Sociedad:</h4>
+            <h4 class="font-bold text-white text-sm">El Retorno de la Decisión Territorial:</h4>
             <p class="text-slate-300 text-sm leading-relaxed mt-1">
-              Resolvimos el <strong>Problema de Máxima Cobertura con Localización (MCLP)</strong>. Si una institución instala estos <strong>25 canales</strong>, cubre directamente a <strong class="text-emerald-400">63,643 personas adultas</strong> en poblados sin servicio, esquivando las zonas rojas de inundación de Piura y Tumbes. A continuación, puedes explorar la lista detallada de sitios recomendados.
+              Resolviendo el <strong>Problema de Máxima Cobertura con Localización (MCLP)</strong>, estos <strong>25 puntos óptimos</strong> alcanzan una cobertura directa de <strong class="text-emerald-400">63,643 personas adultas</strong> en poblados sin servicio bancario previo, evitando las llanuras de inundación de Piura y Tumbes.
             </p>
           </div>
         </div>
@@ -731,50 +695,90 @@
 
   </main>
 
-  <!-- ================= SECCIÓN DE IMPACTO PARA LINKEDIN ================= -->
-  <section class="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 text-white py-16">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+  <!-- ================= SECCIÓN: CONCLUSIONES Y RECOMENDACIONES DE NEGOCIO ================= -->
+  <section id="conclusiones" class="bg-white border-t border-slate-200 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mx-auto text-emerald-400 text-2xl border border-white/20">
-        <i class="fa-brands fa-linkedin-in"></i>
+      <div class="max-w-3xl mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 mb-3">
+          <i class="fa-solid fa-chart-line"></i> Recomendaciones Estratégicas
+        </div>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+          Implicancias para la Banca y la Inclusión Financiera
+        </h2>
+        <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+          Cuatro directrices basadas en evidencia empírica para optimizar el despliegue de infraestructura financiera en el norte peruano.
+        </p>
       </div>
 
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-        ¿Te gustó este proyecto para tu perfil o empresa?
-      </h2>
-      <p class="text-slate-300 text-base max-w-2xl mx-auto leading-relaxed">
-        Diseñé este trabajo para demostrar cómo la ciencia de datos espacial resuelve problemas comerciales y sociales complejos. Si deseas compartirlo o citarlo en LinkedIn, preparé un borrador con el storytelling listo.
-      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Recomendación 1 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm mb-4">
+            01
+          </div>
+          <h3 class="font-bold text-slate-900 text-sm mb-2">Estrategia Dual de Canales</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Diferenciar entre <strong>canales físicos tradicionales</strong> en valles interandinos protegidos (riesgo FEN &lt; 45%) y <strong>canales digitales o móviles</strong> en zonas expuestas a desbordes.
+          </p>
+        </div>
 
-      <div class="flex flex-wrap justify-center gap-3 pt-2">
-        <button onclick="abrirModalLinkedIn()" class="px-6 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm transition shadow-lg flex items-center gap-2">
-          <i class="fa-solid fa-copy text-emerald-600"></i> Copiar Texto para tu Publicación
-        </button>
-        <a href="https://github.com/wilder14-eslu/geobanca-norte-peru" target="_blank" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition border border-slate-700 flex items-center gap-2">
-          <i class="fa-brands fa-github"></i> Ver Código en GitHub
-        </a>
+        <!-- Recomendación 2 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-sm mb-4">
+            02
+          </div>
+          <h3 class="font-bold text-slate-900 text-sm mb-2">Capilaridad vs. Sucursal</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Con 70,560 corresponsales frente a 629 oficinas, el agente de barrio es el canal con mayor eficiencia de costo de instalación y menor tiempo de amortización en zonas periurbanas.
+          </p>
+        </div>
+
+        <!-- Recomendación 3 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm mb-4">
+            03
+          </div>
+          <h3 class="font-bold text-slate-900 text-sm mb-2">Atención a Desiertos</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Los 5 distritos con cero cobertura representan una falla de mercado que requiere incentivos regulatorios (ej. banca estatal o alianzas público-privadas) para romper el aislamiento.
+          </p>
+        </div>
+
+        <!-- Recomendación 4 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm mb-4">
+            04
+          </div>
+          <h3 class="font-bold text-slate-900 text-sm mb-2">Eficiencia de Cobertura</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Instalar solo 25 puntos óptimos bajo el modelo MCLP cubre más del 27% de toda la población en demanda insatisfecha de la macro región, maximizando el impacto por sol invertido.
+          </p>
+        </div>
+
       </div>
 
     </div>
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-slate-950 text-slate-500 py-12 border-t border-slate-800 text-xs">
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-center">
-      <div class="flex flex-wrap justify-center items-center gap-4 text-slate-400 font-medium">
-        <span><strong>Autor:</strong> Wilder E. (esluw)</span>
-        <span>•</span>
+      <div class="flex flex-wrap justify-center items-center gap-4 text-slate-300 font-medium">
         <span><strong>Proyecto:</strong> GeoBanca Norte Perú</span>
         <span>•</span>
-        <span><strong>Enfoque:</strong> Estadística Espacial & Business Analytics</span>
+        <span><strong>Ámbito:</strong> 327 distritos (Piura, Lambayeque, La Libertad, Cajamarca, Tumbes)</span>
+        <span>•</span>
+        <span><strong>Autor:</strong> Wilder E. (esluw)</span>
         <span>•</span>
         <span><strong>Año:</strong> 2026</span>
       </div>
-      <div>
-        Fuentes Oficiales: SBS Perú, INEI (Censo 2025), SENAMHI, CHIRPS Satelital y OpenStreetMap.
+      <div class="text-slate-500">
+        Fuentes Oficiales: Superintendencia de Banca, Seguros y AFP (SBS), INEI (Censo Nacional 2025), SENAMHI, CHIRPS Satelital y OpenStreetMap.
       </div>
       <div class="text-slate-600">
-        100% reproducible en Python con PySAL, GeoPandas, GSTools y Folium.
+        Procesamiento y modelado espacial reproducible en Python (PySAL, GeoPandas, GSTools, Scikit-Learn y PuLP/CBC).
       </div>
     </div>
   </footer>
@@ -801,72 +805,6 @@
           Cerrar (Esc)
         </button>
       </div>
-    </div>
-  </div>
-
-  <!-- ================= MODAL: GENERADOR DE POST DE LINKEDIN ================= -->
-  <div id="linkedin-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4" onclick="cerrarModalLinkedIn()">
-    <div class="relative max-w-2xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-8" onclick="event.stopPropagation()">
-      
-      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-[#0a66c2] text-white flex items-center justify-center text-lg shadow-sm">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </div>
-          <div>
-            <h3 class="text-lg font-black text-slate-900 leading-tight">Texto Sugerido para tu LinkedIn</h3>
-            <p class="text-xs text-slate-500">Listo para copiar, pegar y personalizar con tus palabras</p>
-          </div>
-        </div>
-        <button onclick="cerrarModalLinkedIn()" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <!-- Texto del Post -->
-      <div class="relative mb-5">
-        <textarea id="linkedin-post-text" rows="12" class="w-full bg-slate-50 border border-slate-300 rounded-2xl p-4 text-xs font-sans text-slate-800 leading-relaxed focus:outline-none focus:border-emerald-600 select-all" readonly>
-¿Dónde abrir el próximo canal financiero sin que una inundación se lleve la inversión? 📍🌧️💼
-
-Comparto con mucho entusiasmo mi proyecto final de Analítica y Estadística Espacial: "GeoBanca Norte Perú".
-
-El reto:
-En la Macro Región Norte (Piura, Lambayeque, La Libertad, Cajamarca y Tumbes), más de 5.4 millones de adultos necesitan acceso a servicios financieros. Sin embargo, las entidades bancarias suelen concentrarse en las mismas esquinas urbanas, mientras distritos rurales quedan en completo abandono ("desiertos financieros"). Por si fuera poco, el Fenómeno El Niño (FEN) expone las inversiones a graves daños por inundaciones.
-
-¿Cómo lo resolvimos con Data Science Espacial?
-1️⃣ Autocorrelación Espacial (Moran & LISA): Demostramos que la inclusión financiera de un distrito depende fuertemente del desarrollo de sus vecinos (efecto arrastre territorial).
-2️⃣ Econometría Espacial (Durbin Espacial - SDM): Corregimos las fallas de los modelos tradicionales capturando spillovers intermunicipales.
-3️⃣ Geoestadística de Lluvias Extremas (Kriging Ordinario): Modelamos 175 estaciones meteorológicas del SENAMHI, reduciendo el error en más de 23% para mapear zonas inundables críticas.
-4️⃣ Procesos Puntuales & Machine Learning: Identificamos trampas de hacinamiento comercial y evaluamos el potencial con Random Forest + SHAP.
-5️⃣ Optimización Exacta (MCLP con solver CBC): Encontramos los 25 puntos óptimos exactos que benefician a +63,643 adultos en demanda insatisfecha, esquivando las llanuras inundables.
-
-🔗 Puedes explorar el visor cartográfico interactivo aquí:
-https://wilder14-eslu.github.io/geobanca-norte-peru/
-
-💻 Repositorio 100% reproducible en Python (PySAL, GeoPandas, GSTools, Folium):
-https://github.com/wilder14-eslu/geobanca-norte-peru
-
-¡Me encantaría leer sus opiniones y sugerencias! 🚀
-
-#DataScience #SpatialAnalytics #Fintech #InclusionFinanciera #Python #MachineLearning #Geospatial #Peru #Banca #BusinessIntelligence
-        </textarea>
-      </div>
-
-      <!-- Botones de Copiar -->
-      <div class="flex items-center justify-between gap-3">
-        <span id="copy-status" class="text-xs font-bold text-emerald-600 hidden">
-          <i class="fa-solid fa-check mr-1"></i> ¡Copiado al portapapeles!
-        </span>
-        <div class="flex items-center gap-2 ml-auto">
-          <button onclick="cerrarModalLinkedIn()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
-            Cancelar
-          </button>
-          <button onclick="copiarTextoLinkedIn()" class="px-5 py-2 rounded-xl bg-[#0a66c2] hover:bg-[#084e96] text-white text-xs font-bold transition flex items-center gap-2 shadow-sm">
-            <i class="fa-regular fa-copy"></i> Copiar al Portapapeles
-          </button>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -901,7 +839,6 @@ https://github.com/wilder14-eslu/geobanca-norte-peru
       { id: 25, ccpp: "ROSA SAURA", distrito: "SINSICAP", prov: "OTUZCO", dpto: "LA LIBERTAD", demanda: 1693, riesgo: "31%", estrategia: "Prioridad: canal físico", badge: "bg-emerald-100 text-emerald-800" }
     ];
 
-    // Renderizar la tabla de 25 sitios
     function renderizarTablaMCLP(lista) {
       const tbody = document.getElementById('mclp-table-body');
       tbody.innerHTML = '';
@@ -925,7 +862,6 @@ https://github.com/wilder14-eslu/geobanca-norte-peru
       });
     }
 
-    // Filtrar tabla por departamento
     function filtrarTablaMCLP() {
       const depto = document.getElementById('filtro-depto').value;
       if (depto === "TODOS") {
@@ -936,7 +872,6 @@ https://github.com/wilder14-eslu/geobanca-norte-peru
       }
     }
 
-    // Cambiar vista: Ejecutivo vs Técnico
     function cambiarVistaModo(modo) {
       const execBtn = document.getElementById('btn-view-exec');
       const techBtn = document.getElementById('btn-view-tech');
@@ -956,7 +891,6 @@ https://github.com/wilder14-eslu/geobanca-norte-peru
       }
     }
 
-    // Cambiar mapa en el iFrame
     function cambiarMapa(url, btnElement) {
       document.getElementById('map-frame').src = url;
       document.querySelectorAll('.map-tab-btn').forEach(b => {
@@ -967,7 +901,6 @@ https://github.com/wilder14-eslu/geobanca-norte-peru
       btnElement.classList.remove('text-slate-600');
     }
 
-    // Pantalla completa para el mapa
     function togglePantallaCompleta() {
       const elem = document.getElementById('map-wrapper');
       if (!document.fullscreenElement) {
@@ -977,7 +910,6 @@ https://github.com/wilder14-eslu/geobanca-norte-peru
       }
     }
 
-    // Modal de imágenes
     function openModal(src, title, desc) {
       document.getElementById('modal-img').src = src;
       document.getElementById('modal-title').textContent = title;
@@ -991,29 +923,6 @@ https://github.com/wilder14-eslu/geobanca-norte-peru
       document.body.style.overflow = 'auto';
     }
 
-    // Modal de LinkedIn
-    function abrirModalLinkedIn() {
-      document.getElementById('linkedin-modal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function cerrarModalLinkedIn() {
-      document.getElementById('linkedin-modal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    function copiarTextoLinkedIn() {
-      const textarea = document.getElementById('linkedin-post-text');
-      textarea.select();
-      textarea.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(textarea.value).then(() => {
-        const status = document.getElementById('copy-status');
-        status.classList.remove('hidden');
-        setTimeout(() => { status.classList.add('hidden'); }, 3500);
-      });
-    }
-
-    // Barra de progreso de lectura
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -1021,15 +930,10 @@ https://github.com/wilder14-eslu/geobanca-norte-peru
       document.getElementById('reading-progress').style.width = progress + '%';
     });
 
-    // Tecla Escape para cerrar modales
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeModal();
-        cerrarModalLinkedIn();
-      }
+      if (e.key === 'Escape') closeModal();
     });
 
-    // Inicializar tabla al cargar
     document.addEventListener('DOMContentLoaded', () => {
       renderizarTablaMCLP(SITIOS_MCLP);
     });
