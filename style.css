@@ -1,0 +1,340 @@
+/* ==========================================================================
+   GeoBanca Norte Perú — Hoja de Estilos de Producción (UI/UX)
+   ========================================================================== */
+
+/* Variables y configuraciones base */
+:root {
+  --brand-primary: #10b981;
+  --brand-primary-dark: #059669;
+  --brand-accent: #0284c7;
+  --brand-warning: #f59e0b;
+  --brand-danger: #f43f5e;
+  --bg-dark: #020617;
+  --bg-card-dark: #0f172a;
+  --border-dark: #1e293b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Barra de progreso de lectura */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  z-index: 1000;
+  background: linear-gradient(90deg, #10b981, #0284c7, #6366f1);
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+/* Tarjetas analíticas */
+.report-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+/* Miniaturas con zoom modal */
+.zoomable-thumb {
+  cursor: zoom-in;
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+}
+.zoomable-thumb:hover {
+  transform: scale(1.02);
+  filter: brightness(1.03);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor del visor cartográfico */
+#map-wrapper {
+  position: relative;
+  min-height: 600px;
+  height: 620px;
+  width: 100%;
+  background: #020617;
+}
+
+#map-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Panel flotante de control de capas (Glassmorphism) */
+.map-floating-panel {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  border-radius: 14px;
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.5), 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+  padding: 12px 14px;
+  max-width: 290px;
+  width: calc(100% - 28px);
+  color: #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+.layer-switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  user-select: none;
+}
+.layer-switch-label:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Toggle Switch estilizado */
+.toggle-switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #334155;
+  transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+}
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+input:checked + .toggle-slider {
+  background-color: #10b981;
+}
+input:checked + .toggle-slider:before {
+  transform: translateX(16px);
+}
+
+/* Leyenda flotante retráctil */
+.map-floating-legend {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.45);
+  padding: 10px 14px;
+  color: #f1f5f9;
+  font-size: 11px;
+  max-width: 300px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.legend-content {
+  transition: max-height 0.3s ease, opacity 0.2s ease;
+  max-height: 400px;
+  overflow: hidden;
+}
+.legend-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Tabla de Sitios Óptimos MCLP */
+.table-container {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Primera columna pegajosa (Sticky first column) */
+.table-sticky-col {
+  position: sticky;
+  left: 0;
+  background-color: #090d16;
+  z-index: 5;
+  box-shadow: 2px 0 6px -2px rgba(0, 0, 0, 0.5);
+}
+thead .table-sticky-col {
+  z-index: 15;
+  background-color: #0f172a;
+}
+tr:hover .table-sticky-col {
+  background-color: #1e293b;
+}
+
+/* Fila activa/seleccionada en la tabla */
+tr.mclp-row-active {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  border-left: 3px solid #10b981;
+}
+tr.mclp-row-active .table-sticky-col {
+  background-color: #064e3b !important;
+}
+
+/* Badges semafóricos de riesgo FEN */
+.badge-riesgo-bajo {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.badge-riesgo-medio {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.badge-riesgo-alto {
+  background-color: rgba(244, 63, 94, 0.15);
+  color: #fb7185;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+/* Modal HD con Zoom y Arrastre (Pan & Zoom) */
+#image-modal {
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-viewport {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  min-height: 480px;
+  max-height: 72vh;
+}
+.modal-viewport.dragging {
+  cursor: grabbing;
+}
+
+#modal-img {
+  max-width: 100%;
+  max-height: 68vh;
+  object-fit: contain;
+  transition: transform 0.08s linear;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Botones flotantes del visor de imagen */
+.zoom-controls-bar {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.zoom-btn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #1e293b;
+  color: #cbd5e1;
+  font-size: 13px;
+  transition: all 0.15s ease;
+}
+.zoom-btn:hover {
+  background: #334155;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Popups personalizados de Leaflet */
+.leaflet-popup-content-wrapper {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155;
+  border-radius: 14px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4) !important;
+  padding: 0 !important;
+}
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  line-height: 1.4 !important;
+}
+.leaflet-popup-tip {
+  background: #0f172a !important;
+  border: 1px solid #334155;
+}
+.leaflet-container a.leaflet-popup-close-button {
+  color: #94a3b8 !important;
+  padding: 6px 8px 0 0 !important;
+}
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: #ffffff !important;
+}
+
+/* Barras de desplazamiento personalizadas */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Animaciones y utilidades */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 0.4; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+.pulse-circle {
+  animation: pulse-ring 2s infinite ease-in-out;
+}

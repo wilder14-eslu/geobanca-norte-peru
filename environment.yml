@@ -1,0 +1,31 @@
+name: geobanca
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.10,<3.12
+  - pip
+  - pandas>=2.2
+  - numpy>=1.26
+  - geopandas>=1.0
+  - pyogrio>=0.9
+  - shapely>=2.0
+  - rasterio>=1.3
+  - folium>=0.17
+  - matplotlib>=3.8
+  - mapclassify>=2.6
+  - scipy>=1.12
+  - statsmodels>=0.14
+  - scikit-learn>=1.4
+  - coinor-cbc
+  - pip:
+      - libpysal>=4.10
+      - esda>=2.5
+      - spreg>=1.5
+      - mgwr>=2.2
+      - pykrige>=1.7
+      - scikit-gstat>=1.0
+      - pointpats>=2.4
+      - xgboost>=2.0
+      - shap>=0.45
+      - pulp>=2.7
