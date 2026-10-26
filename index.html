@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeoBanca Norte Perú — Caso de Negocio & Analítica Espacial</title>
+  <title>GeoBanca Norte Perú — Optimización Espacial de Canales Financieros y Riesgo Climático</title>
   
-  <!-- Metadatos OpenGraph -->
-  <meta property="og:title" content="GeoBanca Norte Perú: Estrategia de Expansión Bancaria con Analítica Espacial">
-  <meta property="og:description" content="Optimización de 25 puntos estratégicos para beneficiar a 63,643 personas en el Norte del Perú combinando Big Data, Machine Learning y Riesgo Climático FEN.">
+  <meta property="og:title" content="GeoBanca Norte Perú: Expansión de Canales Financieros y Riesgo Climático">
+  <meta property="og:description" content="Análisis integral de estadística espacial, econometría, geoestadística y optimización combinatoria para la localización estratégica de canales en la Macro Región Norte del Perú.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="outputs/figuras/09_matriz_oportunidad_riesgo.png">
   <meta name="author" content="Wilder E. (esluw)">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- MathJax -->
@@ -29,22 +28,17 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            navy: {
-              800: '#111c38',
-              900: '#0a1024',
-              950: '#050814',
-            },
-            fintech: {
+            brand: {
               50: '#ecfdf5',
               100: '#d1fae5',
-              400: '#34d399',
               500: '#10b981',
               600: '#059669',
               700: '#047857',
+              900: '#064e3b',
             }
           }
         }
@@ -57,33 +51,26 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
 
     #reading-progress {
-      position: fixed; top: 0; left: 0; height: 3.5px; z-index: 100;
-      background: linear-gradient(90deg, #10b981, #06b6d4, #6366f1);
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 100;
+      background: linear-gradient(90deg, #059669, #0284c7, #6366f1);
       width: 0%;
-      transition: width 0.15s ease-out;
+      transition: width 0.1s ease-out;
     }
 
-    .exec-card {
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    .report-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .exec-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 32px -10px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.03);
+    .report-card:hover {
+      box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
     }
 
     .zoomable-thumb {
       cursor: zoom-in;
-      transition: transform 0.3s ease, filter 0.3s ease;
+      transition: transform 0.25s ease, filter 0.25s ease;
     }
     .zoomable-thumb:hover {
-      transform: scale(1.02);
-      filter: brightness(1.03);
-    }
-
-    .view-toggle-btn.active {
-      background-color: #0f172a;
-      color: #ffffff;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+      transform: scale(1.015);
+      filter: brightness(1.02);
     }
 
     ::-webkit-scrollbar { width: 7px; height: 7px; }
@@ -95,135 +82,117 @@
 
 <body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900">
 
-  <!-- Barra de progreso superior -->
+  <!-- Indicador de avance de lectura -->
   <div id="reading-progress"></div>
 
-  <!-- ================= TOP BAR & HEADER ================= -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+  <!-- ================= ENCABEZADO INSTITUCIONAL ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
       
-      <!-- Brand & Project Info -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-cyan-600 flex items-center justify-center text-white shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform">
-          <i class="fa-solid fa-map-location-dot text-base"></i>
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-sm">
+          <i class="fa-solid fa-chart-pie text-base"></i>
         </div>
         <div>
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-600">GeoBanca Norte Perú</span>
-            <span class="hidden sm:inline-block text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-semibold border border-slate-200">Executive Brief</span>
-          </div>
-          <h1 class="text-sm font-bold text-slate-900 leading-tight">Expansión Bancaria con Analítica Espacial</h1>
+          <span class="text-[11px] font-extrabold uppercase tracking-widest text-emerald-700">Informe de Inteligencia Espacial</span>
+          <h1 class="text-sm font-bold text-slate-900 leading-tight">GeoBanca Norte Perú</h1>
         </div>
-      </a>
+      </div>
 
-      <!-- Quick Nav Corporativo -->
-      <nav class="flex items-center space-x-6 text-sm font-medium text-slate-600">
-        <a href="#pitch" class="hover:text-emerald-600 transition-colors">El Reto</a>
-        <a href="#mapa-estrategico" class="hover:text-emerald-600 transition-colors">Visor de Mapa</a>
-        <a href="#solucion-6-pasos" class="hover:text-emerald-600 transition-colors">Metodología</a>
-        <a href="#sitios-recomendados" class="hover:text-emerald-600 transition-colors font-semibold text-emerald-700 flex items-center gap-1.5">
-          <i class="fa-solid fa-bullseye text-xs"></i> 25 Puntos Óptimos
+      <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold text-slate-600">
+        <a href="#diagnostico" class="hover:text-emerald-700 transition-colors">Diagnóstico Territorial</a>
+        <a href="#cartografia" class="hover:text-emerald-700 transition-colors">Visor Cartográfico</a>
+        <a href="#fases-metodologicas" class="hover:text-emerald-700 transition-colors">Fases de Modelado</a>
+        <a href="#optimizacion-mclp" class="hover:text-emerald-700 transition-colors text-emerald-700 font-bold flex items-center gap-1.5">
+          <i class="fa-solid fa-bullseye text-xs"></i> Solución MCLP (P=25)
         </a>
-        <a href="#conclusiones" class="hover:text-emerald-600 transition-colors hidden md:inline">Recomendaciones</a>
+        <a href="#recomendaciones" class="hover:text-emerald-700 transition-colors">Recomendaciones</a>
       </nav>
 
     </div>
   </header>
 
-  <!-- ================= HERO EJECUTIVO / PITCH ================= -->
-  <section id="pitch" class="relative overflow-hidden bg-gradient-to-b from-[#0a1024] via-[#0f172a] to-[#1e293b] text-white pt-14 pb-20">
-    <!-- Fondos decorativos -->
-    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]"></div>
-    <div class="absolute -top-32 -right-32 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
-
+  <!-- ================= PORTADA & MARCO CONCEPTUAL ================= -->
+  <section id="diagnostico" class="relative overflow-hidden bg-slate-950 text-white pt-16 pb-20 border-b border-slate-800">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Mini pill superior -->
-      <div class="flex justify-center mb-6">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/15 border border-emerald-500/30 text-emerald-300">
-          <i class="fa-solid fa-briefcase"></i> Caso de Estudio de Impacto Empresarial & Inclusión Financiera
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700 mb-4">
+          <span>Ámbito: 327 distritos · Macro Región Norte del Perú</span>
         </div>
-      </div>
-
-      <!-- Titular comprensible para todo público -->
-      <div class="max-w-4xl mx-auto text-center mb-10">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-5">
-          ¿Si fueras un banco y pudieras abrir <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">25 nuevos puntos</span> en el norte del Perú, dónde los pondrías?
+          Estrategia Geoespacial para la Expansión de Canales Financieros y Mitigación del Riesgo Climático
         </h2>
         <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-normal">
-          Un análisis de <strong>Data Science Espacial</strong> que equilibra dos variables críticas: 
-          <span class="text-emerald-400 font-semibold underline decoration-emerald-500/50 underline-offset-4">atender a donde no hay bancos</span> 
-          sin arriesgar la inversión 
-          <span class="text-cyan-400 font-semibold underline decoration-cyan-500/50 underline-offset-4">donde las lluvias de El Niño lo destruyen todo</span>.
+          Evaluación analítica que integra datos de áreas, econometría espacial, interpolación geoestadística de precipitaciones extremas FEN y optimización combinatoria sobre <strong>7.32 millones de habitantes</strong> en los departamentos de Piura, Lambayeque, La Libertad, Cajamarca y Tumbes.
         </p>
       </div>
 
-      <!-- Tarjeta resumen: La Pregunta de Negocio vs La Respuesta de los Datos -->
-      <div class="max-w-4xl mx-auto bg-slate-900/80 backdrop-blur-md rounded-2xl border border-slate-700/80 p-6 sm:p-8 shadow-2xl mb-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
+      <!-- Cuadro comparativo: Problemática vs Solución -->
+      <div class="max-w-5xl mx-auto bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 mb-12 shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-800">
           
-          <!-- Lado Izquierdo: El Problema de la Vida Real -->
           <div class="space-y-3">
-            <div class="flex items-center gap-2 text-rose-400 font-bold text-xs uppercase tracking-wider">
-              <i class="fa-solid fa-circle-exclamation"></i> El Reto del Negocio
+            <div class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation"></i> Diagnóstico Territorial
             </div>
-            <h3 class="text-xl font-bold text-white">Bancos hacinados en la costa y abandono en la sierra</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              En las capitales como Trujillo o Piura, los bancos se canibalizan abriendo agencias en la misma esquina, mientras en distritos rurales la gente viaja hasta 4 horas para cobrar un sueldo o pensión. Y cuando llega El Niño, muchas inversiones se pierden bajo el agua.
+            <h3 class="text-lg font-bold text-white">Concentración Urbana y Exclusión Financiera Andina</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              La infraestructura bancaria convencional exhibe una elevada aglomeración en los centros metropolitanos costeros (Trujillo, Chiclayo, Piura), mientras las zonas rurales altoandinas de Cajamarca y Piura enfrentan severas barreras de acceso. A este desequilibrio se suma la exposición recurrente a inundaciones provocadas por el Fenómeno El Niño (FEN), que deteriora la capacidad de pago y la operatividad de los puntos físicos.
             </p>
           </div>
 
-          <!-- Lado Derecho: La Solución Encontrada -->
           <div class="pt-6 md:pt-0 md:pl-8 space-y-3">
-            <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider">
-              <i class="fa-solid fa-circle-check"></i> El Hallazgo con Datos
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+              <i class="fa-solid fa-circle-check"></i> Enfoque Analítico Propuesto
             </div>
-            <h3 class="text-xl font-bold text-white">63,643 personas beneficiadas con precisión matemática</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Mediante optimización combinatoria y modelos meteorológicos, encontramos exactamente <strong class="text-white">25 centros poblados estratégicos</strong> que maximizan nuevos clientes evitando zonas vulnerables a inundaciones.
+            <h3 class="text-lg font-bold text-white">Localización Óptima con Restricción Climática</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Mediante la resolución exacta del Problema de Máxima Cobertura con Localización (MCLP) bajo el solver CBC, se identificaron <strong>25 ubicaciones estratégicas</strong> que maximizan la atención de población desatendida (+63,643 adultos) restringiendo la instalación en llanuras de alta inundabilidad histórica calculadas por Kriging.
             </p>
           </div>
 
         </div>
       </div>
 
-      <!-- ================= MÉTRICAS CLAVE EN LENGUAJE SIMPLE ================= -->
+      <!-- Resumen Cuantitativo Consolidado -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 text-center">
-          <div class="text-xs font-semibold text-slate-400">Territorio evaluado</div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-white mt-1">327</div>
-          <div class="text-[11px] text-emerald-400 mt-1 font-medium">Distritos en 5 Dptos.</div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <div class="text-xs font-semibold text-slate-400">Ámbito Distrital</div>
+          <div class="text-2xl font-black text-white mt-1">327</div>
+          <div class="text-[10px] text-slate-500 mt-0.5 font-mono">5 departamentos</div>
         </div>
 
-        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 text-center">
-          <div class="text-xs font-semibold text-slate-400">Población total</div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-white mt-1">7.32 M</div>
-          <div class="text-[11px] text-slate-400 mt-1">5.49M mayores de 18</div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <div class="text-xs font-semibold text-slate-400">Población Total</div>
+          <div class="text-2xl font-black text-white mt-1">7.32 M</div>
+          <div class="text-[10px] text-slate-500 mt-0.5 font-mono">5.49 M adultos (18+)</div>
         </div>
 
-        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 text-center">
-          <div class="text-xs font-semibold text-slate-400">Agentes de barrio</div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 mt-1">70,560</div>
-          <div class="text-[11px] text-slate-400 mt-1">El canal más masivo</div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <div class="text-xs font-semibold text-slate-400">Corresponsales (CNB)</div>
+          <div class="text-2xl font-black text-cyan-400 mt-1">70,560</div>
+          <div class="text-[10px] text-slate-500 mt-0.5 font-mono">Red de mayor capilaridad</div>
         </div>
 
-        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 text-center">
-          <div class="text-xs font-semibold text-slate-400">Cajeros automáticos</div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-white mt-1">4,941</div>
-          <div class="text-[11px] text-slate-400 mt-1">Frente a solo 629 oficinas</div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <div class="text-xs font-semibold text-slate-400">Cajeros Automáticos</div>
+          <div class="text-2xl font-black text-white mt-1">4,941</div>
+          <div class="text-[10px] text-slate-500 mt-0.5 font-mono">629 oficinas activas</div>
         </div>
 
-        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 text-center">
-          <div class="text-xs font-semibold text-slate-400">Desiertos financieros</div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 mt-1">5</div>
-          <div class="text-[11px] text-amber-300 mt-1">Cero puntos bancarios</div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <div class="text-xs font-semibold text-slate-400">Desiertos Financieros</div>
+          <div class="text-2xl font-black text-amber-400 mt-1">5</div>
+          <div class="text-[10px] text-slate-500 mt-0.5 font-mono">0 puntos de atención</div>
         </div>
 
-        <div class="bg-emerald-950/80 border border-emerald-600/50 rounded-2xl p-4 text-center">
-          <div class="text-xs font-semibold text-emerald-300">Puntos óptimos</div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 mt-1">25</div>
-          <div class="text-[11px] text-emerald-200 mt-1 font-bold">+63k personas cubiertas</div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <div class="text-xs font-semibold text-slate-400">Puntos Óptimos MCLP</div>
+          <div class="text-2xl font-black text-emerald-400 mt-1">25</div>
+          <div class="text-[10px] text-emerald-400 mt-0.5 font-mono">+63,643 hab. cubiertos</div>
         </div>
       </div>
 
@@ -231,33 +200,30 @@
   </section>
 
   <!-- ================= VISOR CARTOGRÁFICO INTERACTIVO ================= -->
-  <section id="mapa-estrategico" class="py-16 bg-white border-b border-slate-200">
+  <section id="cartografia" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-6">
         <div>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-cyan-50 text-cyan-700 border border-cyan-200 mb-2">
-            <i class="fa-solid fa-earth-americas"></i> Visor Interactivo en Vivo
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-            Explora el mapa del Norte Peruano
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Cartografía Operativa</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-0.5">
+            Explorador Territorial Interactivo
           </h2>
-          <p class="text-slate-600 text-sm mt-1 max-w-2xl">
-            Toca o haz clic sobre cualquier distrito para ver su población, nivel de acceso a servicios bancarios y riesgo estimado.
+          <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-2xl">
+            Visualizador SIG con consulta de atributos demográficos, oferta de canales y zonificación de riesgo FEN a nivel distrital.
           </p>
         </div>
 
-        <!-- Botones de selección de mapa -->
         <div class="flex flex-wrap items-center gap-2">
           <div class="bg-slate-100 p-1 rounded-xl border border-slate-200 flex flex-wrap gap-1">
-            <button onclick="cambiarMapa('outputs/mapas/05_mapa_principal.html', this)" class="map-tab-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shadow-xs transition">
-              <i class="fa-solid fa-layer-group mr-1 text-emerald-400"></i> Mapa Completo
+            <button onclick="cambiarMapa('outputs/mapas/05_mapa_principal.html', this)" class="map-tab-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white transition">
+              Mapa Multicapa Distrital
             </button>
             <button onclick="cambiarMapa('outputs/mapas/05_desiertos_financieros.html', this)" class="map-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">
-              <i class="fa-solid fa-triangle-exclamation mr-1 text-amber-500"></i> Desiertos Financieros
+              Desiertos Financieros
             </button>
             <button onclick="cambiarMapa('outputs/mapas/05_oferta_osm.html', this)" class="map-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">
-              <i class="fa-solid fa-location-dot mr-1 text-cyan-600"></i> Agencias & Cajeros
+              Red OSM & Puntos
             </button>
           </div>
 
@@ -267,401 +233,253 @@
         </div>
       </div>
 
-      <!-- Contenedor del Mapa iFrame -->
-      <div id="map-wrapper" class="relative w-full h-[580px] bg-slate-900 rounded-3xl overflow-hidden border border-slate-300 shadow-xl">
+      <div id="map-wrapper" class="relative w-full h-[580px] bg-slate-950 rounded-2xl overflow-hidden border border-slate-300 shadow-md">
         <iframe id="map-frame" src="outputs/mapas/05_mapa_principal.html" class="w-full h-full border-0" loading="lazy" title="Mapa Interactivo GeoBanca"></iframe>
         
-        <!-- Tarjeta de ayuda flotante -->
-        <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-slate-200 text-xs text-slate-700 shadow-md flex items-center gap-2 pointer-events-none">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Tip: Puedes hacer zoom con la rueda del ratón y arrastrar el mapa</span>
+        <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-slate-200 text-xs text-slate-700 shadow-sm pointer-events-none">
+          <span class="font-semibold text-slate-900">Consulta de capa:</span> Seleccione cualquier polígono distrital para desplegar su ficha de indicadores.
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ================= SELECTOR DE MODO: EJECUTIVO vs TÉCNICO ================= -->
-  <section class="py-6 bg-slate-100 border-b border-slate-200 sticky top-18 z-30 shadow-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <div class="flex items-center gap-2">
-        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Elige cómo quieres ver la explicación:</span>
-      </div>
-      
-      <div class="inline-flex bg-white p-1 rounded-xl border border-slate-300 shadow-xs">
-        <button id="btn-view-exec" onclick="cambiarVistaModo('exec')" class="view-toggle-btn active px-4 py-1.5 rounded-lg text-xs font-bold flex items-center gap-2 transition">
-          <i class="fa-solid fa-user-tie text-emerald-500"></i>
-          <span>Modo Ejecutivo (Lenguaje de Negocio)</span>
-        </button>
-        <button id="btn-view-tech" onclick="cambiarVistaModo('tech')" class="view-toggle-btn px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 flex items-center gap-2 transition">
-          <i class="fa-solid fa-code text-cyan-600"></i>
-          <span>Modo Técnico (Data Science & Fórmulas)</span>
-        </button>
-      </div>
-    </div>
-  </section>
+  <!-- ================= FASES DE MODELADO ANALÍTICO ================= -->
+  <main id="fases-metodologicas" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
 
-  <!-- ================= LAS 6 FASES EXPLICADAS PASO A PASO ================= -->
-  <main id="solucion-6-pasos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
-
-    <!-- ================= PASO 1: AEDE & AUTOCORRELACIÓN ================= -->
-    <article class="exec-card bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-5">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-black text-base border border-emerald-200">1</div>
-          <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-600">Paso 1: Mapeo del Acceso</span>
-            <h3 class="text-2xl font-black text-slate-900 leading-tight">
-              ¿El desarrollo bancario de un distrito contagia a sus vecinos?
-            </h3>
-          </div>
+    <!-- FASE 1: AEDE & AUTOCORRELACIÓN -->
+    <article class="report-card bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5 border-b border-slate-100 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Fase 1 · Datos de Áreas</span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+            Análisis Exploratorio de Datos Espaciales (AEDE) y Autocorrelación
+          </h3>
         </div>
-        
         <div class="flex items-center gap-2">
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
-            <i class="fa-solid fa-magnet mr-1"></i> Efecto Contagio Detectado
+          <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-slate-100 text-slate-800 border border-slate-200">
+            Moran Global: I = 0.540 (p &lt; 0.001)
           </span>
         </div>
       </div>
 
-      <!-- Contenido en Modo Ejecutivo -->
-      <div class="view-exec space-y-4 mb-6">
-        <div class="bg-emerald-50/70 border border-emerald-200/80 rounded-2xl p-5">
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
-              <i class="fa-regular fa-lightbulb"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
-              <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                Los distritos no viven en islas aisladas. Se descubrió un fuerte <strong>"efecto arrastre"</strong>: si los distritos vecinos tienen muchos bancos y comercios (como en el eje costero Trujillo–Chiclayo–Piura), el distrito también florece. En cambio, en la sierra de Cajamarca y Piura rural ocurre lo contrario: los distritos de bajos ingresos están rodeados de otros distritos desatendidos, atrapados en una <strong>trampa geográfica de exclusión financiera</strong>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        Se evaluó la tasa de puntos de atención por cada 10,000 adultos sobre la matriz de contigüidad Reina de primer orden (\(W\)). El contraste confirma una <strong>autocorrelación espacial positiva estadísticamente significativa</strong>. El análisis local LISA evidencia aglomeraciones Alto-Alto (Hotspots) en el eje costero urbano (Trujillo–Chiclayo–Piura) en contraste con agrupamientos Bajo-Bajo (Coldspots) en las cuencas altoandinas de Cajamarca y las provincias serranas de Piura (Huancabamba y Ayabaca).
+      </p>
 
-      <!-- Contenido en Modo Técnico -->
-      <div class="view-tech hidden space-y-3 mb-6 bg-slate-900 text-slate-200 p-5 rounded-2xl border border-slate-800 font-mono text-xs">
-        <div class="text-emerald-400 font-bold text-sm mb-1 font-sans">Detalle Metodológico (AEDE & Moran):</div>
-        <p>Matriz de pesos de Contigüidad Reina 1er orden estandarizada por filas. Índice de Moran Global: <strong>I = 0.540 (p &lt; 0.001, 999 permutaciones)</strong>. Fuerte autocorrelación espacial positiva. Clusters LISA identifican agrupamientos Alto-Alto (HH) en costa urbana y Bajo-Bajo (LL) en Ayabaca, Huancabamba y Cajamarca rural.</p>
-      </div>
-
-      <!-- Figuras interactivas -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
           <img src="outputs/figuras/03_moran_global.png" alt="Moran Global" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Moran Global (I = 0.540)', 'Demuestra estadísticamente que el acceso financiero está altamente agrupado en el espacio: los distritos con alto acceso se juntan con distritos de alto acceso.')">
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Diagrama de Dispersión de Moran Global', 'I de Moran = 0.540 (p < 0.001). Predominancia de cuadrantes Q1 (Alto-Alto) y Q3 (Bajo-Bajo), evidenciando dependencia espacial.')">
           <div class="text-xs font-bold text-slate-700 mt-2">Diagrama de Moran Global</div>
-          <div class="text-[11px] text-slate-500">Haz clic para agrandar la imagen</div>
+          <div class="text-[11px] text-slate-500 font-mono">Variable: Puntos / 10k adultos (W Reina 1)</div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
           <img src="outputs/figuras/03_lisa_acceso.png" alt="Clusters LISA" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Mapa de Clusters LISA', 'Rojo: Ciudades costeras con alta concentración. Azul: Zonas andinas en abandono financiero crónico.')">
-          <div class="text-xs font-bold text-slate-700 mt-2">Mapa de Clusters LISA (Hotspots y Coldspots)</div>
-          <div class="text-[11px] text-slate-500">Rojo = Zonas de alta oferta · Azul = Zonas desatendidas</div>
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Clusters Espaciales Locales LISA (Anselin)', 'Rojo: Agrupamientos Alto-Alto en eje costero. Azul: Trampa territorial Bajo-Bajo en sierra de Cajamarca y Piura.')">
+          <div class="text-xs font-bold text-slate-700 mt-2">Clusters Locales LISA (Anselin)</div>
+          <div class="text-[11px] text-slate-500 font-mono">Significancia pseudo p &lt; 0.05 (999 perm.)</div>
         </div>
       </div>
     </article>
 
-    <!-- ================= PASO 2: ECONOMETRÍA ESPACIAL ================= -->
-    <article class="exec-card bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-5">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-cyan-50 text-cyan-700 flex items-center justify-center font-black text-base border border-cyan-200">2</div>
-          <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-cyan-600">Paso 2: Modelado Econométrico</span>
-            <h3 class="text-2xl font-black text-slate-900 leading-tight">
-              ¿Por qué los modelos estadísticos tradicionales se equivocan?
-            </h3>
-          </div>
+    <!-- FASE 2: ECONOMETRÍA ESPACIAL -->
+    <article class="report-card bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5 border-b border-slate-100 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-cyan-700">Fase 2 · Modelado Econométrico</span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+            Econometría Espacial: Especificación de Spillovers Territoriales
+          </h3>
         </div>
-        
-        <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-100 text-cyan-800">
-          <i class="fa-solid fa-calculator mr-1"></i> Modelo Durbin Espacial (SDM)
+        <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-slate-100 text-slate-800 border border-slate-200">
+          Mejor Especificación: SDM (AIC: 1648.0)
         </span>
       </div>
 
-      <div class="view-exec space-y-4 mb-6">
-        <div class="bg-cyan-50/70 border border-cyan-200/80 rounded-2xl p-5">
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-xl bg-cyan-600 text-white flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
-              <i class="fa-regular fa-lightbulb"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
-              <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                Una regresión lineal ordinaria asume que lo que pasa en un distrito es independiente de sus vecinos. Al incorporar el <strong>derrame territorial (spillover)</strong> mediante un modelo Durbin Espacial (SDM), se explica un <strong>38.4% de la varianza</strong> y se eliminan los sesgos sistemáticos en las decisiones de inversión.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="view-tech hidden space-y-3 mb-6 bg-slate-900 text-slate-200 p-5 rounded-2xl border border-slate-800 font-mono text-xs">
-        <div class="text-cyan-400 font-bold text-sm mb-1 font-sans">Comparativa Formal de Modelos:</div>
-        <p>El OLS tradicional presenta autocorrelación residual (\(I = 0.214^{***}\), AIC: 1695.6). El SDM minimiza el AIC a <strong>1648.0</strong>, con \(R^2 = 0.384\) y elimina completamente el sesgo espacial en residuos (\(I = 0.001\), no significativo).</p>
-      </div>
+      <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        El modelo de Mínimos Cuadrados Ordinarios (MCO) infringe el supuesto de independencia residual (\(I_{\text{res}} = 0.214^{***}\)). La aplicación de pruebas de Multiplicadores de Lagrange (LM) condujo a la selección del <strong>Modelo Durbin Espacial (SDM)</strong>, el cual minimiza el Criterio de Información de Akaike (AIC: 1648.0), alcanza un \(R^2 = 0.384\) y absorbe en su totalidad la autocorrelación en perturbaciones (\(I_{\text{res}} = 0.001\)). El análisis de impactos revela que la urbanización y la renta de distritos limítrofes generan derrames indirectos positivos sobre el acceso local.
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
-          <img src="outputs/figuras/04_coeficientes.png" alt="Coeficientes e Impactos" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Impactos Directos e Indirectos (SDM)', 'La pobreza reduce fuertemente la apertura de canales, pero la cercanía a un centro urbano vecino reactiva la viabilidad del canal.')">
-          <div class="text-xs font-bold text-slate-700 mt-2">Impactos Directos e Indirectos (Spillovers)</div>
-          <div class="text-[11px] text-slate-500">Muestra cuánto influye el distrito y cuánto influyen los vecinos</div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+          <img src="outputs/figuras/04_coeficientes.png" alt="Impactos Marginales SDM" 
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Impactos Directos, Indirectos y Totales (SDM)', 'Estimación de efectos marginales descompuestos. La pobreza ejerce un efecto directo adverso; el rezago de urbanización compensa favorablemente.')">
+          <div class="text-xs font-bold text-slate-700 mt-2">Impactos Marginales: Directos, Indirectos y Totales</div>
+          <div class="text-[11px] text-slate-500 font-mono">Estimación por Máxima Verosimilitud</div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
-          <img src="outputs/figuras/04_residuos_ols_sem.png" alt="Residuos" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Residuos del Modelo', 'El modelo espacial elimina los errores agrupados que cometía la regresión ordinaria.')">
-          <div class="text-xs font-bold text-slate-700 mt-2">Corrección de Errores: Tradicional vs Espacial</div>
-          <div class="text-[11px] text-slate-500">Comprobación de robustez estadística</div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+          <img src="outputs/figuras/04_residuos_ols_sem.png" alt="Diagnóstico Residual" 
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Diagnóstico de Residuos Espaciales', 'Comparación de la estructura espacial de los residuos entre la especificación estándar y los modelos espaciales.')">
+          <div class="text-xs font-bold text-slate-700 mt-2">Diagnóstico de Perturbaciones: MCO vs. Modelos Espaciales</div>
+          <div class="text-[11px] text-slate-500 font-mono">Verificación de no autocorrelación residual</div>
         </div>
       </div>
     </article>
 
-    <!-- ================= PASO 3: GEOESTADÍSTICA & EL NIÑO ================= -->
-    <article class="exec-card bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-5">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center font-black text-base border border-sky-200">3</div>
-          <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-sky-600">Paso 3: Riesgo Climático FEN</span>
-            <h3 class="text-2xl font-black text-slate-900 leading-tight">
-              ¿Cómo evitar poner un canal donde el agua llega a los 2 metros?
-            </h3>
-          </div>
+    <!-- FASE 3: GEOESTADÍSTICA DE PRECIPITACIONES FEN -->
+    <article class="report-card bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5 border-b border-slate-100 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-700">Fase 3 · Datos Continuos</span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+            Geoestadística: Modelado Continuo del Riesgo Pluviométrico FEN
+          </h3>
         </div>
-        
-        <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-100 text-sky-800">
-          <i class="fa-solid fa-cloud-showers-heavy mr-1"></i> Kriging Ordinario (175 estaciones)
+        <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-slate-100 text-slate-800 border border-slate-200">
+          Red: 175 Estaciones SENAMHI
         </span>
       </div>
 
-      <div class="view-exec space-y-4 mb-6">
-        <div class="bg-sky-50/70 border border-sky-200/80 rounded-2xl p-5">
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-xl bg-sky-600 text-white flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
-              <i class="fa-regular fa-lightbulb"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
-              <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                El Fenómeno El Niño (1998, 2017, 2023) genera graves daños a la infraestructura comercial. Mediante <strong>Geoestadística (Kriging Ordinario)</strong> sobre 175 estaciones pluviométricas del SENAMHI, se reconstruyó un campo continuo de precipitación extrema que <strong>redujo el error en más de 23%</strong> respecto a interpolaciones convencionales (IDW), mapeando con precisión los distritos en zona de riesgo.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="view-tech hidden space-y-3 mb-6 bg-slate-900 text-slate-200 p-5 rounded-2xl border border-slate-800 font-mono text-xs">
-        <div class="text-sky-400 font-bold text-sm mb-1 font-sans">Geoestadística y Kriging:</div>
-        <p>Ajuste de semivariograma teórico (Esférico/Exponencial) por WLS. Rango espacial: ~140 km. Validación cruzada Leave-One-Out (LOO) para Marzo 1998: IDW (RMSE 94.7 mm) vs Kriging Ordinario (RMSE <strong>72.5 mm</strong>) vs Kriging con Deriva Externa DEM (74.1 mm).</p>
-      </div>
+      <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        Se modeló la superficie continua de precipitación extrema acumulada correspondiente a los eventos FEN históricos (marzo 1998, 2017 y 2023). El semivariograma teórico ajustado por Mínimos Cuadrados Ponderados (WLS) determinó un rango de dependencia espacial de ~140 km. La validación cruzada Leave-One-Out (LOO) demostró que el <strong>Kriging Ordinario (RMSE: 72.5 mm)</strong> reduce el error de estimación en más de un 23% frente a métodos determinísticos convencionales (IDW RMSE: 94.7 mm), permitiendo caracterizar con rigurosidad las áreas de alta vulnerabilidad física en el bajo Piura y Tumbes.
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
-          <img src="outputs/figuras/06_semivariograma.png" alt="Semivariograma" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Semivariograma de Lluvias FEN', 'Muestra cómo la correlación de lluvias disminuye con la distancia hasta los 140 kilómetros de alcance.')">
-          <div class="text-xs font-bold text-slate-700 mt-2">Semivariograma Teórico Ajustado</div>
-          <div class="text-[11px] text-slate-500">Mide la correlación espacial del clima</div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+          <img src="outputs/figuras/06_semivariograma.png" alt="Ajuste Semivariograma" 
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Ajuste del Semivariograma Teórico (WLS)', 'Modelos Esférico y Exponencial ajustados sobre la red meteorológica con rango de dependencia pluviométrica de ~140 km.')">
+          <div class="text-xs font-bold text-slate-700 mt-2">Semivariograma Teórico Experimental y Teórico</div>
+          <div class="text-[11px] text-slate-500 font-mono">Ajuste WLS sobre datos SENAMHI / CHIRPS</div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
-          <img src="outputs/figuras/06_kriging_1998.png" alt="Kriging 1998" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Interpolación Kriging (El Niño 1998)', 'Epicentro rojo en el bajo Piura y Tumbes con acumulaciones de más de 500 mm en un mes.')">
-          <div class="text-xs font-bold text-slate-700 mt-2">Superficie de Predicción Kriging (El Niño 1998)</div>
-          <div class="text-[11px] text-slate-500">Rojo = Zonas de riesgo extremo de inundación</div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+          <img src="outputs/figuras/06_kriging_1998.png" alt="Kriging Ordinario 1998" 
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Superficie Kriging Ordinario (Marzo 1998)', 'Predicción espacial óptima BLUE que delimita el núcleo crítico (>500 mm/mes) en la costa norte.')">
+          <div class="text-xs font-bold text-slate-700 mt-2">Superficie de Predicción Kriging Ordinario (FEN 1998)</div>
+          <div class="text-[11px] text-slate-500 font-mono">Estimador Lineal Insesgado Óptimo (BLUE)</div>
         </div>
       </div>
     </article>
 
-    <!-- ================= PASO 4: PROCESOS PUNTUALES ================= -->
-    <article class="exec-card bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-5">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center font-black text-base border border-amber-200">4</div>
-          <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600">Paso 4: Patrones Puntuales</span>
-            <h3 class="text-2xl font-black text-slate-900 leading-tight">
-              La paradoja bancaria: ¿Por qué todos compiten en la misma esquina?
-            </h3>
-          </div>
+    <!-- FASE 4: PROCESOS PUNTUALES ESPACIALES -->
+    <article class="report-card bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5 border-b border-slate-100 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700">Fase 4 · Patrones Puntuales</span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+            Procesos Puntuales Espaciales y Aglomeración Competitiva
+          </h3>
         </div>
-        
-        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">
-          <i class="fa-solid fa-shapes mr-1"></i> Clark-Evans R = 0.41 (Clustering)
+        <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-slate-100 text-slate-800 border border-slate-200">
+          Clark-Evans: R = 0.41 (p &lt; 0.001)
         </span>
       </div>
 
-      <div class="view-exec space-y-4 mb-6">
-        <div class="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-5">
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-xl bg-amber-600 text-white flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
-              <i class="fa-regular fa-lightbulb"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
-              <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                Al cruzar 14,481 centros poblados con las ubicaciones de cajeros y sucursales, los datos comprueban una <strong>aglomeración excesiva</strong> en los centros metropolitanos (ej. centro histórico de Trujillo y Chiclayo) mientras la periferia norte y las zonas rurales carecen de canales básicos. Esto evidencia una oportunidad desaprovechada de expansión hacia mercados cautivos.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="view-tech hidden space-y-3 mb-6 bg-slate-900 text-slate-200 p-5 rounded-2xl border border-slate-800 font-mono text-xs">
-        <div class="text-amber-400 font-bold text-sm mb-1 font-sans">Estadística de Procesos Puntuales:</div>
-        <p>Test de Clark-Evans con R = 0.41 (p &lt; 0.001), rechazando la Completa Aleatoriedad Espacial (CSR). La función K inhomogénea de Ripley supera las envolventes de simulación de Monte Carlo a distancias menores a 5 km, probando atracción competitiva.</p>
-      </div>
+      <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        Se evaluó la estructura espacial de los puntos de atención georreferenciados (OpenStreetMap) frente al universo de 14,481 centros poblados del INEI. El estadístico de Clark-Evans (\(R = 0.41\)) rechaza de forma concluyente la hipótesis de Completa Aleatoriedad Espacial (CSR). La función \(K\) inhomogénea de Ripley confirma que la banca tradicional y los cajeros automáticos operan bajo dinámicas de <strong>aglomeración y competencia espacial en un radio inferior a 5 km</strong>, generando vacíos significativos de atención en zonas periurbanas consolidadas.
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
           <img src="outputs/figuras/07_kernel_trujillo.png" alt="Densidad Kernel Trujillo" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Densidad Kernel en Trujillo Metropolitano', 'Hiperconcentración en el centro histórico y desatención flagrante en distritos populosos como La Esperanza y El Porvenir.')">
-          <div class="text-xs font-bold text-slate-700 mt-2">Densidad Kernel 2D en Trujillo</div>
-          <div class="text-[11px] text-slate-500">Muestra los puntos calientes de competencia y vacíos</div>
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Estimación de Densidad Kernel 2D (Trujillo)', 'Concentración hipertrofiada en el centro histórico frente a déficit relativo en distritos periféricos populosos.')">
+          <div class="text-xs font-bold text-slate-700 mt-2">Densidad Kernel 2D de Canales en Trujillo Metropolitano</div>
+          <div class="text-[11px] text-slate-500 font-mono">Análisis de intensidad espacial bivariada</div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
-          <img src="outputs/figuras/07_k_inhomogenea.png" alt="Ripley K Inhomogénea" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Función K Inhomogénea de Ripley', 'La línea real queda muy por encima de las simulaciones, evidenciando aglomeración fuerte.')">
-          <div class="text-xs font-bold text-slate-700 mt-2">Función K Inhomogénea de Ripley</div>
-          <div class="text-[11px] text-slate-500">Prueba científica de aglomeración de bancos</div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+          <img src="outputs/figuras/07_k_inhomogenea.png" alt="Función K Inhomogénea" 
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Función K Inhomogénea de Ripley', 'La trayectoria empírica rebasa las bandas de Monte Carlo, evidenciando interacción y atracción espacial.')">
+          <div class="text-xs font-bold text-slate-700 mt-2">Función K Inhomogénea de Ripley con Envolventes</div>
+          <div class="text-[11px] text-slate-500 font-mono">Simulación de Monte Carlo bajo Poisson No Homogéneo</div>
         </div>
       </div>
     </article>
 
-    <!-- ================= PASO 5: MACHINE LEARNING ESPACIAL ================= -->
-    <article class="exec-card bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-5">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-purple-50 text-purple-700 flex items-center justify-center font-black text-base border border-purple-200">5</div>
-          <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-purple-600">Paso 5: Inteligencia Artificial Espacio-Temporal</span>
-            <h3 class="text-2xl font-black text-slate-900 leading-tight">
-              ¿Cómo predice el modelo el potencial de inclusión financiera a 10 años?
-            </h3>
-          </div>
+    <!-- FASE 5: ML ESPACIO-TEMPORAL -->
+    <article class="report-card bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5 border-b border-slate-100 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-purple-700">Fase 5 · Aprendizaje Automático</span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+            Dinámica Espacio-Temporal y Aprendizaje Automático (ML)
+          </h3>
         </div>
-        
-        <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-800">
-          <i class="fa-solid fa-brain mr-1"></i> Random Forest + Block-CV + SHAP
+        <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-slate-100 text-slate-800 border border-slate-200">
+          Spatial Block-CV: R² = 0.332
         </span>
       </div>
 
-      <div class="view-exec space-y-4 mb-6">
-        <div class="bg-purple-50/70 border border-purple-200/80 rounded-2xl p-5">
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-xl bg-purple-600 text-white flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
-              <i class="fa-regular fa-lightbulb"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 text-sm">Resumen Ejecutivo:</h4>
-              <p class="text-slate-700 text-sm leading-relaxed mt-1">
-                Con base en un panel oficial de 10 años de la SBS (2017 a 2026), se entrenó un Random Forest con <strong>validación espacial por bloques</strong>. El análisis de importancia SHAP confirma que la tasa de urbanización vecina amortigua el efecto negativo de la altitud y la pobreza, triplicando la probabilidad de que una localidad suba de categoría de acceso si sus distritos limítrofes cuentan con servicios activos.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="view-tech hidden space-y-3 mb-6 bg-slate-900 text-slate-200 p-5 rounded-2xl border border-slate-800 font-mono text-xs">
-        <div class="text-purple-400 font-bold text-sm mb-1 font-sans">Markov Espacial & Machine Learning:</div>
-        <p>Cadenas de Markov Espaciales con matriz de transición condicionada por el entorno territorial. Random Forest Espacial (\(R^2 = 0.332\) en Spatial Block CV de 5 folds). Feature importance explicada con árboles SHAP TreeExplainer.</p>
-      </div>
+      <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        Se procesó el panel de datos distritales de la SBS (10 cortes temporales entre 2017 y 2026). La matriz de <strong>Markov Espacial</strong> demuestra que la probabilidad de transición hacia estratos superiores de acceso se multiplica por tres cuando el entorno vecinal es de alta oferta. Para predecir el acceso potencial, se entrenó un Random Forest con <strong>validación cruzada por bloques espaciales (Spatial Block-CV)</strong> a fin de mitigar el sobreajuste por autocorrelación. Los valores SHAP revelan la ponderación relativa de la orografía, la pobreza monetaria y los retardos espaciales del entorno.
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
-          <img src="outputs/figuras/08_markov_espacial.png" alt="Markov Espacial" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Matrices de Transición de Markov Espacial', 'Demuestra que estar rodeado de vecinos con alta oferta triplica la probabilidad de subir de categoría de inclusión financiera.')">
-          <div class="text-xs font-bold text-slate-700 mt-2">Cadenas de Markov Espaciales</div>
-          <div class="text-[11px] text-slate-500">Mide la probabilidad de ascenso financiero intertemporal</div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+          <img src="outputs/figuras/08_markov_espacial.png" alt="Cadenas de Markov Espaciales" 
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Matrices de Transición de Markov Espacial', 'Condicionamiento territorial intertemporal: el rezago espacial incrementa significativamente las probabilidades de movilidad ascendente.')">
+          <div class="text-xs font-bold text-slate-700 mt-2">Matrices de Transición de Cadenas de Markov Espaciales</div>
+          <div class="text-[11px] text-slate-500 font-mono">Panel SBS 2017–2026 (10 periodos)</div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center">
-          <img src="outputs/figuras/08_shap_acceso_potencial.png" alt="SHAP Values" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Valores SHAP del Modelo', 'Muestra el peso relativo de cada variable (altitud, urbanismo, pobreza, distritos vecinos) sobre la viabilidad del punto.')">
-          <div class="text-xs font-bold text-slate-700 mt-2">Explicabilidad con Valores SHAP</div>
-          <div class="text-[11px] text-slate-500">Desglosa qué factores pesan más en la decisión</div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+          <img src="outputs/figuras/08_shap_acceso_potencial.png" alt="Valores SHAP" 
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Importancia de Variables según Valores SHAP', 'Descomposición del aporte de covariables biofísicas, socioeconómicas y espaciales sobre la predicción.')">
+          <div class="text-xs font-bold text-slate-700 mt-2">Explicabilidad Global del Modelo Mediante Valores SHAP</div>
+          <div class="text-[11px] text-slate-500 font-mono">Algoritmo TreeExplainer sobre Random Forest</div>
         </div>
       </div>
     </article>
 
-    <!-- ================= PASO 6: DECISIÓN MCLP & RESULTADOS ================= -->
-    <article id="sitios-recomendados" class="exec-card bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-emerald-500/30">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 border-b border-slate-700 pb-5">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-emerald-500 text-slate-950 flex items-center justify-center font-black text-base shadow-lg shadow-emerald-500/30">6</div>
-          <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-400">Paso 6: La Decisión Final</span>
-            <h3 class="text-2xl font-black text-white leading-tight">
-              Los 25 Puntos Estratégicos: Impacto Máximo y Riesgo Mínimo
-            </h3>
-          </div>
+    <!-- FASE 6: OPTIMIZACIÓN MCLP -->
+    <article id="optimizacion-mclp" class="report-card bg-slate-900 text-white rounded-2xl border border-slate-800 p-6 sm:p-8 shadow-md">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Fase 6 · Optimización Combinatoria</span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+            Problema de Máxima Cobertura con Localización (MCLP Exacto)
+          </h3>
         </div>
-        
-        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
-          <i class="fa-solid fa-bullseye mr-1"></i> Optimización Exacta (CBC Solver)
+        <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">
+          Solver: CBC (Branch-and-Cut)
         </span>
       </div>
 
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 mb-8">
-        <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-0.5">
-            <i class="fa-solid fa-check"></i>
-          </div>
-          <div>
-            <h4 class="font-bold text-white text-sm">El Retorno de la Decisión Territorial:</h4>
-            <p class="text-slate-300 text-sm leading-relaxed mt-1">
-              Resolviendo el <strong>Problema de Máxima Cobertura con Localización (MCLP)</strong>, estos <strong>25 puntos óptimos</strong> alcanzan una cobertura directa de <strong class="text-emerald-400">63,643 personas adultas</strong> en poblados sin servicio bancario previo, evitando las llanuras de inundación de Piura y Tumbes.
-            </p>
-          </div>
-        </div>
-      </div>
+      <p class="text-slate-300 text-sm leading-relaxed mb-6">
+        Se formuló un problema de Programación Entera Mixta (MIP) para determinar la ubicación óptima de \(P = 25\) canales financieros sobre el conjunto de centros poblados elegibles, maximizando la población adulta cubierta en un radio de servicio establecido y penalizando la ubicación en zonas de alto riesgo de anegamiento por FEN. La solución exacta mediante el solver CBC alcanza una <strong>cobertura del 27.42% de la demanda no atendida en el norte, equivalente a 63,643 adultos</strong>.
+      </p>
 
-      <!-- Gráficos de soporte MCLP -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <div class="bg-slate-950/70 border border-slate-700 rounded-2xl p-4 text-center">
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-center">
           <img src="outputs/figuras/09_matriz_oportunidad_riesgo.png" alt="Matriz Oportunidad vs Riesgo" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Matriz Oportunidad × Riesgo Climático', 'Cuadrante I: Alta necesidad de bancos con bajo riesgo climático. Los candidatos perfectos para inversión.')">
-          <div class="text-xs font-bold text-emerald-300 mt-2">Matriz de Decisión: Oportunidad vs Riesgo</div>
-          <div class="text-[11px] text-slate-400">Cuadrante seguro de expansión</div>
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Matriz Oportunidad × Riesgo Climático', 'Clasificación de unidades territoriales en 4 cuadrantes según brecha de acceso y nivel de exposición pluviométrica.')">
+          <div class="text-xs font-bold text-emerald-300 mt-2">Matriz de Decisión: Oportunidad vs. Riesgo Climático</div>
+          <div class="text-[11px] text-slate-500 font-mono">Priorización de cuadrantes de inversión segura</div>
         </div>
 
-        <div class="bg-slate-950/70 border border-slate-700 rounded-2xl p-4 text-center">
-          <img src="outputs/figuras/09_mclp_cobertura.png" alt="Curva MCLP" 
-               class="w-full h-56 object-contain rounded-xl zoomable-thumb mx-auto"
-               onclick="openModal(this.src, 'Curva de Cobertura Poblacional', 'Muestra cómo con solo 25 puntos estratégicos se cubre más del 27% de toda la población desatendida del norte.')">
-          <div class="text-xs font-bold text-cyan-300 mt-2">Curva de Cobertura Poblacional Acumulada</div>
-          <div class="text-[11px] text-slate-400">Retorno marginal de cada nuevo canal</div>
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-center">
+          <img src="outputs/figuras/09_mclp_cobertura.png" alt="Curva de Cobertura MCLP" 
+               class="w-full h-56 object-contain rounded-lg zoomable-thumb mx-auto"
+               onclick="openModal(this.src, 'Curva de Cobertura Acumulada según Número de Sitios P', 'Comparación entre solver exacto Branch-and-Cut (CBC) frente a heurística voraz (Greedy).')">
+          <div class="text-xs font-bold text-cyan-300 mt-2">Curva de Cobertura Poblacional Acumulada por Puntos P</div>
+          <div class="text-[11px] text-slate-500 font-mono">Evaluación de rendimientos marginales de cobertura</div>
         </div>
       </div>
 
-      <!-- ================= TABLA INTERACTIVA DE LOS 25 PUNTOS ================= -->
-      <div class="bg-slate-950 rounded-2xl border border-slate-800 p-5 overflow-hidden">
+      <!-- TABLA OFICIAL DE RESULTADOS MCLP -->
+      <div class="bg-slate-950 rounded-xl border border-slate-800 p-5 overflow-hidden">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
-            <h4 class="text-sm font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-list-check text-emerald-400"></i> Tabla de Sitios Seleccionados por el Algoritmo
-            </h4>
-            <p class="text-xs text-slate-400">Filtrable por Departamento o Tipo de Estrategia recomendada</p>
+            <h4 class="text-sm font-bold text-white">Relación de Sitios Óptimos Seleccionados (P = 25)</h4>
+            <p class="text-xs text-slate-400">Coordenadas, volumen de demanda en radio y tipología estratégica de canal</p>
           </div>
 
           <div class="flex items-center gap-2">
-            <select id="filtro-depto" onchange="filtrarTablaMCLP()" class="bg-slate-800 border border-slate-700 text-xs text-slate-200 rounded-lg px-3 py-1.5 focus:outline-none focus:border-emerald-500">
+            <select id="filtro-depto" onchange="filtrarTablaMCLP()" class="bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-3 py-1.5 focus:outline-none focus:border-emerald-500 font-mono">
               <option value="TODOS">Todos los Departamentos</option>
               <option value="CAJAMARCA">Cajamarca</option>
               <option value="PIURA">Piura</option>
@@ -673,19 +491,18 @@
 
         <div class="overflow-x-auto max-h-96">
           <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-slate-900 text-slate-400 uppercase tracking-wider font-semibold sticky top-0 border-b border-slate-800">
+            <thead class="bg-slate-900 text-slate-400 uppercase tracking-wider font-semibold sticky top-0 border-b border-slate-800 font-mono text-[11px]">
               <tr>
                 <th class="py-2.5 px-3">#</th>
                 <th class="py-2.5 px-3">Centro Poblado</th>
                 <th class="py-2.5 px-3">Distrito / Provincia</th>
                 <th class="py-2.5 px-3">Dpto.</th>
-                <th class="py-2.5 px-3 text-right">Demanda Cercana</th>
+                <th class="py-2.5 px-3 text-right">Demanda en Radio</th>
                 <th class="py-2.5 px-3 text-center">Riesgo FEN</th>
-                <th class="py-2.5 px-3">Estrategia Recomendada</th>
+                <th class="py-2.5 px-3">Tipología Estratégica</th>
               </tr>
             </thead>
             <tbody id="mclp-table-body" class="divide-y divide-slate-800/60 font-sans">
-              <!-- Se llena dinámicamente con JavaScript -->
             </tbody>
           </table>
         </div>
@@ -695,65 +512,51 @@
 
   </main>
 
-  <!-- ================= SECCIÓN: CONCLUSIONES Y RECOMENDACIONES DE NEGOCIO ================= -->
-  <section id="conclusiones" class="bg-white border-t border-slate-200 py-16">
+  <!-- ================= RECOMENDACIONES ESTRATÉGICAS ================= -->
+  <section id="recomendaciones" class="bg-white border-t border-slate-200 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mb-12">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 mb-3">
-          <i class="fa-solid fa-chart-line"></i> Recomendaciones Estratégicas
-        </div>
-        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-          Implicancias para la Banca y la Inclusión Financiera
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Síntesis para la Toma de Decisiones</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-0.5">
+          Implicancias para la Gestión de Inclusión Financiera
         </h2>
-        <p class="text-slate-600 text-sm mt-2 leading-relaxed">
-          Cuatro directrices basadas en evidencia empírica para optimizar el despliegue de infraestructura financiera en el norte peruano.
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          Lineamientos de política pública y despliegue corporativo derivados de la evidencia analítica integrada.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Recomendación 1 -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm mb-4">
-            01
-          </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+          <div class="text-xs font-mono font-bold text-slate-400 mb-2">LINEAMIENTO 01</div>
           <h3 class="font-bold text-slate-900 text-sm mb-2">Estrategia Dual de Canales</h3>
           <p class="text-slate-600 text-xs leading-relaxed">
-            Diferenciar entre <strong>canales físicos tradicionales</strong> en valles interandinos protegidos (riesgo FEN &lt; 45%) y <strong>canales digitales o móviles</strong> en zonas expuestas a desbordes.
+            Asignar infraestructura física estándar únicamente en localidades con riesgo FEN controlado (&lt; 45%), canalizando alternativas digitales o agentes resilientes en áreas de alta exposición pluvial.
           </p>
         </div>
 
-        <!-- Recomendación 2 -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-sm mb-4">
-            02
-          </div>
-          <h3 class="font-bold text-slate-900 text-sm mb-2">Capilaridad vs. Sucursal</h3>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+          <div class="text-xs font-mono font-bold text-slate-400 mb-2">LINEAMIENTO 02</div>
+          <h3 class="font-bold text-slate-900 text-sm mb-2">Eficiencia del Corresponsal</h3>
           <p class="text-slate-600 text-xs leading-relaxed">
-            Con 70,560 corresponsales frente a 629 oficinas, el agente de barrio es el canal con mayor eficiencia de costo de instalación y menor tiempo de amortización en zonas periurbanas.
+            La capilaridad de los 70,560 corresponsales no bancarios confirma que el canal de bajo costo operativo representa la alternativa más viable para el cierre de brechas en centros poblados rurales intermedios.
           </p>
         </div>
 
-        <!-- Recomendación 3 -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm mb-4">
-            03
-          </div>
-          <h3 class="font-bold text-slate-900 text-sm mb-2">Atención a Desiertos</h3>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+          <div class="text-xs font-mono font-bold text-slate-400 mb-2">LINEAMIENTO 03</div>
+          <h3 class="font-bold text-slate-900 text-sm mb-2">Intervención en Desiertos</h3>
           <p class="text-slate-600 text-xs leading-relaxed">
-            Los 5 distritos con cero cobertura representan una falla de mercado que requiere incentivos regulatorios (ej. banca estatal o alianzas público-privadas) para romper el aislamiento.
+            Los 5 distritos con nula cobertura financiera requieren esquemas de colaboración entre la banca estatal (Banco de la Nación) y programas sociales para superar las fallas de mercado observadas.
           </p>
         </div>
 
-        <!-- Recomendación 4 -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm mb-4">
-            04
-          </div>
-          <h3 class="font-bold text-slate-900 text-sm mb-2">Eficiencia de Cobertura</h3>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+          <div class="text-xs font-mono font-bold text-slate-400 mb-2">LINEAMIENTO 04</div>
+          <h3 class="font-bold text-slate-900 text-sm mb-2">Rendimiento de Cobertura</h3>
           <p class="text-slate-600 text-xs leading-relaxed">
-            Instalar solo 25 puntos óptimos bajo el modelo MCLP cubre más del 27% de toda la población en demanda insatisfecha de la macro región, maximizando el impacto por sol invertido.
+            La solución de optimización matemática demuestra que con únicamente 25 puntos se cubre el 27.42% de la población desatendida total, garantizando la máxima rentabilidad social de la inversión.
           </p>
         </div>
 
@@ -762,7 +565,7 @@
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ================= PIE DE PÁGINA ================= -->
   <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-center">
       <div class="flex flex-wrap justify-center items-center gap-4 text-slate-300 font-medium">
@@ -778,39 +581,38 @@
         Fuentes Oficiales: Superintendencia de Banca, Seguros y AFP (SBS), INEI (Censo Nacional 2025), SENAMHI, CHIRPS Satelital y OpenStreetMap.
       </div>
       <div class="text-slate-600">
-        Procesamiento y modelado espacial reproducible en Python (PySAL, GeoPandas, GSTools, Scikit-Learn y PuLP/CBC).
+        Marco analítico reproducible desarrollado en Python con librerías PySAL, GeoPandas, GSTools, Scikit-Learn y PuLP/CBC.
       </div>
     </div>
   </footer>
 
-  <!-- ================= MODAL DE ZOOM DE IMÁGENES ================= -->
+  <!-- ================= MODAL DE ZOOM DE FIGURAS ================= -->
   <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeModal()">
-    <div class="relative max-w-5xl w-full bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl p-5" onclick="event.stopPropagation()">
+    <div class="relative max-w-5xl w-full bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden shadow-2xl p-5" onclick="event.stopPropagation()">
       <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
         <div>
           <h4 id="modal-title" class="text-base font-bold text-white">Título de la Figura</h4>
-          <p id="modal-desc" class="text-xs text-slate-400 mt-0.5">Descripción de la figura</p>
+          <p id="modal-desc" class="text-xs text-slate-400 mt-0.5">Descripción analítica</p>
         </div>
-        <button onclick="closeModal()" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition">
+        <button onclick="closeModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
       
-      <div class="flex items-center justify-center bg-slate-950 rounded-2xl p-2 max-h-[75vh] overflow-auto">
-        <img id="modal-img" src="" alt="Ampliación" class="max-w-full max-h-[70vh] object-contain rounded-xl">
+      <div class="flex items-center justify-center bg-slate-950 rounded-xl p-2 max-h-[75vh] overflow-auto">
+        <img id="modal-img" src="" alt="Ampliación" class="max-w-full max-h-[70vh] object-contain rounded-lg">
       </div>
 
       <div class="mt-4 flex justify-end">
-        <button onclick="closeModal()" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white transition">
+        <button onclick="closeModal()" class="px-5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white transition">
           Cerrar (Esc)
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ================= DATOS Y SCRIPTS DE INTERACTIVIDAD ================= -->
+  <!-- ================= SCRIPTS ================= -->
   <script>
-    // Datos reales de los 25 sitios MCLP extraídos del modelo
     const SITIOS_MCLP = [
       { id: 1, ccpp: "SHAULLO GRANDE", distrito: "LLACANORA", prov: "CAJAMARCA", dpto: "CAJAMARCA", demanda: 5061, riesgo: "38%", estrategia: "Prioridad: canal físico", badge: "bg-emerald-100 text-emerald-800" },
       { id: 2, ccpp: "CHUNGAYO", distrito: "SANTO DOMINGO", prov: "MORROPON", dpto: "PIURA", demanda: 4170, riesgo: "93%", estrategia: "Prioridad: canal resiliente", badge: "bg-amber-100 text-amber-800" },
@@ -848,12 +650,12 @@
         tr.innerHTML = `
           <td class="py-2.5 px-3 font-mono text-slate-500">${item.id}</td>
           <td class="py-2.5 px-3 font-bold text-white">${item.ccpp}</td>
-          <td class="py-2.5 px-3 text-slate-300">${item.distrito} <span class="text-slate-500">(${item.prov})</span></td>
-          <td class="py-2.5 px-3 font-semibold text-emerald-400">${item.dpto}</td>
+          <td class="py-2.5 px-3 text-slate-300">${item.distrito} <span class="text-slate-500 font-mono text-[10px]">(${item.prov})</span></td>
+          <td class="py-2.5 px-3 font-semibold text-emerald-400 font-mono">${item.dpto}</td>
           <td class="py-2.5 px-3 text-right font-mono font-bold text-white">${item.demanda.toLocaleString()} hab.</td>
           <td class="py-2.5 px-3 text-center font-mono ${parseInt(item.riesgo) > 70 ? 'text-rose-400' : 'text-emerald-400'}">${item.riesgo}</td>
           <td class="py-2.5 px-3">
-            <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold ${item.badge}">
+            <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold ${item.badge}">
               ${item.estrategia}
             </span>
           </td>
@@ -872,32 +674,13 @@
       }
     }
 
-    function cambiarVistaModo(modo) {
-      const execBtn = document.getElementById('btn-view-exec');
-      const techBtn = document.getElementById('btn-view-tech');
-      const execElements = document.querySelectorAll('.view-exec');
-      const techElements = document.querySelectorAll('.view-tech');
-
-      if (modo === 'exec') {
-        execBtn.classList.add('active');
-        techBtn.classList.remove('active');
-        execElements.forEach(el => el.classList.remove('hidden'));
-        techElements.forEach(el => el.classList.add('hidden'));
-      } else {
-        techBtn.classList.add('active');
-        execBtn.classList.remove('active');
-        techElements.forEach(el => el.classList.remove('hidden'));
-        execElements.forEach(el => el.classList.add('hidden'));
-      }
-    }
-
     function cambiarMapa(url, btnElement) {
       document.getElementById('map-frame').src = url;
       document.querySelectorAll('.map-tab-btn').forEach(b => {
-        b.classList.remove('bg-slate-900', 'text-white', 'shadow-xs');
+        b.classList.remove('bg-slate-900', 'text-white');
         b.classList.add('text-slate-600');
       });
-      btnElement.classList.add('bg-slate-900', 'text-white', 'shadow-xs');
+      btnElement.classList.add('bg-slate-900', 'text-white');
       btnElement.classList.remove('text-slate-600');
     }
 
