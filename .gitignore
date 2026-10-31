@@ -27,3 +27,8 @@ venv/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Notas internas de trabajo (solo locales)
+CONTEXTO_PROYECTO.md
+CONTEXTO.md
+docs/arquitectura.md
