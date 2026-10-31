@@ -1,658 +1,303 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeoBanca Norte Perú | Póster Científico de Estadística Espacial</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- MathJax for Mathematical Formulas -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f0fdf4',
-              100: '#dcfce7',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-              900: '#064e3b',
-            },
-            spatial: {
-              dark: '#0a0f1d',
-              card: '#111827',
-              cardHover: '#1f2937',
-              border: '#374151',
-              accent: '#38bdf8'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    /* Custom scrollbar and modal transitions */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0b1120;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1f2937;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #374151;
-    }
-    .poster-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .poster-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
-    }
-    .img-zoom {
-      cursor: zoom-in;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-    .img-zoom:hover {
-      opacity: 0.92;
-      transform: scale(1.01);
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GeoBanca Norte · Póster de investigación</title>
+  <meta name="description" content="Póster interactivo: brechas espaciales de acceso a canales financieros y ubicación óptima de nuevos canales en la Macro Región Norte del Perú, con datos de SBS, INEI y SENAMHI.">
+  <link rel="preload" href="assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/vendor/maplibre-gl-4.7.1.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-[#0b1120] text-slate-200 font-sans min-h-screen antialiased selection:bg-emerald-500 selection:text-white">
+<body>
+  <a class="skip" href="#resumen">Saltar al resumen</a>
 
-  <!-- ================= TOP NAVIGATION / ACTION BAR ================= -->
-  <header class="sticky top-0 z-40 bg-[#0b1120]/90 backdrop-blur-md border-b border-slate-800">
-    <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
-          <i class="fa-solid fa-map-location-dot text-lg"></i>
-        </div>
-        <div>
-          <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Estadística Espacial Aplicada</span>
-          <h1 class="text-lg font-bold text-white leading-none">GeoBanca Norte Perú</h1>
-        </div>
+  <div class="poster">
+    <!-- Cabecera del póster -->
+    <header class="poster-head">
+      <div class="head-title">
+        <h1>Brechas espaciales de acceso financiero y ubicación óptima de nuevos canales en el norte del Perú</h1>
+        <p class="subtitle">Un análisis con econometría espacial, geoestadística del Fenómeno El Niño y optimización de cobertura</p>
       </div>
-
-      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
-        <a href="#kpis" class="hover:text-emerald-400 transition-colors">Ámbito</a>
-        <a href="#aede" class="hover:text-emerald-400 transition-colors">AEDE & LISA</a>
-        <a href="#modelos" class="hover:text-emerald-400 transition-colors">Econometría Espacial</a>
-        <a href="#geoestadistica" class="hover:text-emerald-400 transition-colors">Geoestadística</a>
-        <a href="#procesos-puntuales" class="hover:text-emerald-400 transition-colors">Patrones Puntuales</a>
-        <a href="#visor-mapa" class="hover:text-emerald-400 text-cyan-400 flex items-center gap-1.5 transition-colors">
-          <i class="fa-solid fa-earth-americas"></i> Visor Interactivo
-        </a>
-        <a href="#optimizacion" class="hover:text-emerald-400 transition-colors">Decisión MCLP</a>
-      </nav>
-
-      <div class="flex items-center space-x-3">
-        <a href="https://github.com/wilder14-eslu/geobanca-norte-peru" target="_blank" 
-           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white border border-slate-700 shadow-sm transition">
-          <i class="fa-brands fa-github text-sm"></i>
-          <span>Código & Repo</span>
-        </a>
-        <button onclick="window.print()" title="Imprimir o guardar PDF del póster"
-                class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-semibold text-white shadow-sm transition">
-          <i class="fa-solid fa-file-pdf"></i>
-          <span>Imprimir / PDF</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ================= HERO HEADER DEL PÓSTER ================= -->
-  <section class="relative overflow-hidden pt-8 pb-10 border-b border-slate-800/80 bg-gradient-to-b from-slate-900 to-[#0b1120]">
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]"></div>
-    
-    <div class="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-4xl mx-auto mb-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 mb-3">
-          <i class="fa-solid fa-award"></i> Proyecto Final de Estadística Espacial & Geoestadística
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          Oportunidad y Riesgo Territorial para la Expansión de Canales Financieros en el Norte del Perú
-        </h2>
-        <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-          Análisis integral de <span class="text-emerald-400 font-semibold">datos de áreas (AEDE, SAR/SEM, Durbin)</span>, 
-          <span class="text-cyan-400 font-semibold">geoestadística de lluvias extremas El Niño (Kriging)</span>, 
-          <span class="text-amber-400 font-semibold">procesos puntuales espaciales (K/L inhomogénea)</span> y 
-          <span class="text-purple-400 font-semibold">optimización combinatoria (MCLP exacto)</span> sobre 327 distritos.
+      <div class="head-meta">
+        <p class="author">Wilder Espinoza Luna</p>
+        <p>Escuela Profesional de Estadística<br>Universidad Nacional Mayor de San Marcos</p>
+        <p class="head-links">
+          <a href="https://github.com/wilder14-eslu/geobanca-norte-peru">Repositorio y notebooks</a>
+          <button id="print-btn" class="text-btn" type="button">Imprimir o guardar en PDF</button>
         </p>
-        
-        <div class="mt-4 flex flex-wrap justify-center items-center gap-3 text-xs text-slate-400">
-          <span class="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1 rounded-md border border-slate-700">
-            <i class="fa-solid fa-compass text-emerald-400"></i> Proyección Oficial: <strong>EPSG:32717 (UTM 17S)</strong>
-          </span>
-          <span class="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1 rounded-md border border-slate-700">
-            <i class="fa-solid fa-building-columns text-cyan-400"></i> Fuentes: <strong>SBS, INEI (Censo 2025), SENAMHI, CHIRPS, OSM</strong>
-          </span>
-          <span class="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1 rounded-md border border-slate-700">
-            <i class="fa-solid fa-code text-purple-400"></i> Stack: <strong>PySAL (esda, spreg, pointpats), GSTools, Scikit-Learn, CBC</strong>
-          </span>
-        </div>
+      </div>
+    </header>
+
+    <main class="poster-body">
+      <!-- Columna izquierda: resumen, introducción, método -->
+      <div class="col col-intro">
+        <section id="resumen" class="block">
+          <h2>Resumen</h2>
+          <p>
+            Se analizó el acceso a canales financieros en <span data-k="distritos"></span> distritos de Tumbes, Piura, Lambayeque,
+            La Libertad y Cajamarca, con <span data-k="adultos"></span> adultos y <span data-k="puntos_atencion"></span> puntos de
+            atención registrados por la SBS. El acceso presenta autocorrelación espacial positiva (I de Moran = <span data-k="moran"></span>,
+            p = <span data-k="moran_p"></span>) y <span data-k="lisa_ll"></span> desiertos financieros concentrados en la sierra.
+            El modelo de Durbin espacial obtuvo el mejor ajuste (AIC = <span data-k="sdm_aic"></span>): la pobreza reduce el acceso y la
+            urbanización lo aumenta. El kriging ordinario redujo el error de interpolación de la lluvia extrema frente a IDW en los tres
+            eventos de El Niño. <span data-k="distritos_desatendidos"></span> distritos tienen menos acceso del esperado, con
+            <span data-k="adultos_desatendidos"></span> adultos desatendidos; la mayor parte del déficit es urbano. Para la población
+            rural, 25 canales ubicados por máxima cobertura alcanzan al <span data-k="mclp25"></span> de la demanda a 5 km o menos.
+          </p>
+          <p class="keywords"><strong>Palabras clave:</strong> inclusión financiera, autocorrelación espacial, modelo de Durbin, kriging, MCLP.</p>
+        </section>
+
+        <section class="block">
+          <h2>Introducción</h2>
+          <p>
+            La red de canales financieros del norte del Perú creció rápido en la última década, sobre todo por los agentes
+            corresponsales. Sin embargo, la oferta se instala donde ya hay demanda urbana, y los episodios de El Niño de 1998,
+            2017 y 2023 interrumpieron el acceso justo en las zonas más vulnerables.
+          </p>
+          <p class="question">¿Dónde falta acceso, qué lo explica y dónde conviene abrir nuevos canales considerando el riesgo climático?</p>
+          <h3>Objetivos</h3>
+          <ol class="objectives">
+            <li>Medir y mapear el acceso distrital y su dependencia espacial.</li>
+            <li>Estimar sus determinantes con modelos econométricos espaciales.</li>
+            <li>Modelar la lluvia extrema de El Niño y construir un índice de exposición.</li>
+            <li>Proponer la ubicación óptima de nuevos canales.</li>
+          </ol>
+        </section>
+
+        <section class="block">
+          <h2>Método</h2>
+          <ol class="pipeline">
+            <li><strong>Integración de datos.</strong> Cruce por ubigeo de SBS, Censo 2025, Mapa de Pobreza 2018, SENAMHI, CHIRPS, DEM Copernicus y OpenStreetMap.</li>
+            <li><strong>Análisis exploratorio espacial.</strong> Tasas por 10 mil adultos suavizadas por Bayes empírico; I de Moran, LISA y Getis-Ord con contigüidad Reina.</li>
+            <li><strong>Econometría espacial.</strong> OLS, SAR, SEM y SDM, elegidos con pruebas de multiplicadores de Lagrange y AIC.</li>
+            <li><strong>Geoestadística.</strong> Semivariograma, kriging ordinario y con deriva externa, validados contra IDW por validación cruzada.</li>
+            <li><strong>Patrones y dinámica.</strong> Procesos puntuales (Clark-Evans, K de Ripley), Markov espacial y Random Forest con validación cruzada espacial.</li>
+            <li><strong>Optimización.</strong> Problema de máxima cobertura (MCLP) resuelto de forma exacta con CBC, con escenario ajustado por riesgo.</li>
+          </ol>
+          <table class="data-table compact" aria-label="Datos del estudio">
+            <caption>Tabla 1. Unidades de análisis</caption>
+            <tbody id="table-units"></tbody>
+          </table>
+        </section>
+
+        <section id="diagnostico" class="block result">
+          <h2>Resultados</h2>
+          <h3>Hay oferta, pero mal repartida</h3>
+          <p>
+            El ámbito tiene <strong data-k="puntos_x10k_adultos"></strong> puntos por 10 mil adultos, pero la mediana distrital es
+            <strong data-k="mediana_distrital_x10k"></strong>. <strong data-k="sin_cajero"></strong> distritos no tienen cajero automático,
+            <strong data-k="sin_oficina"></strong> no tienen oficina y <strong data-k="sin_punto_atencion"></strong> no tienen ningún canal.
+            Hay <strong data-k="lisa_hh"></strong> distritos Alto-Alto en la costa de Piura y Tumbes y <strong data-k="lisa_ll"></strong> Bajo-Bajo en la sierra.
+          </p>
+          <figure>
+            <div id="chart-dep" class="chart"></div>
+            <figcaption>Figura 2. Mediana del acceso suavizado por departamento (puntos por 10 mil adultos).</figcaption>
+          </figure>
+        </section>
       </div>
 
-      <!-- ================= KPI STRIP ================= -->
-      <div id="kpis" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
-        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center shadow-sm">
-          <div class="text-2xl font-black text-white">327</div>
-          <div class="text-xs text-slate-400 font-medium">Distritos en 5 Deptos</div>
-          <div class="text-[10px] text-emerald-400 mt-1">PIU, LAM, LIB, CAJ, TUM</div>
+      <!-- Figura central: mapa 3D -->
+      <section class="block block-map" aria-labelledby="map-title">
+        <div class="map-head">
+          <h3 id="map-title">Explora el territorio en 3D</h3>
+          <p class="map-help">Arrastra para mover; usa clic derecho, Ctrl + arrastrar o dos dedos para rotar e inclinar. Haz clic en un distrito para ver su ficha.</p>
         </div>
-        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center shadow-sm">
-          <div class="text-2xl font-black text-emerald-400">7.32 M</div>
-          <div class="text-xs text-slate-400 font-medium">Población Total</div>
-          <div class="text-[10px] text-slate-400 mt-1">5.49 M adultos (18+)</div>
-        </div>
-        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center shadow-sm">
-          <div class="text-2xl font-black text-cyan-400">70,560</div>
-          <div class="text-xs text-slate-400 font-medium">Agentes Corresponsales</div>
-          <div class="text-[10px] text-slate-400 mt-1">Canal con mayor capilaridad</div>
-        </div>
-        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center shadow-sm">
-          <div class="text-2xl font-black text-blue-400">4,941</div>
-          <div class="text-xs text-slate-400 font-medium">Cajeros Automáticos</div>
-          <div class="text-[10px] text-slate-400 mt-1">629 Oficinas Bancarias</div>
-        </div>
-        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center shadow-sm">
-          <div class="text-2xl font-black text-amber-400">5</div>
-          <div class="text-xs text-slate-400 font-medium">Desiertos Financieros</div>
-          <div class="text-[10px] text-amber-400 mt-1">0 puntos en todo el distrito</div>
-        </div>
-        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center shadow-sm">
-          <div class="text-2xl font-black text-purple-400">P = 25</div>
-          <div class="text-xs text-slate-400 font-medium">Puntos Óptimos MCLP</div>
-          <div class="text-[10px] text-purple-400 mt-1">+63,643 personas cubiertas</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CUERPO PRINCIPAL DEL PÓSTER (GRID DE 3 COLUMNAS) ================= -->
-  <main class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-      <!-- ================= COLUMNA 1: DATOS DE ÁREAS & MODELOS ESPACIALES ================= -->
-      <div class="space-y-6">
-
-        <!-- PANEL 1: AEDE & AUTOCORRELACIÓN ESPACIAL -->
-        <article id="aede" class="poster-card bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-lg">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">1</span>
-              <h3 class="text-base font-bold text-white">AEDE & Autocorrelación Espacial</h3>
+        <div class="map-frame">
+          <div id="map" class="map" role="application" aria-label="Mapa 3D de distritos"></div>
+          <div class="map-controls">
+            <fieldset>
+              <legend>Color</legend>
+              <div id="color-options" class="seg"></div>
+            </fieldset>
+            <fieldset>
+              <legend>Altura</legend>
+              <div id="height-options" class="seg"></div>
+            </fieldset>
+            <label class="check"><input id="toggle-sites" type="checkbox" checked> <span>Sitios propuestos (MCLP, 25)</span></label>
+            <div id="legend" class="legend" aria-live="polite"></div>
+            <label class="search">
+              <span>Buscar distrito</span>
+              <input id="search" type="search" list="district-list" placeholder="Ej.: Alto Trujillo" autocomplete="off">
+              <datalist id="district-list"></datalist>
+            </label>
+            <p id="search-msg" class="search-msg" role="status"></p>
+            <div class="view-btns">
+              <button type="button" data-view="3d">Vista 3D</button>
+              <button type="button" data-view="2d">Vista cenital</button>
             </div>
-            <span class="text-[11px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono border border-emerald-800">I de Moran: 0.540***</span>
           </div>
+          <div id="card" class="card" aria-live="polite" hidden></div>
+          <p id="map-fallback" class="map-fallback" hidden></p>
+        </div>
+        <p class="caption">Figura 1. Distritos de la Macro Región Norte. El color y la altura muestran la métrica elegida; las columnas ocres son los 25 sitios del modelo de máxima cobertura (su altura es la demanda en un radio de 5 km).</p>
+      </section>
 
-          <p class="text-xs text-slate-300 leading-relaxed mb-3">
-            Se evaluó la tasa de puntos de atención por cada 10,000 adultos. La matriz de pesos espaciales de contigüidad Reina de 1er orden (\(W_{\text{reina}}\)) evidencia una fuerte autocorrelación espacial positiva global con pseudo \(p < 0.001\) (999 permutaciones).
+      <!-- Resultados en dos columnas -->
+      <div class="col col-res-a">
+
+        <section id="evolucion" class="block result">
+          <h3>La red se triplicó y luego se ajustó</h3>
+          <p>
+            Los canales pasaron de <strong data-k="panel_first"></strong> (<span data-k="panel_first_label"></span>) a
+            <strong data-k="panel_max"></strong> (<span data-k="panel_max_label"></span>) y bajaron a <strong data-k="panel_2025"></strong>
+            en diciembre de 2025. La caída de 2024 ocurre en los cinco departamentos a la vez: una consolidación de corresponsales en todo
+            el sistema. La segregación no cambió: el I de Moran anual se mantuvo entre 0,20 y 0,24.
           </p>
+          <figure>
+            <div id="chart-panel" class="chart"></div>
+            <figcaption>Figura 3. Canales de atención por departamento (cajeros, corresponsales y EOB), cortes SBS.</figcaption>
+          </figure>
+        </section>
 
-          <!-- Figura: Moran Global & LISA -->
-          <div class="grid grid-cols-2 gap-2 mb-3">
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/03_moran_global.png" alt="Diagrama de Dispersión de Moran" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Diagrama de Dispersión de Moran Global', 'I de Moran = 0.540 (p < 0.001). Cuadrantes Q1 (Alto-Alto) y Q3 (Bajo-Bajo) dominan el patrón espacial del acceso financiero.')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">Moran Global</span>
-            </div>
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/03_lisa_acceso.png" alt="Mapa de Clusters LISA Acceso" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Clusters Espaciales Locales LISA (Anselin)', 'Hotspots (Alto-Alto) consolidados en la costa urbana (Trujillo, Chiclayo, Piura) frente a Coldspots (Bajo-Bajo) en la sierra andina de Cajamarca y Piura.')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">Clusters LISA</span>
-            </div>
-          </div>
-
-          <!-- Hallazgos LISA -->
-          <div class="bg-slate-950/60 rounded-lg p-3 border border-slate-800/80 text-xs space-y-1.5">
-            <div class="flex items-start gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-red-500 mt-0.5 flex-shrink-0"></span>
-              <span><strong>Hotspots (Alto-Alto):</strong> Eje costero Trujillo–Chiclayo–Piura concentra alta oferta y spillover positivo interdistrital.</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-blue-500 mt-0.5 flex-shrink-0"></span>
-              <span><strong>Coldspots (Bajo-Bajo):</strong> Sierra de Huancabamba, Ayabaca y Cajamarca rural en trampa de baja densidad de canales.</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- PANEL 2: ECONOMETRÍA ESPACIAL -->
-        <article id="modelos" class="poster-card bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-lg">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">2</span>
-              <h3 class="text-base font-bold text-white">Econometría Espacial: OLS \(\to\) SDM</h3>
-            </div>
-            <span class="text-[11px] px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 font-mono border border-cyan-800">Mejor: SDM (AIC: 1648.0)</span>
-          </div>
-
-          <p class="text-xs text-slate-300 leading-relaxed mb-3">
-            El modelo estándar MCO viola el supuesto de independencia (\(I_{\text{residuos}} = 0.214***\)). Las pruebas de Multiplicadores de Lagrange (LM) guiaron hacia la especificación de Durbin Espacial (SDM) que neutraliza la autocorrelación de residuos (\(I_{\text{residuos}} = 0.001\)).
+        <section id="determinantes" class="block result">
+          <h3>Pobreza, urbanización y entorno</h3>
+          <p>
+            El OLS deja residuos autocorrelacionados (I = <span data-k="ols_moran"></span>). Las pruebas LM robustas favorecen el SEM;
+            el SDM logra el menor AIC y muestra que una ciudad grande concentra la oferta en desmedro de sus vecinos.
           </p>
-
-          <!-- Tabla comparativa de especificaciones -->
-          <div class="overflow-x-auto rounded-lg border border-slate-800 mb-3">
-            <table class="w-full text-left text-[11px] text-slate-300">
-              <thead class="bg-slate-950 text-slate-400 font-semibold border-b border-slate-800">
-                <tr>
-                  <th class="p-2">Modelo</th>
-                  <th class="p-2">AIC</th>
-                  <th class="p-2">\(R^2\) pseudo</th>
-                  <th class="p-2">Moran Res.</th>
-                  <th class="p-2">Parámetro</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800/60 bg-slate-950/40 font-mono">
-                <tr class="text-slate-400">
-                  <td class="p-2 font-sans">OLS (MCO)</td>
-                  <td class="p-2">1695.6</td>
-                  <td class="p-2">0.233</td>
-                  <td class="p-2 text-amber-400">0.214***</td>
-                  <td class="p-2">—</td>
-                </tr>
-                <tr>
-                  <td class="p-2 font-sans">SAR (ML)</td>
-                  <td class="p-2">1680.3</td>
-                  <td class="p-2">0.286</td>
-                  <td class="p-2">0.045</td>
-                  <td class="p-2">\(\rho = 0.298***\)</td>
-                </tr>
-                <tr>
-                  <td class="p-2 font-sans">SEM (ML)</td>
-                  <td class="p-2">1661.7</td>
-                  <td class="p-2">0.231</td>
-                  <td class="p-2">-0.016</td>
-                  <td class="p-2">\(\lambda = 0.452***\)</td>
-                </tr>
-                <tr class="bg-emerald-950/40 text-emerald-300 font-semibold">
-                  <td class="p-2 font-sans flex items-center gap-1">SDM (ML) <i class="fa-solid fa-check text-[10px]"></i></td>
-                  <td class="p-2">1648.0</td>
-                  <td class="p-2">0.384</td>
-                  <td class="p-2 text-emerald-400">0.001 (ns)</td>
-                  <td class="p-2">\(\rho = 0.427***\)</td>
-                </tr>
-              </tbody>
+          <div class="table-scroll">
+            <table id="table-models" class="data-table">
+              <caption>Tabla 2. Modelos estimados por máxima verosimilitud. Respuesta: raíz del acceso suavizado.</caption>
             </table>
           </div>
+          <p class="fig-note">Coeficientes de pobreza 2018 (%), población urbana (%) y altitud (km). I res.: I de Moran de los residuos. *** p &lt; 0,01; ** p &lt; 0,05; * p &lt; 0,1.</p>
+        </section>
 
-          <!-- Coeficientes Gráfica -->
-          <div class="relative group bg-slate-950 rounded-lg p-2 border border-slate-800">
-            <img src="outputs/figuras/04_coeficientes.png" alt="Coeficientes e Impactos Espaciales" 
-                 class="w-full h-36 object-contain rounded img-zoom" 
-                 onclick="openModal(this.src, 'Efectos Directos, Indirectos y Totales (SDM)', 'La pobreza distrital ejerce un fuerte impacto directo negativo sobre la oferta de canales, mientras que el rezago espacial de la población urbana genera derrames positivos intermunicipales significativos.')">
-            <div class="text-[10px] text-slate-400 text-center mt-1">Efectos marginales directos e indirectos (SDM)</div>
-          </div>
-        </article>
-
-      </div>
-
-
-      <!-- ================= COLUMNA 2: GEOESTADÍSTICA (RIESGO EL NIÑO) & PROCESOS PUNTUALES ================= -->
-      <div class="space-y-6">
-
-        <!-- PANEL 3: GEOESTADÍSTICA DE LLUVIAS EXTREMAS -->
-        <article id="geoestadistica" class="poster-card bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-lg">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs">3</span>
-              <h3 class="text-base font-bold text-white">Geoestadística: Riesgo El Niño (FEN)</h3>
-            </div>
-            <span class="text-[11px] px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 font-mono border border-cyan-800">175 Estaciones SENAMHI</span>
-          </div>
-
-          <p class="text-xs text-slate-300 leading-relaxed mb-3">
-            Para evaluar el riesgo de crédito y operatividad, se modeló el campo continuo de precipitación máxima histórica (eventos extremos marzo 1998, 2017 y 2023). Se ajustó un semivariograma teórico por Mínimos Cuadrados Ponderados (WLS).
+        <section id="modelo" class="block result">
+          <h3>Qué se puede predecir</h3>
+          <p>
+            Con validación cruzada espacial, el Random Forest con rezagos espaciales y posición alcanza R² = <strong data-k="ml_best_r2"></strong>.
+            El cambio anual de cada distrito no es predecible: ningún modelo supera a la persistencia (RMSE <span data-k="persist_rmse"></span>
+            frente a <span data-k="rf_rmse"></span>).
           </p>
+          <figure>
+            <div id="chart-ml" class="chart"></div>
+            <figcaption>Figura 7. R² en validación cruzada espacial por modelo y conjunto de variables.</figcaption>
+          </figure>
+        </section>
+      </div>
 
-          <div class="grid grid-cols-2 gap-2 mb-3">
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/06_semivariograma.png" alt="Semivariograma de Precipitación" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Ajuste de Semivariograma Teórico (WLS)', 'Modelos Esférico y Exponencial ajustados sobre la red pluviométrica del SENAMHI. Rango espacial estimado de ~140 km con efecto pepita atribuible a microclimas andinos.')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">Semivariograma</span>
-            </div>
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/06_kriging_1998.png" alt="Kriging Ordinario 1998" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Interpolación Kriging Ordinario (FEN 1998)', 'Superficie de predicción óptima BLUE y mapa de varianza de estimación. Muestra el núcleo crítico de acumulación pluvial (>500 mm/mes) en el bajo Piura y Tumbes.')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">Kriging Ordinario</span>
-            </div>
-          </div>
-
-          <!-- Validación cruzada LOO -->
-          <div class="bg-slate-950/60 rounded-lg p-3 border border-slate-800 text-xs">
-            <div class="flex justify-between items-center text-[11px] mb-1">
-              <span class="font-semibold text-slate-300">Validación Leave-One-Out (LOO) - Marzo 1998:</span>
-              <span class="text-emerald-400 font-mono font-bold">Kriging supera a IDW</span>
-            </div>
-            <div class="grid grid-cols-3 gap-2 text-center font-mono text-[10px] pt-1">
-              <div class="bg-slate-900 p-1.5 rounded border border-slate-800">
-                <div class="text-slate-400">IDW RMSE</div>
-                <div class="text-amber-400 font-bold">94.7 mm</div>
-              </div>
-              <div class="bg-slate-900 p-1.5 rounded border border-slate-800">
-                <div class="text-slate-400">Kriging Ord.</div>
-                <div class="text-emerald-400 font-bold">72.5 mm</div>
-              </div>
-              <div class="bg-slate-900 p-1.5 rounded border border-slate-800">
-                <div class="text-slate-400">Krig. Deriva Ext.</div>
-                <div class="text-cyan-400 font-bold">74.1 mm</div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- PANEL 4: PROCESOS PUNTUALES ESPACIALES -->
-        <article id="procesos-puntuales" class="poster-card bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-lg">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">4</span>
-              <h3 class="text-base font-bold text-white">Procesos Puntuales Espaciales</h3>
-            </div>
-            <span class="text-[11px] px-2 py-0.5 rounded bg-amber-950 text-amber-300 font-mono border border-amber-800">R de Clark-Evans = 0.41***</span>
-          </div>
-
-          <p class="text-xs text-slate-300 leading-relaxed mb-3">
-            Se analizó la distribución puntual de la infraestructura financiera (cajeros y agencias OSM) frente a 14,481 centros poblados. La hipótesis de Completa Aleatoriedad Espacial (CSR) fue rechazada contundentemente a favor de un patrón agrupado (clustering).
+      <div class="col col-res-b">
+        <section id="clima" class="block result">
+          <h3>Dónde golpea El Niño</h3>
+          <p>
+            El kriging ordinario predice la lluvia extrema mejor que IDW en los tres eventos; IDW suaviza los máximos. Los distritos más
+            expuestos están en Tumbes y en la sierra de Piura.
           </p>
+          <figure>
+            <div id="chart-krig" class="chart"></div>
+            <figcaption>Figura 4. Error de validación cruzada dejando uno fuera (RMSE, mm) por método y evento.</figcaption>
+          </figure>
+          <ol id="list-expo" class="rank-list" aria-label="Distritos más expuestos"></ol>
+        </section>
 
-          <div class="grid grid-cols-2 gap-2 mb-3">
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/07_kernel_trujillo.png" alt="Kernel de Densidad en Trujillo" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Densidad Kernel 2D de Canales en Trujillo', 'Estimación de intensidad espacial en el continuo urbano de Trujillo. Muestra hiperconcentración en el centro histórico y severa escasez en la periferia norte (La Esperanza/El Porvenir).')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">Kernel Trujillo</span>
-            </div>
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/07_k_inhomogenea.png" alt="Función K inhomogénea de Ripley" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Función K Inhomogénea de Ripley con Envolventes', 'La curva empírica sobrepasa las envolventes de simulación de Monte Carlo bajo proceso de Poisson no homogéneo, confirmando interacción y atracción mutua entre puntos a escalas cortas (<5 km).')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">Ripley K & L</span>
-            </div>
-          </div>
-
-          <div class="text-[11px] text-slate-300 bg-slate-950/60 p-2.5 rounded border border-slate-800 flex items-center gap-2">
-            <i class="fa-solid fa-circle-exclamation text-amber-400"></i>
-            <span><strong>Conclusión:</strong> Los bancos y cajeros compiten aglomerándose en los mismos nodos comerciales, dejando vacíos de atención a cortas distancias.</span>
-          </div>
-        </article>
-
-      </div>
-
-
-      <!-- ================= COLUMNA 3: ESPACIO-TIEMPO, ML & DECISIÓN MCLP ================= -->
-      <div class="space-y-6">
-
-        <!-- PANEL 5: ESPACIO-TIEMPO & MACHINE LEARNING -->
-        <article id="ml" class="poster-card bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-lg">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-xs">5</span>
-              <h3 class="text-base font-bold text-white">Espacio-Tiempo & ML Espacial</h3>
-            </div>
-            <span class="text-[11px] px-2 py-0.5 rounded bg-purple-950 text-purple-300 font-mono border border-purple-800">Panel SBS 2017–2026</span>
-          </div>
-
-          <p class="text-xs text-slate-300 leading-relaxed mb-3">
-            Se modeló la dinámica espacio-temporal mediante matrices de Markov Espacial y modelos de ensamble con <strong>Validación Cruzada por Bloques Espaciales</strong> (Spatial Block-CV) para evitar sobreajuste por dependencia espacial.
+        <section id="decision" class="block result">
+          <h3>Dos déficits distintos</h3>
+          <p>
+            <strong data-k="distritos_desatendidos"></strong> distritos tienen menos acceso del esperado por su estructura. Faltan unos
+            <strong data-k="canales_faltantes"></strong> canales, de los cuales <strong data-k="canales_urbanos_faltantes"></strong> son urbanos:
+            siete distritos explican <strong data-k="top7_share"></strong> del déficit. En la ciudad falta capacidad; en el campo, cercanía.
           </p>
-
-          <div class="grid grid-cols-2 gap-2 mb-3">
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/08_markov_espacial.png" alt="Cadenas de Markov Espaciales" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Matrices de Transición de Markov Espacial', 'La probabilidad de que un distrito salte de bajo a alto acceso se triplica si sus distritos vecinos son de alto acceso (efecto arrastre territorial).')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">Markov Espacial</span>
-            </div>
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/08_shap_acceso_potencial.png" alt="Valores SHAP del Modelo Random Forest" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Explicabilidad Global con SHAP Values', 'Importancia de covariables sobre el acceso esperado: Altitud y pobreza restringen severamente la oferta; la tasa de urbanización vecina (Lag W) actúa como amortiguador positivo.')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">SHAP Values</span>
-            </div>
-          </div>
-
-          <div class="text-xs text-slate-300 bg-slate-950/60 p-2.5 rounded border border-slate-800">
-            <strong>Random Forest Espacial:</strong> Logró un \(R^2 = 0.332\) en CV espacial (frente a 0.200 de XGBoost) al incorporar rezagos \(WX\) y coordenadas proyectadas.
-          </div>
-        </article>
-
-        <!-- PANEL 6: MATRIZ DE DECISIÓN & OPTIMIZACIÓN MCLP -->
-        <article id="optimizacion" class="poster-card bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-lg border-emerald-500/30">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-lg bg-emerald-500 text-slate-950 flex items-center justify-center font-bold text-xs">6</span>
-              <h3 class="text-base font-bold text-white">Decisión Territorial & Optimización MCLP</h3>
-            </div>
-            <span class="text-[11px] px-2 py-0.5 rounded bg-emerald-900 text-emerald-200 font-mono border border-emerald-700">Solución CBC Exacta</span>
-          </div>
-
-          <p class="text-xs text-slate-300 leading-relaxed mb-3">
-            Se cruzó la <strong>Oportunidad</strong> (brecha de acceso insatisfecha) con el <strong>Riesgo Climático</strong> (exposición a lluvias FEN interpoladas) para priorizar distritos. Luego se resolvió el <strong>Problema de Máxima Cobertura con Localización (MCLP)</strong>.
+          <figure>
+            <div id="chart-urban" class="chart"></div>
+            <figcaption>Figura 5. Canales urbanos faltantes, diez distritos con mayor déficit.</figcaption>
+          </figure>
+          <p>
+            Para los <strong data-k="adultos_rurales_desatendidos"></strong> adultos rurales desatendidos, el MCLP cubre
+            <strong data-k="mclp25"></strong> con 25 canales y <strong data-k="mclp50"></strong> con 50. La heurística voraz queda a menos de un
+            punto del óptimo exacto.
           </p>
+          <figure>
+            <div id="chart-mclp" class="chart"></div>
+            <figcaption>Figura 6. Cobertura de adultos rurales desatendidos a 5 km o menos según el número de canales.</figcaption>
+          </figure>
+        </section>
 
-          <div class="grid grid-cols-2 gap-2 mb-3">
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/09_matriz_oportunidad_riesgo.png" alt="Matriz Oportunidad vs Riesgo" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Matriz Oportunidad × Riesgo Climático', 'Cuadrante I (Alta Oportunidad / Bajo Riesgo) contiene los distritos prioritarios para expansión inmediata (ej. valles interandinos y zonas costeras protegidas).')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">Matriz Decisión</span>
+      </div>
+
+      <!-- Franja inferior: matriz y sitios -->
+      <section class="block block-wide" aria-labelledby="sites-title">
+        <div class="wide-grid">
+          <div>
+            <h3 id="matrix-title">El riesgo decide el tipo de canal</h3>
+            <p>
+              Cada distrito desatendido se ubica por su oportunidad y su exposición a lluvia extrema. Con riesgo bajo conviene un canal
+              físico; con riesgo alto, uno que tolere interrupciones, como agentes con respaldo digital.
+            </p>
+            <figure>
+              <div id="chart-matrix" class="chart chart-square"></div>
+              <figcaption>Figura 8. Matriz oportunidad por riesgo de los distritos desatendidos (percentiles). Tamaño: adultos desatendidos.</figcaption>
+            </figure>
+          </div>
+          <div>
+            <div class="sites-head">
+              <h3 id="sites-title">Los 25 sitios propuestos</h3>
+              <label class="check"><input id="filter-robust" type="checkbox"> <span>Solo los que se mantienen con riesgo</span></label>
             </div>
-            <div class="relative group bg-slate-950 rounded-lg p-1.5 border border-slate-800">
-              <img src="outputs/figuras/09_mclp_cobertura.png" alt="Curva de Cobertura MCLP" 
-                   class="w-full h-36 object-contain rounded img-zoom" 
-                   onclick="openModal(this.src, 'Curva de Cobertura de Población según Número de Puntos P', 'Comparación entre solver exacto Branch-and-Cut (CBC) frente a heurística voraz (Greedy). Para P=25, se alcanza 27.42% de cobertura de la población desatendida.')">
-              <span class="absolute bottom-2 left-2 text-[10px] bg-black/70 text-slate-300 px-1.5 py-0.5 rounded">Curva MCLP</span>
+            <div class="table-scroll sites-scroll">
+              <table id="table-sites" class="data-table sites-table">
+                <caption>Tabla 3. Solución exacta del MCLP con P = 25 y radio de 5 km. Selecciona una fila para ubicarla en el mapa.</caption>
+              </table>
             </div>
           </div>
-
-          <!-- Recomendación final de política -->
-          <div class="bg-gradient-to-r from-emerald-950/60 to-slate-950 p-3 rounded-lg border border-emerald-500/40 text-xs">
-            <div class="font-bold text-emerald-300 mb-1 flex items-center gap-1.5">
-              <i class="fa-solid fa-bullseye"></i> Hallazgo Clave para Expansión Financiera:
-            </div>
-            <div class="text-slate-300 leading-relaxed">
-              Instalar <strong>25 agentes estratégicos</strong> seleccionados por el modelo cubre a <strong>63,643 adultos</strong> en localidades desatendidas, esquivando las llanuras de inundación de Piura y Tumbes.
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-
-    <!-- ================= SECCIÓN CENTRAL: VISOR CARTOGRÁFICO INTERACTIVO EN VIVO ================= -->
-    <section id="visor-mapa" class="mt-8 bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800">
-        <div>
-          <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-1">
-            <i class="fa-solid fa-satellite"></i> Visualizador Cartográfico Interactivo en Tiempo Real
-          </div>
-          <h3 class="text-2xl font-black text-white">Explorador Espacial de la Macro Región Norte</h3>
-          <p class="text-xs text-slate-400 mt-0.5">Explora las capas distritales, haz zoom a las provincias y visualiza fichas por distrito directamente durante la sustentación.</p>
         </div>
+      </section>
 
-        <!-- Botones de cambio de mapa -->
-        <div class="flex flex-wrap items-center gap-2">
-          <div class="inline-flex rounded-xl bg-slate-950 p-1 border border-slate-800">
-            <button onclick="cambiarMapa('outputs/mapas/05_mapa_principal.html', this)" 
-                    class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white shadow-sm transition">
-              <i class="fa-solid fa-layer-group mr-1.5"></i> Mapa Principal Multicapa
-            </button>
-            <button onclick="cambiarMapa('outputs/mapas/05_desiertos_financieros.html', this)" 
-                    class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition">
-              <i class="fa-solid fa-triangle-exclamation mr-1.5 text-amber-400"></i> Desiertos Financieros
-            </button>
-            <button onclick="cambiarMapa('outputs/mapas/05_oferta_osm.html', this)" 
-                    class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition">
-              <i class="fa-solid fa-location-dot mr-1.5 text-cyan-400"></i> Red OSM & Puntos
-            </button>
-          </div>
+      <section class="block">
+        <h2>Discusión</h2>
+        <p>
+          La expansión de la red se apoyó en corresponsales y no redujo la segregación espacial: los distritos de la sierra pobre
+          siguen en el quintil más bajo y tienen la mayor persistencia. El derrame negativo de la urbanización sugiere que las ciudades
+          absorben la oferta de su entorno.
+        </p>
+        <p>
+          Los resultados tienen límites claros. La demanda rural se reparte en partes iguales entre caseríos, la distancia es en línea
+          recta y no por camino, la SBS cuenta los corresponsales por entidad (un comercio puede contarse más de una vez) y el acceso
+          esperado proviene de un modelo con R² cercano a 0,33. El índice climático mide lluvia, no huaicos ni cortes de vía.
+        </p>
+      </section>
 
-          <button onclick="togglePantallaCompleta()" 
-                  class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white border border-slate-700 transition" 
-                  title="Ver mapa en pantalla completa">
-            <i class="fa-solid fa-expand mr-1"></i> Pantalla Completa
-          </button>
-        </div>
-      </div>
+      <section class="block">
+        <h2>Conclusiones</h2>
+        <ol class="conclusions">
+          <li>El acceso financiero en el norte del Perú está espacialmente agrupado: costa con acceso, sierra excluida.</li>
+          <li>La pobreza lo reduce y la urbanización lo aumenta, con efectos de vecindad que exigen modelos espaciales.</li>
+          <li>El kriging es el método adecuado para estimar la exposición a la lluvia extrema de El Niño.</li>
+          <li>La prioridad comercial es densificar ciudades intermedias de Piura y Alto Trujillo; la prioridad de inclusión es cubrir la sierra con canales ligeros.</li>
+          <li>El riesgo climático cambia el tipo de canal más que su ubicación.</li>
+        </ol>
+      </section>
 
-      <!-- Contenedor del Mapa iFrame -->
-      <div id="map-wrapper" class="relative w-full h-[650px] bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 shadow-inner">
-        <iframe id="map-frame" src="outputs/mapas/05_mapa_principal.html" 
-                class="w-full h-full border-0" 
-                loading="lazy"
-                title="Visor Cartográfico GeoBanca"></iframe>
-        
-        <!-- Badge flotante de ayuda -->
-        <div class="absolute bottom-4 left-4 pointer-events-none bg-slate-900/90 backdrop-blur-md border border-slate-700 px-3 py-1.5 rounded-lg text-[11px] text-slate-300 shadow-lg">
-          <i class="fa-solid fa-mouse-pointer text-emerald-400 mr-1"></i> Haz clic en cualquier distrito en el mapa para ver sus indicadores oficiales.
-        </div>
-      </div>
-    </section>
+      <section class="block references">
+        <h2>Referencias</h2>
+        <ul>
+          <li>Anselin, L. (1988). <em>Spatial econometrics: Methods and models</em>. Kluwer Academic.</li>
+          <li>Anselin, L. (1995). Local indicators of spatial association: LISA. <em>Geographical Analysis, 27</em>(2), 93-115.</li>
+          <li>Baddeley, A., Rubak, E., &amp; Turner, R. (2015). <em>Spatial point patterns: Methodology and applications with R</em>. CRC Press.</li>
+          <li>Church, R., &amp; ReVelle, C. (1974). The maximal covering location problem. <em>Papers of the Regional Science Association, 32</em>(1), 101-118.</li>
+          <li>Clayton, D., &amp; Kaldor, J. (1987). Empirical Bayes estimates of age-standardized relative risks for use in disease mapping. <em>Biometrics, 43</em>(3), 671-681.</li>
+          <li>Cressie, N. (1993). <em>Statistics for spatial data</em> (Ed. rev.). Wiley.</li>
+          <li>Funk, C., Peterson, P., Landsfeld, M., Pedreros, D., Verdin, J., Shukla, S., Husak, G., Rowland, J., Harrison, L., Hoell, A., &amp; Michaelsen, J. (2015). The climate hazards infrared precipitation with stations: A new environmental record for monitoring extremes. <em>Scientific Data, 2</em>, 150066.</li>
+          <li>Instituto Nacional de Estadística e Informática. (2020). <em>Mapa de pobreza monetaria provincial y distrital 2018</em>. INEI.</li>
+          <li>LeSage, J., &amp; Pace, R. K. (2009). <em>Introduction to spatial econometrics</em>. CRC Press.</li>
+          <li>Rey, S. J. (2001). Spatial empirics for economic growth and convergence. <em>Geographical Analysis, 33</em>(3), 195-214.</li>
+        </ul>
+      </section>
+    </main>
 
-    <!-- ================= TABLA DE SÍNTESIS METODOLÓGICA ================= -->
-    <section class="mt-8 bg-slate-900/80 border border-slate-800 rounded-2xl p-6">
-      <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
-        <i class="fa-solid fa-clipboard-list text-emerald-400"></i> Resumen de Fases y Hallazgos Metodológicos
-      </h4>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
-        <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
-          <div class="font-bold text-white mb-1">1. Datos de Áreas</div>
-          <div class="text-slate-400 leading-relaxed">
-            Diagnóstico de no estacionariedad y autocorrelación fuerte (\(I = 0.54\)). SDM confirma la presencia de spillovers espaciales sustanciales.
-          </div>
-        </div>
-        <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
-          <div class="font-bold text-white mb-1">2. Geoestadística</div>
-          <div class="text-slate-400 leading-relaxed">
-            Interpolación espacial mediante Kriging Ordinario reduce el error medio cuadrático en más de un 20% frente a métodos determinísticos (IDW).
-          </div>
-        </div>
-        <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
-          <div class="font-bold text-white mb-1">3. Procesos Puntuales</div>
-          <div class="text-slate-400 leading-relaxed">
-            Rechazo de Poisson homogéneo. Concentración crítica de la banca tradicional y cajeros automáticos en centros metropolitanos.
-          </div>
-        </div>
-        <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
-          <div class="font-bold text-white mb-1">4. Decisión Territorial</div>
-          <div class="text-slate-400 leading-relaxed">
-            MCLP exacto ofrece cobertura eficiente de 63,643 adultos con 25 puntos en distritos desatendidos con baja vulnerabilidad a inundaciones.
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ================= PIE DE PÁGINA ACADÉMICO ================= -->
-  <footer class="border-t border-slate-800 bg-slate-950/90 py-8 text-center text-xs text-slate-500">
-    <div class="max-w-[1600px] mx-auto px-4 space-y-2">
-      <div class="flex justify-center items-center gap-4 text-slate-400">
-        <span><strong>Autor:</strong> Wilder E. (esluw)</span>
-        <span>•</span>
-        <span><strong>Curso:</strong> Estadística Espacial & Geoestadística</span>
-        <span>•</span>
-        <span><strong>Año:</strong> 2026</span>
-      </div>
-      <div>
-        Proyecto 100% reproducible en Python. Datos procesados con PySAL, GeoPandas, GSTools y Folium.
-      </div>
-      <div class="text-[11px] text-slate-600">
-        Repositorio: <a href="https://github.com/wilder14-eslu/geobanca-norte-peru" target="_blank" class="text-emerald-500 hover:underline">github.com/wilder14-eslu/geobanca-norte-peru</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ================= MODAL / LIGHTBOX PARA ZOOM DE IMÁGENES ================= -->
-  <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeModal()">
-    <div class="relative max-w-5xl w-full bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden shadow-2xl p-4" onclick="event.stopPropagation()">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
-        <div>
-          <h4 id="modal-title" class="text-base font-bold text-white">Título de la Figura</h4>
-          <p id="modal-desc" class="text-xs text-slate-400 mt-0.5">Descripción de la figura</p>
-        </div>
-        <button onclick="closeModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      
-      <div class="flex items-center justify-center bg-slate-950 rounded-xl p-2 max-h-[75vh] overflow-auto">
-        <img id="modal-img" src="" alt="Ampliación de figura" class="max-w-full max-h-[70vh] object-contain rounded">
-      </div>
-
-      <div class="mt-3 flex justify-end">
-        <button onclick="closeModal()" class="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white transition">
-          Cerrar (Esc)
-        </button>
-      </div>
-    </div>
+    <footer class="poster-foot">
+      <p>Cifras generadas por <code>src/02_exportar_web.py</code> el <span data-k="generado"></span> desde las salidas de los notebooks. Fuentes: SBS, INEI, SENAMHI, CHIRPS, Copernicus y OpenStreetMap.</p>
+    </footer>
   </div>
 
-  <!-- ================= SCRIPTS DE INTERACTIVIDAD ================= -->
-  <script>
-    // Cambio interactivo del mapa en el iFrame
-    function cambiarMapa(url, btnElement) {
-      document.getElementById('map-frame').src = url;
-      
-      // Actualizar estilos de los botones
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-sm');
-        btn.classList.add('text-slate-400');
-      });
-      btnElement.classList.add('bg-emerald-600', 'text-white', 'shadow-sm');
-      btnElement.classList.remove('text-slate-400');
-    }
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
 
-    // Pantalla completa para el mapa
-    function togglePantallaCompleta() {
-      const elem = document.getElementById('map-wrapper');
-      if (!document.fullscreenElement) {
-        elem.requestFullscreen().catch(err => {
-          alert(`Error al entrar en pantalla completa: ${err.message}`);
-        });
-      } else {
-        document.exitFullscreen();
-      }
-    }
-
-    // Modal / Lightbox para zoom de figuras
-    function openModal(src, title, desc) {
-      document.getElementById('modal-img').src = src;
-      document.getElementById('modal-title').textContent = title;
-      document.getElementById('modal-desc').textContent = desc;
-      document.getElementById('image-modal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      document.getElementById('image-modal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    // Cerrar modal con tecla Escape
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
-  </script>
-
+  <script src="assets/vendor/maplibre-gl-4.7.1.js"></script>
+  <script src="assets/vendor/deck.gl-9.0.38.min.js"></script>
+  <script src="assets/data/geobanca_web.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/map3d.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
