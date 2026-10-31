@@ -316,7 +316,6 @@
   document.getElementById("toggle-sites").addEventListener("change", (e) => Map3D.setSites(e.target.checked));
   document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => Map3D.view(b.dataset.view)));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") Map3D.select(-1); });
-  document.getElementById("print-btn").addEventListener("click", () => window.print());
 
   // Búsqueda de distrito
   const options = props.map((p, i) => ({ i, label: `${p.n}, ${p.p}` })).sort((a, b) => a.label.localeCompare(b.label, "es"));
