@@ -154,6 +154,12 @@ geobanca-norte-peru/
 └── docs/                      catálogo de datos, guía SENAMHI e imágenes
 ```
 
+## Arquitectura
+
+El diseño del sistema está documentado con diagramas en [`docs/arquitectura.md`](docs/arquitectura.md): contexto, capas,
+flujo de datos entre notebooks, modelo de datos del póster, componentes del frontend, secuencia de interacción, despliegue y
+la propuesta de pipeline orquestado.
+
 ## Cómo reproducir
 
 ```bash
