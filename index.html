@@ -3,42 +3,116 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GeoBanca Norte · Póster de investigación</title>
+  <title>GeoBanca Norte Perú · El territorio y la brecha financiera</title>
   <meta name="description" content="Póster interactivo: brechas espaciales de acceso a canales financieros y ubicación óptima de nuevos canales en la Macro Región Norte del Perú, con datos de SBS, INEI y SENAMHI.">
   <link rel="preload" href="assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/vendor/maplibre-gl-4.7.1.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <a class="skip" href="#resumen">Saltar al resumen</a>
+  <a class="skip" href="#explorar">Saltar al explorador</a>
 
   <div class="poster">
-    <!-- Cabecera del póster -->
+    <div class="topbar" id="inicio">
+      <a class="brand" href="#inicio" aria-label="GeoBanca Norte, inicio">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M9 13V9m3 4V6m3 7v-3" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        <span>GeoBanca<span class="brand-region">NORTE PERÚ</span></span>
+      </a>
+      <span class="topbar-note">Un territorio. Cinco departamentos. Nuevas oportunidades.</span>
+      <a class="source-link" href="https://github.com/wilder14-eslu/geobanca-norte-peru" target="_blank" rel="noopener noreferrer">Ver investigación <span aria-hidden="true">↗</span></a>
+    </div>
+
     <header class="poster-head">
-      <img class="head-logo" src="assets/img/escudo-unmsm.png" width="240" height="280" alt="Escudo de la Universidad Nacional Mayor de San Marcos">
       <div class="head-title">
-        <h1>Brechas espaciales de acceso financiero y ubicación óptima de nuevos canales en el norte del Perú</h1>
-        <p class="subtitle">Un análisis con econometría espacial, geoestadística del Fenómeno El Niño y optimización de cobertura</p>
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> OBSERVATORIO DE ACCESO FINANCIERO</p>
+        <h1>La brecha financiera,<br><span>vista desde el territorio.</span></h1>
+        <p class="subtitle">Brechas espaciales de acceso financiero y ubicación óptima de nuevos canales en el norte del Perú.</p>
+        <div class="hero-actions">
+          <a class="button-primary" href="#explorar">Explorar el mapa <span aria-hidden="true">↗</span></a>
+          <a class="button-text" href="#hallazgos">Conocer los hallazgos <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="coverage-line">Tumbes <span>·</span> Piura <span>·</span> Lambayeque <span>·</span> La Libertad <span>·</span> Cajamarca</p>
       </div>
-      <div class="head-meta">
+      <aside class="head-meta" aria-label="Equipo de investigación">
+        <div class="institution">
+          <img class="head-logo" src="assets/img/escudo-unmsm.png" width="240" height="280" alt="Escudo de la Universidad Nacional Mayor de San Marcos">
+          <div><span class="institution-kicker">UNIVERSIDAD NACIONAL</span><strong>Mayor de San Marcos</strong><span>Escuela Profesional de Estadística</span></div>
+        </div>
         <p class="course">Estadística Espacial</p>
-        <p>Docente: Misael Erikson Maguiña Palma</p>
-        <p class="members-title">Integrantes</p>
-        <ul class="members">
-          <li>Briceño Ypanaque, Gabriel Alberto</li>
-          <li>Espinoza Luna, Wilder Gilmer</li>
-          <li>Isase Camara, Vicente Edgar</li>
-          <li>Montoya Juro, Oscar Alberto</li>
-          <li>Pablo Machaca, Gerson Alexis</li>
-          <li>Polastre Mamani, Frank</li>
-        </ul>
-        <p class="affiliation">Escuela Profesional de Estadística<br>Universidad Nacional Mayor de San Marcos</p>
-      </div>
+        <p class="research-description">Econometría espacial, riesgo climático y optimización de cobertura para entender dónde hace falta llegar.</p>
+        <details class="team-details">
+          <summary>Equipo de investigación <span aria-hidden="true">+</span></summary>
+          <p>Docente: Misael Erikson Maguiña Palma</p>
+          <ul class="members">
+            <li>Briceño Ypanaque, Gabriel Alberto</li>
+            <li>Espinoza Luna, Wilder Gilmer</li>
+            <li>Isase Camara, Vicente Edgar</li>
+            <li>Montoya Juro, Oscar Alberto</li>
+            <li>Pablo Machaca, Gerson Alexis</li>
+            <li>Polastre Mamani, Frank</li>
+          </ul>
+        </details>
+      </aside>
     </header>
 
+    <section class="kpi-strip" aria-label="El estudio en cifras">
+      <div class="kpi"><span class="kpi-label">Territorio analizado</span><strong data-k="distritos">—</strong><span>distritos del norte del Perú</span></div>
+      <div class="kpi"><span class="kpi-label">Red financiera</span><strong data-k="puntos_atencion">—</strong><span>puntos de atención · marzo 2026</span></div>
+      <div class="kpi kpi-alert"><span class="kpi-label">La brecha de acceso</span><strong data-k="distritos_desatendidos">—</strong><span>distritos con acceso bajo lo esperado</span></div>
+      <div class="kpi"><span class="kpi-label">Una oportunidad concreta</span><strong data-k="mclp25">—</strong><span>cobertura rural con 25 nuevos canales</span></div>
+    </section>
+
+    <nav class="section-nav" aria-label="Secciones de la investigación">
+      <a href="#explorar" aria-current="location"><span>01</span> Explorar</a>
+      <a href="#estudio"><span>02</span> El estudio</a>
+      <a href="#hallazgos"><span>03</span> Hallazgos</a>
+      <a href="#propuestas"><span>04</span> Dónde actuar</a>
+      <a href="#conclusiones"><span>05</span> Conclusiones</a>
+      <span class="nav-note"><span class="status-dot" aria-hidden="true"></span> Datos oficiales · SBS / INEI / SENAMHI</span>
+    </nav>
+
     <main class="poster-body">
-      <!-- Columna izquierda: resumen, introducción, método -->
-      <div class="col col-intro">
+      <!-- Figura central: mapa 3D -->
+      <section id="explorar" class="block block-map" aria-labelledby="map-title">
+        <div class="map-head">
+          <div><p class="eyebrow">01 / EXPLORADOR TERRITORIAL</p><h2 id="map-title">Cada distrito cuenta una historia.</h2><p class="map-intro">Descubre cómo se distribuyen el acceso financiero, las brechas y el riesgo climático.</p></div><span class="map-badge"><span class="status-dot" aria-hidden="true"></span> <span data-k="distritos"></span> distritos · 5 departamentos</span>
+
+        </div>
+        <div class="map-frame">
+          <div id="map" class="map" role="application" aria-label="Mapa 3D de distritos"></div>
+          <div class="map-controls">
+            <div class="controls-heading"><span>Configura tu vista</span><span aria-hidden="true">☷</span></div>
+            <fieldset>
+              <legend>¿Qué quieres explorar?</legend>
+              <div id="color-options" class="seg"></div>
+            </fieldset>
+            <fieldset>
+              <legend>Altura de los distritos</legend>
+              <div id="height-options" class="seg"></div>
+            </fieldset>
+            <label class="check"><input id="toggle-sites" type="checkbox" checked> <span>Sitios propuestos (MCLP, 25)</span></label>
+            <div id="legend" class="legend" aria-live="polite"></div>
+            <label class="search">
+              <span>Buscar distrito</span>
+              <input id="search" type="search" list="district-list" placeholder="Nombre de distrito…" autocomplete="off">
+              <datalist id="district-list"></datalist>
+            </label>
+            <p id="search-msg" class="search-msg" role="status"></p>
+            <div class="view-btns">
+              <button type="button" data-view="3d" aria-pressed="true">Vista 3D</button>
+              <button type="button" data-view="2d" aria-pressed="false">Vista cenital</button>
+            </div>
+            <button class="reset-view" id="reset-view" type="button">↺ Restablecer explorador</button>
+            <p class="map-help">Selecciona un distrito para ver su ficha. Arrastra para mover; Ctrl + arrastrar para inclinar.</p>
+          </div>
+          <div id="card" class="card" aria-live="polite" hidden></div>
+          <p id="map-fallback" class="map-fallback" hidden></p>
+        </div>
+        <p class="caption">Figura 1. Distritos de la Macro Región Norte. El color y la altura muestran la métrica elegida; las columnas ocres son los 25 sitios del modelo de máxima cobertura (su altura es la demanda en un radio de 5 km).</p>
+      </section>
+
+      <!-- Contexto: resumen, introducción y método -->
+      <div id="estudio" class="col col-intro">
         <section id="resumen" class="block">
           <h2>Resumen</h2>
           <p>
@@ -88,6 +162,11 @@
           </table>
         </section>
 
+
+      </div>
+
+      <!-- Resultados en dos columnas -->
+      <div id="hallazgos" class="col col-res-a">
         <section id="diagnostico" class="block result">
           <h2>Resultados</h2>
           <h3>Hay oferta, pero mal repartida</h3>
@@ -102,46 +181,6 @@
             <figcaption>Figura 2. Mediana del acceso suavizado por departamento (puntos por 10 mil adultos).</figcaption>
           </figure>
         </section>
-      </div>
-
-      <!-- Figura central: mapa 3D -->
-      <section class="block block-map" aria-labelledby="map-title">
-        <div class="map-head">
-          <h3 id="map-title">Explora el territorio en 3D</h3>
-          <p class="map-help">Arrastra para mover; usa clic derecho, Ctrl + arrastrar o dos dedos para rotar e inclinar. Haz clic en un distrito para ver su ficha.</p>
-        </div>
-        <div class="map-frame">
-          <div id="map" class="map" role="application" aria-label="Mapa 3D de distritos"></div>
-          <div class="map-controls">
-            <fieldset>
-              <legend>Color</legend>
-              <div id="color-options" class="seg"></div>
-            </fieldset>
-            <fieldset>
-              <legend>Altura</legend>
-              <div id="height-options" class="seg"></div>
-            </fieldset>
-            <label class="check"><input id="toggle-sites" type="checkbox" checked> <span>Sitios propuestos (MCLP, 25)</span></label>
-            <div id="legend" class="legend" aria-live="polite"></div>
-            <label class="search">
-              <span>Buscar distrito</span>
-              <input id="search" type="search" list="district-list" placeholder="Ej.: Alto Trujillo" autocomplete="off">
-              <datalist id="district-list"></datalist>
-            </label>
-            <p id="search-msg" class="search-msg" role="status"></p>
-            <div class="view-btns">
-              <button type="button" data-view="3d">Vista 3D</button>
-              <button type="button" data-view="2d">Vista cenital</button>
-            </div>
-          </div>
-          <div id="card" class="card" aria-live="polite" hidden></div>
-          <p id="map-fallback" class="map-fallback" hidden></p>
-        </div>
-        <p class="caption">Figura 1. Distritos de la Macro Región Norte. El color y la altura muestran la métrica elegida; las columnas ocres son los 25 sitios del modelo de máxima cobertura (su altura es la demanda en un radio de 5 km).</p>
-      </section>
-
-      <!-- Resultados en dos columnas -->
-      <div class="col col-res-a">
 
         <section id="evolucion" class="block result">
           <h3>La red se triplicó y luego se ajustó</h3>
@@ -224,9 +263,10 @@
       </div>
 
       <!-- Franja inferior: matriz y sitios -->
-      <section class="block block-wide" aria-labelledby="sites-title">
+      <section id="propuestas" class="block block-wide" aria-labelledby="sites-title">
         <div class="wide-grid">
           <div>
+            <p class="eyebrow">04 / DÓNDE ACTUAR</p>
             <h3 id="matrix-title">El riesgo decide el tipo de canal</h3>
             <p>
               Cada distrito desatendido se ubica por su oportunidad y su exposición a lluvia extrema. Con riesgo bajo conviene un canal
@@ -239,7 +279,7 @@
           </div>
           <div>
             <div class="sites-head">
-              <h3 id="sites-title">Los 25 sitios propuestos</h3>
+              <h3 id="sites-title">Los 25 sitios propuestos</h3><span id="sites-count" class="result-count" role="status"></span>
               <label class="check"><input id="filter-robust" type="checkbox"> <span>Solo los que se mantienen con riesgo</span></label>
             </div>
             <div class="table-scroll sites-scroll">
@@ -265,7 +305,8 @@
         </p>
       </section>
 
-      <section class="block">
+      <section id="conclusiones" class="block conclusion-block">
+        <p class="eyebrow">05 / LO QUE NOS DICE EL TERRITORIO</p>
         <h2>Conclusiones</h2>
         <ol class="conclusions">
           <li>El acceso financiero en el norte del Perú está espacialmente agrupado: costa con acceso, sierra excluida.</li>
@@ -294,10 +335,11 @@
     </main>
 
     <footer class="poster-foot">
-      <p>Cifras generadas por <code>src/02_exportar_web.py</code> el <span data-k="generado"></span> desde las salidas de los notebooks. Fuentes: SBS, INEI, SENAMHI, CHIRPS, Copernicus y OpenStreetMap.</p>
+      <a class="footer-brand" href="#inicio">GeoBanca Norte Perú <span aria-hidden="true">↑</span></a><p>Investigación con datos abiertos. Actualizado el <span data-k="generado"></span>.<br>Fuentes: SBS, INEI, SENAMHI, CHIRPS, Copernicus y OpenStreetMap.</p>
     </footer>
   </div>
 
+  <noscript><p class="noscript">Activa JavaScript para explorar el mapa, los indicadores y los gráficos de esta investigación.</p></noscript>
   <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
 
   <script src="assets/vendor/maplibre-gl-4.7.1.js"></script>

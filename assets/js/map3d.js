@@ -149,7 +149,7 @@
         autoHighlight: state.selected < 0,
         highlightColor: [29, 43, 42, 110],
         highlightedObjectIndex: state.selected,
-        transitions: { getElevation: { duration: 650 }, getFillColor: { duration: 350 } },
+        transitions: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? {} : { getElevation: { duration: 650 }, getFillColor: { duration: 350 } },
         updateTriggers: { getFillColor: state.color, getElevation: state.height },
         onHover: hoverDistrict,
         onClick: (info) => info.object && select(info.index, true),
@@ -245,7 +245,8 @@
         maxPitch: 70, antialias: true, attributionControl: { compact: true },
         fadeDuration: reduce ? 0 : 300,
       });
-      if (window.matchMedia("(min-width: 821px)").matches) map.setPadding({ left: 280, right: 40, top: 0, bottom: 0 });
+      // El panel ocupa su propia columna; el mapa usa todo su lienzo.
+      new ResizeObserver(() => map.resize()).observe(container);
       map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
       overlay = new deck.MapboxOverlay({ interleaved: false, layers: layers() });
       map.addControl(overlay);
@@ -261,7 +262,7 @@
   function flyTo(lon, lat, zoom) {
     if (!map) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    map[reduce ? "jumpTo" : "flyTo"]({ center: [lon, lat], zoom: zoom || 9.2, pitch: map.getPitch() || 45, essential: true, duration: 1600 });
+    map[reduce ? "jumpTo" : "flyTo"]({ center: [lon, lat], zoom: zoom || 9.2, pitch: map.getPitch(), essential: true, duration: 1600 });
   }
 
   window.Map3D = {

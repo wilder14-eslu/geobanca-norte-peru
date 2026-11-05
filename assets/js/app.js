@@ -224,6 +224,7 @@
     t.insertAdjacentHTML("beforeend", `<thead><tr>${head}</tr></thead><tbody>` + rows.map((s) =>
       `<tr tabindex="0" data-rank="${s.rank}" class="${selectedSite === s.rank ? "is-selected" : ""}" aria-label="Ubicar ${titleCase(s.ccpp)} en el mapa">` +
       siteCols.map(([, , f, cls]) => `<td class="${cls}">${f(s)}</td>`).join("") + "</tr>").join("") + "</tbody>");
+    document.getElementById("sites-count").textContent = rows.length + " de " + sites.length + " sitios";
   }
   document.getElementById("table-sites").addEventListener("click", (e) => {
     const b = e.target.closest("button[data-sort]");
@@ -309,12 +310,31 @@
     box.addEventListener("change", (e) => onChange(e.target.value));
   }
 
-  Map3D.init({ features, sites: D.sitios, onSelect: (f) => renderCard(f) });
+  Map3D.init({ features, sites, onSelect: (f) => renderCard(f) });
   radios("color-options", "color", Object.entries(Map3D.colorMetrics).map(([k, m]) => [k, m.label]), "acc", (k) => { Map3D.setColor(k); renderLegend(); });
   radios("height-options", "height", Object.entries(Map3D.HEIGHTS).map(([k, h]) => [k, h.label]), "ad", (k) => Map3D.setHeight(k));
   renderLegend();
   document.getElementById("toggle-sites").addEventListener("change", (e) => Map3D.setSites(e.target.checked));
-  document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => Map3D.view(b.dataset.view)));
+  function setView(mode) {
+    Map3D.view(mode);
+    document.querySelectorAll("[data-view]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === mode)));
+  }
+  document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => setView(b.dataset.view)));
+  document.getElementById("reset-view").addEventListener("click", () => {
+    Map3D.setColor("acc");
+    Map3D.setHeight("ad");
+    Map3D.setSites(true);
+    Map3D.select(-1);
+    document.querySelector('input[name="color"][value="acc"]').checked = true;
+    document.querySelector('input[name="height"][value="ad"]').checked = true;
+    document.getElementById("toggle-sites").checked = true;
+    document.getElementById("search").value = "";
+    document.getElementById("search-msg").textContent = "";
+    selectedSite = null;
+    renderSites();
+    renderLegend();
+    setView("3d");
+  });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") Map3D.select(-1); });
 
   // Búsqueda de distrito
@@ -335,8 +355,28 @@
     Map3D.flyTo(c[0], c[1], 8.4);
   }
   const search = document.getElementById("search");
+  search.addEventListener("input", () => { if (!search.value.trim()) document.getElementById("search-msg").textContent = ""; });
   search.addEventListener("change", (e) => runSearch(e.target.value));
   search.addEventListener("keydown", (e) => { if (e.key === "Enter") runSearch(e.target.value); });
+
+  // La navegación sigue la sección que se está leyendo.
+  const navLinks = [...document.querySelectorAll(".section-nav a")];
+  const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href")));
+  let navPending = false;
+  function updateNavigation() {
+    const threshold = document.querySelector(".section-nav").offsetHeight + 40;
+    let current = 0;
+    sections.forEach((section, i) => { if (section.getBoundingClientRect().top <= threshold) current = i; });
+    navLinks.forEach((link, i) => {
+      if (i === current) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+    navPending = false;
+  }
+  window.addEventListener("scroll", () => {
+    if (!navPending) { navPending = true; requestAnimationFrame(updateNavigation); }
+  }, { passive: true });
+  updateNavigation();
 
   window.App = { describeMetric, selectSite, fmt };
 })();
