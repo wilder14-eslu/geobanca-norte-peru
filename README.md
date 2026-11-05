@@ -136,7 +136,7 @@ Todas las cifras provienen de los notebooks y de las tablas de `outputs/tablas/`
 geobanca-norte-peru/
 ├── index.html                 póster web interactivo (GitHub Pages)
 ├── assets/
-│   ├── css/  js/              estilos, mapa 3D (MapLibre + deck.gl) y gráficos
+│   ├── css/  js/              estilos, mapa 3D (MapLibre + deck.gl) y controles
 │   ├── data/geobanca_web.js   datos del póster, generados por src/02_exportar_web.py
 │   ├── img/  fonts/  vendor/  escudo, tipografía Archivo y librerías locales
 ├── data/
@@ -361,7 +361,8 @@ flowchart TB
     subgraph Modulos["Módulos propios"]
         APP["app.js · window.App<br/>controlador: enlaza cifras,<br/>tablas, controles y ficha"]
         MAP["map3d.js · window.Map3D<br/>métricas de color, alturas,<br/>selección, vistas"]
-        CH["charts.js · window.Charts<br/>barras, líneas, puntos,<br/>dispersión, tooltip"]
+        CH["charts.js · window.Charts<br/>tooltip del mapa"]
+        FIG["outputs/figuras/*.png<br/>imágenes originales de los notebooks"]
     end
 
     subgraph Capas["Capas de deck.gl"]
@@ -374,7 +375,7 @@ flowchart TB
     HTML --> GB & ML & DK & CH & MAP & APP
     GB --> APP
     APP -->|init, setColor, setHeight,<br/>select, flyTo| MAP
-    APP -->|barsH, lines, dotRows,<br/>scatter| CH
+    HTML --> FIG
     MAP -->|onSelect| APP
     MAP -->|describeMetric| APP
     MAP --> ML
@@ -489,6 +490,10 @@ Para actualizar el póster con los resultados nuevos:
 python src/02_exportar_web.py               # regenera assets/data/geobanca_web.js
 python -m http.server 8000                  # abrir http://localhost:8000
 ```
+
+Las figuras del póster se cargan directamente de `outputs/figuras/`, tal como las exportan los notebooks. Cada figura
+incluye un enlace al notebook de origen y a la imagen completa. No se redibujan los gráficos ni se crean datos adicionales
+para el póster; los indicadores, las tablas y el mapa conservan los resultados del proyecto.
 
 El póster no tiene cifras escritas a mano: todas se leen de `data/processed/` y `outputs/tablas/`. Las librerías y la tipografía
 están dentro del repositorio, así que funciona sin internet; solo el mapa base de fondo necesita conexión.

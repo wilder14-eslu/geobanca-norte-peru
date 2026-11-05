@@ -1,4 +1,4 @@
-/* Controlador del póster: enlaza las cifras, el mapa 3D, los gráficos y las tablas.
+/* Controlador del póster: enlaza las cifras, el mapa 3D y las tablas. Las figuras originales se cargan desde el HTML.
    Todos los valores salen de window.GEOBANCA (generado por src/02_exportar_web.py). */
 (function () {
   "use strict";
@@ -17,14 +17,9 @@
   }
   const pct = (v, d) => fmt(v, d == null ? 1 : d) + "%";
 
-  const COLORS = { green: "#1e7d50", ochre: "#b98010", blue: "#2a6fb8", magenta: "#b23a68", violet: "#6a55c2" };
-  // Orden categórico fijo de departamentos (validado para daltonismo y contraste)
-  const DEP_COLORS = { Cajamarca: "#1e7d50", "La Libertad": "#b98010", Lambayeque: "#2a6fb8", Piura: "#b23a68", Tumbes: "#6a55c2" };
-
   const K = D.kpi;
   const features = D.distritos.features;
   const props = features.map((f) => f.properties);
-  const desat = props.filter((p) => p.des);
 
   // ---- Cifras derivadas ----
   const lisaCount = (c) => props.filter((p) => p.lisa === c).length;
@@ -108,87 +103,12 @@
       <td>${fmt(m["I de Moran residuos"], 3)}</td><td>${spatial(m)}</td></tr>`).join("") + "</tbody>");
   })();
 
-  // ---- Gráficos ----
-  Charts.register(() => {
-    const dep = Object.entries(K.mediana_acceso_eb_departamento).sort((a, b) => b[1] - a[1]);
-    Charts.barsH(document.getElementById("chart-dep"), dep.map(([n, v]) => ({
-      label: n, value: v, color: DEP_COLORS[n],
-      tip: `<b>${n}</b><br>Mediana: ${fmt(v, 1)} puntos por 10 mil adultos`,
-    })), { labelW: 96, format: (v) => fmt(v, 0) });
-  });
-
-  Charts.register(() => {
-    const deps = Object.keys(DEP_COLORS);
-    Charts.lines(document.getElementById("chart-panel"), {
-      labels: panel.map((p) => p.etiqueta.replace("Dic ", "").replace("Mar 2026", "Mar 26")),
-      series: deps.map((d) => ({ name: d, color: DEP_COLORS[d], values: panel.map((p) => p.por_departamento[d] || 0) })),
-      format: (v) => fmt(v),
-    });
-  });
-
-  Charts.register(() => {
-    const ev = [...new Set(D.interpolacion.map((r) => r.evento))];
-    const methods = [["IDW", "IDW", COLORS.magenta], ["KO", "Kriging ordinario", COLORS.green], ["KDE", "Kriging con deriva (altitud)", COLORS.blue]];
-    Charts.dotRows(document.getElementById("chart-krig"), {
-      groups: ev.map((e) => "Marzo " + e.slice(0, 4)),
-      series: methods.map(([k, name, color]) => ({ name, color, values: ev.map((e) => D.interpolacion.find((r) => r.evento === e && r.metodo === k).RMSE_LOO_mm) })),
-      format: (v) => fmt(v, 0) + " mm", min: 50, max: 150, labelW: 96,
-    });
-  });
-
+  // ---- Exposición: resultados exportados del notebook 06 ----
   (function expoList() {
     const top = props.filter((p) => p.expo != null).sort((a, b) => b.expo - a.expo).slice(0, 8);
     document.getElementById("list-expo").innerHTML = top.map((p) =>
       `<li>${p.n} <span class="rank-val">(${p.d}, índice ${fmt(p.expo, 2)})</span></li>`).join("");
   })();
-
-  Charts.register(() => {
-    Charts.barsH(document.getElementById("chart-urban"), topUrban.slice(0, 10).map((p) => ({
-      label: p.n, value: p.falt_urb, color: COLORS.magenta,
-      tip: `<b>${p.n}</b> (${p.p})<br>Canales urbanos faltantes: ${fmt(p.falt_urb)}<br>Acceso observado: ${fmt(p.obs, 0)} frente a ${fmt(p.esp, 0)} esperado por 10 mil adultos<br>Riesgo climático: percentil ${fmt(100 * p.rpct, 0)}`,
-    })), { labelW: 150, format: (v) => fmt(v) });
-  });
-
-  Charts.register(() => {
-    Charts.barsH(document.getElementById("chart-mclp"), D.mclp.map((m) => ({
-      label: `${m.P} canales`, value: m["cobertura_exacta_%"], marker: m["cobertura_voraz_%"], color: COLORS.green,
-      tip: `<b>${m.P} canales nuevos</b><br>Exacto (CBC): ${pct(m["cobertura_exacta_%"])}<br>Voraz: ${pct(m["cobertura_voraz_%"])}<br>${fmt(m.adultos_cubiertos)} adultos cubiertos`,
-    })), { labelW: 90, max: 50, format: (v) => pct(v), tickFormat: (t) => t + "%" });
-    const box = document.getElementById("chart-mclp");
-    Charts.legend(box, [{ name: "Solución exacta", color: COLORS.green }, { name: "Heurística voraz (línea)", color: "#1d2b2a" }]);
-  });
-
-  Charts.register(() => {
-    const sets = [...new Set(D.ml_cv.map((r) => r.variables))];
-    const mods = [["Ridge", COLORS.blue], ["Random Forest", COLORS.green], ["XGBoost", COLORS.ochre]];
-    const niceSet = { "estructurales (X)": "Variables propias", "X + rezagos espaciales (WX)": "+ rezagos WX", "X + WX + coordenadas": "+ WX y posición" };
-    Charts.dotRows(document.getElementById("chart-ml"), {
-      groups: sets.map((s) => niceSet[s] || s),
-      series: mods.map(([m, c]) => ({ name: m, color: c, values: sets.map((s) => D.ml_cv.find((r) => r.modelo === m && r.variables === s)[r2Key]) })),
-      format: (v) => fmt(v, 2), min: 0, max: 0.4, labelW: 128,
-    });
-  });
-
-  const QUAD_COLORS = Map3D_colors();
-  function Map3D_colors() {
-    return { "Prioridad: canal físico": COLORS.green, "Prioridad: canal resiliente": COLORS.ochre, "Bajo impacto, alto riesgo": COLORS.blue, "Bajo impacto, bajo riesgo": "#a3aca8" };
-  }
-  Charts.register(() => {
-    const box = document.getElementById("chart-matrix");
-    const med = (arr) => { const s = arr.slice().sort((a, b) => a - b); return s[Math.floor(s.length / 2)]; };
-    const maxAd = Math.max(...desat.map((p) => p.ad_des));
-    Charts.scatter(box, {
-      xLabel: "Oportunidad (percentil de adultos desatendidos)",
-      yLabel: "Riesgo (percentil de exposición)",
-      vx: med(desat.map((p) => p.opct)), vy: med(desat.map((p) => p.rpct)),
-      points: desat.map((p) => ({
-        x: p.opct, y: p.rpct, r: 3 + 13 * Math.sqrt(p.ad_des / maxAd), color: QUAD_COLORS[p.cuad],
-        tip: `<b>${p.n}</b> (${p.d})<br>${p.cuad}<br>${fmt(p.ad_des)} adultos desatendidos`,
-      })),
-    });
-    const counts = Object.keys(QUAD_COLORS).map((q) => ({ name: `${q} (${desat.filter((p) => p.cuad === q).length})`, color: QUAD_COLORS[q] }));
-    Charts.legend(box, counts, "dot");
-  });
 
   // ---- Tabla 3: sitios MCLP ----
   const sites = D.sitios.map((s, i) => ({ ...s, rank: i + 1 }));

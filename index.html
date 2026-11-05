@@ -133,8 +133,8 @@
           <h2>Introducción</h2>
           <p>
             La red de canales financieros del norte del Perú creció rápido en la última década, sobre todo por los agentes
-            corresponsales. Sin embargo, la oferta se instala donde ya hay demanda urbana, y los episodios de El Niño de 1998,
-            2017 y 2023 interrumpieron el acceso justo en las zonas más vulnerables.
+            corresponsales. El análisis estudia la distribución territorial de esa oferta e incorpora la lluvia de los eventos
+            de El Niño de 1998, 2017 y 2023 para evaluar la exposición climática.
           </p>
           <p class="question">¿Dónde falta acceso, qué lo explica y dónde conviene abrir nuevos canales considerando el riesgo climático?</p>
           <h3>Objetivos</h3>
@@ -152,7 +152,7 @@
             <li><strong>Integración de datos.</strong> Cruce por ubigeo de SBS, Censo 2025, Mapa de Pobreza 2018, SENAMHI, CHIRPS, DEM Copernicus y OpenStreetMap.</li>
             <li><strong>Análisis exploratorio espacial.</strong> Tasas por 10 mil adultos suavizadas por Bayes empírico; I de Moran, LISA y Getis-Ord con contigüidad Reina.</li>
             <li><strong>Econometría espacial.</strong> OLS, SAR, SEM y SDM, elegidos con pruebas de multiplicadores de Lagrange y AIC.</li>
-            <li><strong>Geoestadística.</strong> Semivariograma, kriging ordinario y con deriva externa, validados contra IDW por validación cruzada.</li>
+            <li><strong>Geoestadística.</strong> Precipitación CHIRPS muestreada en las coordenadas de la red SENAMHI; semivariograma, kriging ordinario y con deriva externa, comparados con IDW mediante validación cruzada y contra el campo completo.</li>
             <li><strong>Patrones y dinámica.</strong> Procesos puntuales (Clark-Evans, K de Ripley), Markov espacial y Random Forest con validación cruzada espacial.</li>
             <li><strong>Optimización.</strong> Problema de máxima cobertura (MCLP) resuelto de forma exacta con CBC, con escenario ajustado por riesgo.</li>
           </ol>
@@ -169,6 +169,7 @@
       <div id="hallazgos" class="col col-res-a">
         <section id="diagnostico" class="block result">
           <h2>Resultados</h2>
+          <p class="figure-policy">Figuras originales de los notebooks. Cada imagen permite consultar su fuente y abrirla a tamaño completo.</p>
           <h3>Hay oferta, pero mal repartida</h3>
           <p>
             El ámbito tiene <strong data-k="puntos_x10k_adultos"></strong> puntos por 10 mil adultos, pero la mediana distrital es
@@ -176,9 +177,21 @@
             <strong data-k="sin_oficina"></strong> no tienen oficina y <strong data-k="sin_punto_atencion"></strong> no tienen ningún canal.
             Hay <strong data-k="lisa_hh"></strong> distritos Alto-Alto en la costa de Piura y Tumbes y <strong data-k="lisa_ll"></strong> Bajo-Bajo en la sierra.
           </p>
-          <figure>
-            <div id="chart-dep" class="chart"></div>
-            <figcaption>Figura 2. Mediana del acceso suavizado por departamento (puntos por 10 mil adultos).</figcaption>
+          <figure class="notebook-figure">
+            <a class="figure-image-link" href="outputs/figuras/02_mapas_tematicos.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar figura 2: Mapas distritales de acceso financiero y contexto socioeconómico">
+              <img src="outputs/figuras/02_mapas_tematicos.png" width="5134" height="1958" loading="lazy" decoding="async" alt="Mapas distritales de acceso financiero y contexto socioeconómico">
+            </a>
+            <figcaption>Figura 2. Acceso financiero y contexto socioeconómico por distrito.
+              <span class="figure-source">Imagen original del <a href="notebooks/02_aede.ipynb" download>notebook 02</a> · <a href="outputs/figuras/02_mapas_tematicos.png" target="_blank" rel="noopener noreferrer">Ampliar imagen</a></span>
+            </figcaption>
+          </figure>
+          <figure class="notebook-figure">
+            <a class="figure-image-link" href="outputs/figuras/03_lisa_acceso.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar figura 3: Mapas de clusters LISA y significancia local del acceso financiero">
+              <img src="outputs/figuras/03_lisa_acceso.png" width="3453" height="2134" loading="lazy" decoding="async" alt="Mapas de clusters LISA y significancia local del acceso financiero">
+            </a>
+            <figcaption>Figura 3. Clusters LISA y significancia local del acceso financiero.
+              <span class="figure-source">Imagen original del <a href="notebooks/03_pesos_autocorrelacion.ipynb" download>notebook 03</a> · <a href="outputs/figuras/03_lisa_acceso.png" target="_blank" rel="noopener noreferrer">Ampliar imagen</a></span>
+            </figcaption>
           </figure>
         </section>
 
@@ -187,12 +200,16 @@
           <p>
             Los canales pasaron de <strong data-k="panel_first"></strong> (<span data-k="panel_first_label"></span>) a
             <strong data-k="panel_max"></strong> (<span data-k="panel_max_label"></span>) y bajaron a <strong data-k="panel_2025"></strong>
-            en diciembre de 2025. La caída de 2024 ocurre en los cinco departamentos a la vez: una consolidación de corresponsales en todo
-            el sistema. La segregación no cambió: el I de Moran anual se mantuvo entre 0,20 y 0,24.
+            en diciembre de 2025. La caída de 2024 ocurre en los cinco departamentos a la vez. El I de Moran anual se mantuvo
+            entre 0,20 y 0,24: la expansión no redujo el agrupamiento espacial del acceso.
           </p>
-          <figure>
-            <div id="chart-panel" class="chart"></div>
-            <figcaption>Figura 3. Canales de atención por departamento (cajeros, corresponsales y EOB), cortes SBS.</figcaption>
+          <figure class="notebook-figure">
+            <a class="figure-image-link" href="outputs/figuras/08_evolucion_moran.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar figura 4: Evolución de canales financieros y autocorrelación espacial por año">
+              <img src="outputs/figuras/08_evolucion_moran.png" width="3871" height="1231" loading="lazy" decoding="async" alt="Evolución de canales financieros y autocorrelación espacial por año">
+            </a>
+            <figcaption>Figura 4. Evolución de los canales por departamento y del I de Moran en los cortes de diciembre.
+              <span class="figure-source">Imagen original del <a href="notebooks/08_espaciotemporal_ml.ipynb" download>notebook 08</a> · <a href="outputs/figuras/08_evolucion_moran.png" target="_blank" rel="noopener noreferrer">Ampliar imagen</a></span>
+            </figcaption>
           </figure>
         </section>
 
@@ -208,18 +225,30 @@
             </table>
           </div>
           <p class="fig-note">Coeficientes de pobreza 2018 (%), población urbana (%) y altitud (km). I res.: I de Moran de los residuos. *** p &lt; 0,01; ** p &lt; 0,05; * p &lt; 0,1.</p>
+          <figure class="notebook-figure">
+            <a class="figure-image-link" href="outputs/figuras/04_residuos_ols_sem.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar figura 5: Mapas de residuos de OLS y SEM con su I de Moran">
+              <img src="outputs/figuras/04_residuos_ols_sem.png" width="3325" height="2009" loading="lazy" decoding="async" alt="Mapas de residuos de OLS y SEM con su I de Moran">
+            </a>
+            <figcaption>Figura 5. Residuos del modelo OLS frente al modelo de error espacial SEM.
+              <span class="figure-source">Imagen original del <a href="notebooks/04_regresion_espacial.ipynb" download>notebook 04</a> · <a href="outputs/figuras/04_residuos_ols_sem.png" target="_blank" rel="noopener noreferrer">Ampliar imagen</a></span>
+            </figcaption>
+          </figure>
         </section>
 
         <section id="modelo" class="block result">
           <h3>Qué se puede predecir</h3>
           <p>
             Con validación cruzada espacial, el Random Forest con rezagos espaciales y posición alcanza R² = <strong data-k="ml_best_r2"></strong>.
-            El cambio anual de cada distrito no es predecible: ningún modelo supera a la persistencia (RMSE <span data-k="persist_rmse"></span>
+            En la validación del cambio anual, ningún modelo supera a la persistencia (RMSE <span data-k="persist_rmse"></span>
             frente a <span data-k="rf_rmse"></span>).
           </p>
-          <figure>
-            <div id="chart-ml" class="chart"></div>
-            <figcaption>Figura 7. R² en validación cruzada espacial por modelo y conjunto de variables.</figcaption>
+          <figure class="notebook-figure">
+            <a class="figure-image-link" href="outputs/figuras/08_shap_acceso_potencial.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar figura 6: Valores SHAP de pobreza, urbanización y otras variables del modelo XGBoost">
+              <img src="outputs/figuras/08_shap_acceso_potencial.png" width="2319" height="1315" loading="lazy" decoding="async" alt="Valores SHAP de pobreza, urbanización y otras variables del modelo XGBoost">
+            </a>
+            <figcaption>Figura 6. Determinantes del acceso esperado: valores SHAP del modelo XGBoost.
+              <span class="figure-source">Imagen original del <a href="notebooks/08_espaciotemporal_ml.ipynb" download>notebook 08</a> · <a href="outputs/figuras/08_shap_acceso_potencial.png" target="_blank" rel="noopener noreferrer">Ampliar imagen</a></span>
+            </figcaption>
           </figure>
         </section>
       </div>
@@ -231,9 +260,13 @@
             El kriging ordinario predice la lluvia extrema mejor que IDW en los tres eventos; IDW suaviza los máximos. Los distritos más
             expuestos están en Tumbes y en la sierra de Piura.
           </p>
-          <figure>
-            <div id="chart-krig" class="chart"></div>
-            <figcaption>Figura 4. Error de validación cruzada dejando uno fuera (RMSE, mm) por método y evento.</figcaption>
+          <figure class="notebook-figure">
+            <a class="figure-image-link" href="outputs/figuras/06_validacion.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar figura 7: Validación de IDW, kriging ordinario y kriging con deriva externa, y error por distancia a las estaciones">
+              <img src="outputs/figuras/06_validacion.png" width="3570" height="1261" loading="lazy" decoding="async" alt="Validación de IDW, kriging ordinario y kriging con deriva externa, y error por distancia a las estaciones">
+            </a>
+            <figcaption>Figura 7. Validación cruzada de marzo de 1998 y error del kriging ordinario según la distancia a la red. Los valores en las estaciones se extraen del campo CHIRPS.
+              <span class="figure-source">Imagen original del <a href="notebooks/06_geoestadistica_precipitacion.ipynb" download>notebook 06</a> · <a href="outputs/figuras/06_validacion.png" target="_blank" rel="noopener noreferrer">Ampliar imagen</a></span>
+            </figcaption>
           </figure>
           <ol id="list-expo" class="rank-list" aria-label="Distritos más expuestos"></ol>
         </section>
@@ -245,18 +278,26 @@
             <strong data-k="canales_faltantes"></strong> canales, de los cuales <strong data-k="canales_urbanos_faltantes"></strong> son urbanos:
             siete distritos explican <strong data-k="top7_share"></strong> del déficit. En la ciudad falta capacidad; en el campo, cercanía.
           </p>
-          <figure>
-            <div id="chart-urban" class="chart"></div>
-            <figcaption>Figura 5. Canales urbanos faltantes, diez distritos con mayor déficit.</figcaption>
+          <figure class="notebook-figure">
+            <a class="figure-image-link" href="outputs/figuras/08_brecha_acceso.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar figura 8: Comparación del acceso observado y esperado con mapa de distritos desatendidos">
+              <img src="outputs/figuras/08_brecha_acceso.png" width="3632" height="2194" loading="lazy" decoding="async" alt="Comparación del acceso observado y esperado con mapa de distritos desatendidos">
+            </a>
+            <figcaption>Figura 8. Acceso observado frente al esperado y mapa distrital de la brecha de acceso.
+              <span class="figure-source">Imagen original del <a href="notebooks/08_espaciotemporal_ml.ipynb" download>notebook 08</a> · <a href="outputs/figuras/08_brecha_acceso.png" target="_blank" rel="noopener noreferrer">Ampliar imagen</a></span>
+            </figcaption>
           </figure>
           <p>
             Para los <strong data-k="adultos_rurales_desatendidos"></strong> adultos rurales desatendidos, el MCLP cubre
             <strong data-k="mclp25"></strong> con 25 canales y <strong data-k="mclp50"></strong> con 50. La heurística voraz queda a menos de un
             punto del óptimo exacto.
           </p>
-          <figure>
-            <div id="chart-mclp" class="chart"></div>
-            <figcaption>Figura 6. Cobertura de adultos rurales desatendidos a 5 km o menos según el número de canales.</figcaption>
+          <figure class="notebook-figure">
+            <a class="figure-image-link" href="outputs/figuras/09_mclp_cobertura.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar figura 9: Cobertura de adultos rurales desatendidos y mapa de los 25 sitios MCLP">
+              <img src="outputs/figuras/09_mclp_cobertura.png" width="3664" height="1876" loading="lazy" decoding="async" alt="Cobertura de adultos rurales desatendidos y mapa de los 25 sitios MCLP">
+            </a>
+            <figcaption>Figura 9. Curva de cobertura rural con la heurística voraz, soluciones exactas para 10, 25 y 50 canales y ubicación óptima de 25 sitios a un radio de 5 km.
+              <span class="figure-source">Imagen original del <a href="notebooks/09_ubicacion_optima.ipynb" download>notebook 09</a> · <a href="outputs/figuras/09_mclp_cobertura.png" target="_blank" rel="noopener noreferrer">Ampliar imagen</a></span>
+            </figcaption>
           </figure>
         </section>
 
@@ -272,9 +313,13 @@
               Cada distrito desatendido se ubica por su oportunidad y su exposición a lluvia extrema. Con riesgo bajo conviene un canal
               físico; con riesgo alto, uno que tolere interrupciones, como agentes con respaldo digital.
             </p>
-            <figure>
-              <div id="chart-matrix" class="chart chart-square"></div>
-              <figcaption>Figura 8. Matriz oportunidad por riesgo de los distritos desatendidos (percentiles). Tamaño: adultos desatendidos.</figcaption>
+            <figure class="notebook-figure">
+              <a class="figure-image-link" href="outputs/figuras/09_matriz_oportunidad_riesgo.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar figura 10: Matriz de oportunidad y riesgo con mapa de los cuadrantes de prioridad">
+                <img src="outputs/figuras/09_matriz_oportunidad_riesgo.png" width="3770" height="1755" loading="lazy" decoding="async" alt="Matriz de oportunidad y riesgo con mapa de los cuadrantes de prioridad">
+              </a>
+              <figcaption>Figura 10. Matriz oportunidad por riesgo y distribución territorial de los distritos desatendidos. El área de los puntos representa los adultos desatendidos.
+                <span class="figure-source">Imagen original del <a href="notebooks/09_ubicacion_optima.ipynb" download>notebook 09</a> · <a href="outputs/figuras/09_matriz_oportunidad_riesgo.png" target="_blank" rel="noopener noreferrer">Ampliar imagen</a></span>
+              </figcaption>
             </figure>
           </div>
           <div>
@@ -311,7 +356,7 @@
         <ol class="conclusions">
           <li>El acceso financiero en el norte del Perú está espacialmente agrupado: costa con acceso, sierra excluida.</li>
           <li>La pobreza lo reduce y la urbanización lo aumenta, con efectos de vecindad que exigen modelos espaciales.</li>
-          <li>El kriging es el método adecuado para estimar la exposición a la lluvia extrema de El Niño.</li>
+          <li>En los tres eventos evaluados, el kriging ordinario obtuvo menor error que IDW al reconstruir la lluvia extrema.</li>
           <li>La prioridad comercial es densificar ciudades intermedias de Piura y Alto Trujillo; la prioridad de inclusión es cubrir la sierra con canales ligeros.</li>
           <li>El riesgo climático cambia el tipo de canal más que su ubicación.</li>
         </ol>
@@ -339,7 +384,7 @@
     </footer>
   </div>
 
-  <noscript><p class="noscript">Activa JavaScript para explorar el mapa, los indicadores y los gráficos de esta investigación.</p></noscript>
+  <noscript><p class="noscript">Las figuras originales pueden consultarse sin JavaScript. Actívalo para explorar el mapa, los indicadores y las tablas.</p></noscript>
   <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
 
   <script src="assets/vendor/maplibre-gl-4.7.1.js"></script>
